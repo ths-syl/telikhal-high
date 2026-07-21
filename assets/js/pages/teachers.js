@@ -1,6 +1,7 @@
 import { fetchJSON, showLoading, showError } from "../core/fetchData.js";
 import { openModal } from "../components/modal.js";
 import { initNavbar } from "../components/navbar.js";
+import { bindAvatarFallbacks } from "../core/avatar.js";
 
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
@@ -37,7 +38,7 @@ function teacherCardHTML(t) {
   return `
     <div class="info-card" tabindex="0" data-id="${t.id}" role="button" aria-label="${t.name} এর বিস্তারিত দেখুন">
       <div class="photo-wrap">
-        <img src="${t.photo}" alt="${t.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/220x220.png?text=Photo'">
+        <img class="avatar-img" data-name="${t.name}" src="${t.photo}" alt="${t.name}" loading="lazy">
       </div>
       <div class="card-body">
         <p class="card-name">${t.name}</p>
@@ -52,7 +53,7 @@ function committeeCardHTML(c) {
   return `
     <div class="info-card" tabindex="0" data-id="${c.id}" role="button" aria-label="${c.name} এর বিস্তারিত দেখুন">
       <div class="photo-wrap">
-        <img src="${c.photo}" alt="${c.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/220x220.png?text=Photo'">
+        <img class="avatar-img" data-name="${c.name}" src="${c.photo}" alt="${c.name}" loading="lazy">
       </div>
       <div class="card-body">
         <p class="card-name">${c.name}</p>
@@ -64,9 +65,9 @@ function committeeCardHTML(c) {
 }
 
 function openTeacherModal(t) {
-  openModal(`
+  const html = `
     <div class="modal-header">
-      <img src="${t.photo}" alt="${t.name}" onerror="this.src='https://via.placeholder.com/90x90.png?text=Photo'">
+      <img class="avatar-img" data-name="${t.name}" src="${t.photo}" alt="${t.name}">
       <div>
         <h3>${t.name}</h3>
         <p class="role" style="color:var(--color-amber-dark); font-family:var(--font-ui); font-size:0.85rem;">${t.designation}</p>
@@ -76,19 +77,21 @@ function openTeacherModal(t) {
       <dl>
         <dt>বিষয়</dt><dd>${t.subject}</dd>
         <dt>শিক্ষাগত যোগ্যতা</dt><dd>${t.qualification}</dd>
-        <dt>যোগদানের সাল</dt><dd>${t.joiningYear}</dd>
         <dt>ফোন</dt><dd>${t.phone}</dd>
         <dt>ইমেইল</dt><dd>${t.email}</dd>
+        <dt>রক্তের গ্রুপ</dt><dd>${t.bloodGroup}</dd>
       </dl>
-      <p class="bio">${t.bio}</p>
+      <p class="address-note">${t.address}</p>
     </div>
-  `);
+  `;
+  openModal(html);
+  bindAvatarFallbacks(document.querySelector(".modal-overlay"));
 }
 
 function openCommitteeModal(c) {
-  openModal(`
+  const html = `
     <div class="modal-header">
-      <img src="${c.photo}" alt="${c.name}" onerror="this.src='https://via.placeholder.com/90x90.png?text=Photo'">
+      <img class="avatar-img" data-name="${c.name}" src="${c.photo}" alt="${c.name}">
       <div>
         <h3>${c.name}</h3>
         <p class="role" style="color:var(--color-amber-dark); font-family:var(--font-ui); font-size:0.85rem;">${c.designation}</p>
@@ -99,7 +102,9 @@ function openCommitteeModal(c) {
         <dt>পেশা</dt><dd>${c.occupation}</dd>
       </dl>
     </div>
-  `);
+  `;
+  openModal(html);
+  bindAvatarFallbacks(document.querySelector(".modal-overlay"));
 }
 
 async function renderTeachers() {
@@ -111,6 +116,7 @@ async function renderTeachers() {
   if (!teachers) return showError(gridEl);
 
   gridEl.innerHTML = teachers.map(teacherCardHTML).join("");
+  bindAvatarFallbacks(gridEl);
 
   gridEl.querySelectorAll(".info-card").forEach((card) => {
     const teacher = teachers.find((t) => t.id === card.dataset.id);
@@ -131,6 +137,7 @@ async function renderCommittee() {
   if (!committee) return showError(gridEl);
 
   gridEl.innerHTML = committee.map(committeeCardHTML).join("");
+  bindAvatarFallbacks(gridEl);
 
   gridEl.querySelectorAll(".info-card").forEach((card) => {
     const member = committee.find((c) => c.id === card.dataset.id);

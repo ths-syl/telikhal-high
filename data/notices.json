@@ -6,7 +6,7 @@
     "category": "পরীক্ষা",
     "isImportant": true,
     "details": "আগামী ১০ই আগস্ট থেকে নবম শ্রেণির অর্ধ-বার্ষিক পরীক্ষা শুরু হবে। বিস্তারিত রুটিন একাডেমিক পেজে দেওয়া হলো।",
-    "attachment": null
+    "pdfUrl": "https://drive.google.com/file/d/DUMMY_FILE_ID_001/view"
   },
   {
     "id": "NT002",
@@ -15,7 +15,7 @@
     "category": "সাধারণ",
     "isImportant": true,
     "details": "১৫ই আগস্ট জাতীয় শোক দিবস উপলক্ষে বিদ্যালয় বন্ধ থাকবে এবং আলোচনা সভার আয়োজন করা হবে।",
-    "attachment": null
+    "pdfUrl": "https://drive.google.com/file/d/DUMMY_FILE_ID_002/view"
   },
   {
     "id": "NT003",
@@ -24,7 +24,7 @@
     "category": "সভা",
     "isImportant": false,
     "details": "আগামী মাসের প্রথম শুক্রবার অভিভাবক সমাবেশ অনুষ্ঠিত হবে। সকল অভিভাবককে উপস্থিত থাকার অনুরোধ করা হলো।",
-    "attachment": null
+    "pdfUrl": "https://drive.google.com/file/d/DUMMY_FILE_ID_003/view"
   },
   {
     "id": "NT004",
@@ -33,7 +33,7 @@
     "category": "সহপাঠক্রম",
     "isImportant": false,
     "details": "আগামী সেপ্টেম্বর মাসে বার্ষিক ক্রীড়া প্রতিযোগিতা অনুষ্ঠিত হবে। আগ্রহী শিক্ষার্থীদের নাম নিবন্ধনের জন্য অনুরোধ করা হলো।",
-    "attachment": null
+    "pdfUrl": "https://drive.google.com/file/d/DUMMY_FILE_ID_004/view"
   },
   {
     "id": "NT005",
@@ -42,6 +42,33 @@
     "category": "সাধারণ",
     "isImportant": false,
     "details": "সকল শ্রেণির শিক্ষার্থীদের মাঝে নতুন শিক্ষাবর্ষের পাঠ্যবই বিতরণ কার্যক্রম সম্পন্ন হয়েছে।",
-    "attachment": null
+    "pdfUrl": "https://drive.google.com/file/d/DUMMY_FILE_ID_005/view"
+  },
+  {
+    "id": "NT006",
+    "title": "মাসিক পরীক্ষার ফলাফল প্রকাশ",
+    "date": "২৮-০৬-২০২৬",
+    "category": "পরীক্ষা",
+    "isImportant": false,
+    "details": "জুন মাসের মাসিক পরীক্ষার ফলাফল প্রকাশ করা হয়েছে। শ্রেণি শিক্ষকের কাছে ফলাফল সংগ্রহ করা যাবে।",
+    "pdfUrl": "https://drive.google.com/file/d/DUMMY_FILE_ID_006/view"
+  },
+  {
+    "id": "NT007",
+    "title": "বৃত্তি পরীক্ষার আবেদন শুরু",
+    "date": "১৫-০৬-২০২৬",
+    "category": "বৃত্তি",
+    "isImportant": true,
+    "details": "সরকারি প্রাথমিক ও মাধ্যমিক বৃত্তি পরীক্ষার আবেদন প্রক্রিয়া শুরু হয়েছে। আগ্রহী শিক্ষার্থীদের নির্ধারিত ফরম পূরণ করে জমা দিতে হবে।",
+    "pdfUrl": "https://drive.google.com/file/d/DUMMY_FILE_ID_007/view"
+  },
+  {
+    "id": "NT008",
+    "title": "শিক্ষক নিয়োগ বিজ্ঞপ্তি",
+    "date": "০১-০৬-২০২৬",
+    "category": "নিয়োগ",
+    "isImportant": false,
+    "details": "বিদ্যালয়ে সহকারী শিক্ষক পদে নিয়োগের জন্য আবেদন আহ্বান করা যাচ্ছে। বিস্তারিত শর্তাবলী পিডিএফ কপিতে দেখুন।",
+    "pdfUrl": "https://drive.google.com/file/d/DUMMY_FILE_ID_008/view"
   }
 ]

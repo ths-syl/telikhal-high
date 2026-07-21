@@ -1,5 +1,7 @@
+import { parseBnDate } from "../core/domUtils.js";
+
 /**
- * সাইডবার নোটিশ উইজেট রেন্ডার করে (সর্বোচ্চ ৫টি সাম্প্রতিক নোটিশ)
+ * সাইডবার নোটিশ উইজেট রেন্ডার করে (সর্বশেষ ৫টা নোটিশ, সর্বশেষ সবার উপরে)
  */
 function renderNoticeWidget(containerEl, notices) {
   if (!containerEl) return;
@@ -9,9 +11,7 @@ function renderNoticeWidget(containerEl, notices) {
     return;
   }
 
-  const recent = [...notices]
-    .sort((a, b) => (a.isImportant === b.isImportant ? 0 : a.isImportant ? -1 : 1))
-    .slice(0, 5);
+  const recent = [...notices].sort((a, b) => parseBnDate(b.date) - parseBnDate(a.date)).slice(0, 5);
 
   containerEl.innerHTML = recent
     .map(

@@ -1,6 +1,6 @@
 /**
- * রিইউজেবল মডাল কম্পোনেন্ট — শিক্ষক ও শিক্ষার্থী উভয় পেজে ব্যবহার হবে।
- * ব্যবহার: openModal(innerHTML)
+ * রিইউজেবল মডাল কম্পোনেন্ট — শিক্ষক, শিক্ষার্থী ও গ্যালারি পেজে ব্যবহার হবে।
+ * ব্যবহার: openModal(innerHTML) অথবা প্রশস্ত (lightbox) মডালের জন্য openModal(innerHTML, "modal-wide")
  */
 
 let overlayEl = null;
@@ -27,8 +27,11 @@ function ensureOverlay() {
   return overlayEl;
 }
 
-function openModal(innerHTML) {
+function openModal(innerHTML, sizeClass = "") {
   const overlay = ensureOverlay();
+  const box = overlay.querySelector(".modal-box");
+  box.classList.remove("modal-wide");
+  if (sizeClass) box.classList.add(sizeClass);
   overlay.querySelector(".modal-content").innerHTML = innerHTML;
   overlay.classList.add("open");
   document.body.style.overflow = "hidden";

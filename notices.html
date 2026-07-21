@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>শিক্ষক ও কর্মচারী | তেলিখাল উচ্চ বিদ্যালয়</title>
-<meta name="description" content="তেলিখাল উচ্চ বিদ্যালয়ের শিক্ষক, কর্মচারী ও পরিচালনা কমিটির তথ্য">
+<title>নোটিশ বোর্ড | তেলিখাল উচ্চ বিদ্যালয়</title>
+<meta name="description" content="তেলিখাল উচ্চ বিদ্যালয়ের সকল নোটিশ ও পিডিএফ কপি">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="assets/css/layout.css">
 <link rel="stylesheet" href="assets/css/components.css">
 <link rel="stylesheet" href="assets/css/pages/teachers.css">
+<link rel="stylesheet" href="assets/css/pages/students.css">
+<link rel="stylesheet" href="assets/css/pages/notices.css">
 </head>
 <body>
 
@@ -44,21 +46,25 @@
 <!-- ===================== Page Banner ===================== -->
 <section class="page-banner">
   <div class="container">
-    <h1>শিক্ষক ও কর্মচারী</h1>
-    <p>আমাদের নিবেদিতপ্রাণ শিক্ষক, কর্মচারী ও পরিচালনা কমিটির পরিচিতি</p>
+    <h1>নোটিশ বোর্ড</h1>
+    <p>বিদ্যালয়ের সকল নোটিশ ও পিডিএফ কপি — সর্বশেষ নোটিশ সবার উপরে</p>
   </div>
 </section>
 
-<!-- ===================== Teachers Grid ===================== -->
 <div class="container">
   <section class="section">
-    <div class="section-title"><h2><span>শিক্ষক ও কর্মচারীবৃন্দ</span></h2></div>
-    <div class="card-grid" id="teachers-grid"></div>
-  </section>
 
-  <section class="section">
-    <div class="section-title"><h2><span>বিদ্যালয় ব্যবস্থাপনা কমিটি (SMC)</span></h2></div>
-    <div class="card-grid" id="committee-grid"></div>
+    <!-- Filter / Search -->
+    <div class="notice-filter-bar">
+      <select id="filter-category" aria-label="ক্যাটাগরি অনুযায়ী ফিল্টার"></select>
+      <input type="search" id="filter-search" placeholder="নোটিশের শিরোনাম দিয়ে খুঁজুন..." aria-label="নোটিশ সার্চ করুন">
+    </div>
+    <p class="result-count" id="result-count" style="margin-bottom:1rem;"></p>
+
+    <!-- Notice List -->
+    <div class="notice-board-list" id="notice-board-list"></div>
+    <div class="load-more-wrap" id="load-more-wrap"></div>
+
   </section>
 </div>
 
@@ -91,6 +97,6 @@
   </div>
 </footer>
 
-<script type="module" src="assets/js/pages/teachers.js"></script>
+<script type="module" src="assets/js/pages/notices.js"></script>
 </body>
 </html>

@@ -10,4 +10,16 @@ function debounce(fn, delay = 250) {
   };
 }
 
-export { debounce };
+/**
+ * বাংলা সংখ্যার "DD-MM-YYYY" ফরম্যাটের তারিখকে সাজানোর জন্য সংখ্যায় (timestamp) রূপান্তর করে।
+ * যেমন: "২০-০৭-২০২৬" -> Date timestamp
+ */
+function parseBnDate(bnDateStr) {
+  const bnDigits = "০১২৩৪৫৬৭৮৯";
+  const enDateStr = bnDateStr.replace(/[০-৯]/g, (d) => bnDigits.indexOf(d));
+  const firstPart = enDateStr.split(" ")[0]; // রেঞ্জ ডেট হলে (যেমন "০৫-০৫-... থেকে ...") প্রথম তারিখ নেয়
+  const [day, month, year] = firstPart.split("-").map(Number);
+  return new Date(year, (month || 1) - 1, day || 1).getTime();
+}
+
+export { debounce, parseBnDate };
