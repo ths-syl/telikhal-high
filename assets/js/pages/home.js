@@ -2,7 +2,6 @@ import { fetchJSON, showError } from "../core/fetchData.js";
 import { initHeroSlider } from "../components/slider.js";
 import { renderNoticeWidget } from "../components/noticeWidget.js";
 import { initNavbar } from "../components/navbar.js";
-import { bindAvatarFallbacks } from "../core/avatar.js";
 
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
@@ -61,28 +60,26 @@ async function renderAboutAndMessages() {
   if (headmasterEl) {
     const h = info.headmasterMessage;
     headmasterEl.innerHTML = `
-      <img class="avatar-img" data-name="${h.name}" src="${h.photo}" alt="${h.name}">
+      <img src="${h.photo}" alt="${h.name}" onerror="this.src='https://via.placeholder.com/90x90.png?text=Photo'">
       <div>
         <p class="name">${h.name}</p>
         <p class="role">${h.designation}</p>
         <p class="quote">"${h.message}"</p>
       </div>
     `;
-    bindAvatarFallbacks(headmasterEl);
   }
 
   const smcEl = document.getElementById("smc-message");
   if (smcEl) {
     const s = info.smcPresidentMessage;
     smcEl.innerHTML = `
-      <img class="avatar-img" data-name="${s.name}" src="${s.photo}" alt="${s.name}">
+      <img src="${s.photo}" alt="${s.name}" onerror="this.src='https://via.placeholder.com/90x90.png?text=Photo'">
       <div>
         <p class="name">${s.name}</p>
         <p class="role">${s.designation}</p>
         <p class="quote">"${s.message}"</p>
       </div>
     `;
-    bindAvatarFallbacks(smcEl);
   }
 
   const mapEl = document.getElementById("map-widget");
@@ -122,7 +119,7 @@ async function renderNotableStudents() {
       (s) => `
     <div class="info-card">
       <div class="photo-wrap">
-        <img class="avatar-img" data-name="${s.name}" src="${s.photo}" alt="${s.name}" loading="lazy">
+        <img src="${s.photo}" alt="${s.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/220x220.png?text=Student'">
       </div>
       <div class="card-body">
         <p class="card-name">${s.name}</p>
@@ -132,7 +129,6 @@ async function renderNotableStudents() {
     </div>`
     )
     .join("");
-  bindAvatarFallbacks(el);
 }
 
 async function renderNotices() {

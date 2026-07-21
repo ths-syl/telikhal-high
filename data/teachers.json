@@ -6,10 +6,10 @@
     "subject": "প্রশাসন",
     "photo": "assets/images/teachers/teacher1.jpg",
     "qualification": "এম.এ, বি.এড",
+    "joiningYear": "২০১০",
     "phone": "+৮৮০ ১৭xx-xxxxx১",
     "email": "karim.dummy@example.com",
-    "address": "গ্রাম: তেলিখাল, ডাকঘর: তেলিখাল, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "B+"
+    "bio": "দীর্ঘ ১৫ বছরের অভিজ্ঞতাসম্পন্ন একজন প্রশাসক ও শিক্ষক। বিদ্যালয়ের সার্বিক শিক্ষার মান উন্নয়নে নিরলস কাজ করে যাচ্ছেন।"
   },
   {
     "id": "T002",
@@ -18,10 +18,10 @@
     "subject": "বাংলা",
     "photo": "assets/images/teachers/teacher2.jpg",
     "qualification": "এম.এ (বাংলা), বি.এড",
+    "joiningYear": "২০১২",
     "phone": "+৮৮০ ১৭xx-xxxxx২",
     "email": "salma.dummy@example.com",
-    "address": "গ্রাম: রুস্তমপুর, ডাকঘর: কোম্পানীগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "A+"
+    "bio": "বাংলা সাহিত্যে প্রথম শ্রেণীতে স্নাতকোত্তর। শিক্ষার্থীদের সৃজনশীল লেখনীতে দক্ষ করে তোলার কাজে অভিজ্ঞ।"
   },
   {
     "id": "T003",
@@ -30,10 +30,10 @@
     "subject": "গণিত",
     "photo": "assets/images/teachers/teacher3.jpg",
     "qualification": "এম.এসসি (গণিত)",
+    "joiningYear": "২০১৫",
     "phone": "+৮৮০ ১৭xx-xxxxx৩",
     "email": "zahirul.dummy@example.com",
-    "address": "গ্রাম: ভোলাগঞ্জ, ডাকঘর: ভোলাগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "O+"
+    "bio": "গণিত অলিম্পিয়াডে জেলার একাধিক শিক্ষার্থীকে প্রস্তুত করেছেন। সহজ পদ্ধতিতে জটিল বিষয় বোঝানোর জন্য পরিচিত।"
   },
   {
     "id": "T004",
@@ -42,10 +42,10 @@
     "subject": "ইংরেজি",
     "photo": "assets/images/teachers/teacher4.jpg",
     "qualification": "বি.এ অনার্স, এম.এ (ইংরেজি)",
+    "joiningYear": "২০১৭",
     "phone": "+৮৮০ ১৭xx-xxxxx৪",
     "email": "sumaiya.dummy@example.com",
-    "address": "গ্রাম: ইসলামপুর, ডাকঘর: কোম্পানীগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "AB+"
+    "bio": "ইংরেজি ভাষা দক্ষতা বৃদ্ধির জন্য নিয়মিত ভাষাচর্চা কর্মশালা পরিচালনা করেন।"
   },
   {
     "id": "T005",
@@ -54,10 +54,10 @@
     "subject": "বিজ্ঞান",
     "photo": "assets/images/teachers/teacher5.jpg",
     "qualification": "এম.এসসি (পদার্থবিজ্ঞান)",
+    "joiningYear": "২০১৮",
     "phone": "+৮৮০ ১৭xx-xxxxx৫",
     "email": "shafiqul.dummy@example.com",
-    "address": "গ্রাম: তেলিখাল, ডাকঘর: তেলিখাল, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "B-"
+    "bio": "বিজ্ঞান মেলায় স্কুলকে জেলা পর্যায়ে একাধিকবার প্রতিনিধিত্ব করিয়েছেন।"
   },
   {
     "id": "T006",
@@ -66,9 +66,9 @@
     "subject": "প্রশাসনিক",
     "photo": "assets/images/teachers/staff1.jpg",
     "qualification": "এইচ.এস.সি, কম্পিউটার প্রশিক্ষণ",
+    "joiningYear": "২০১৯",
     "phone": "+৮৮০ ১৭xx-xxxxx৬",
     "email": "nazma.dummy@example.com",
-    "address": "গ্রাম: নয়াবাজার, ডাকঘর: কোম্পানীগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "O-"
+    "bio": "বিদ্যালয়ের দাপ্তরিক ও প্রশাসনিক কার্যক্রম পরিচালনায় সহায়তা করেন।"
   }
 ]

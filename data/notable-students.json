@@ -4,20 +4,20 @@
     "name": "আয়েশা সিদ্দিকা (ডামি)",
     "batch": "এস.এস.সি ২০২৩",
     "achievement": "জিপিএ-৫ প্রাপ্ত এবং জেলা বিজ্ঞান মেলায় প্রথম স্থান অধিকারী",
-    "photo": "assets/images/achievers/achiever1.jpg"
+    "photo": "assets/images/students/notable1.jpg"
   },
   {
     "id": "N002",
     "name": "মোঃ ইমরান হোসেন (ডামি)",
     "batch": "এস.এস.সি ২০২২",
     "achievement": "জাতীয় গণিত অলিম্পিয়াডে বিভাগীয় পর্যায়ে চ্যাম্পিয়ন",
-    "photo": "assets/images/achievers/achiever2.jpg"
+    "photo": "assets/images/students/notable2.jpg"
   },
   {
     "id": "N003",
     "name": "সুমাইয়া আক্তার (ডামি)",
     "batch": "এস.এস.সি ২০২৪",
     "achievement": "সদ্য সমাপ্ত এস.এস.সি পরীক্ষায় উপজেলার মধ্যে সর্বোচ্চ নম্বর অর্জনকারী",
-    "photo": "assets/images/achievers/achiever3.jpg"
+    "photo": "assets/images/students/notable3.jpg"
   }
 ]

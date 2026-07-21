@@ -5,14 +5,10 @@
     "address": "তেলিখাল, কোম্পানীগঞ্জ, সিলেট, বাংলাদেশ"
   },
   "socialLinks": [
-    { "platform": "Facebook", "url": "https://www.facebook.com/telikhalhighschool.dummy", "icon": "facebook" },
+    { "platform": "Facebook", "url": "#", "icon": "facebook" },
     { "platform": "YouTube", "url": "#", "icon": "youtube" },
     { "platform": "WhatsApp", "url": "#", "icon": "whatsapp" }
   ],
-  "facebookPage": {
-    "pageUrl": "https://www.facebook.com/telikhalhighschool.dummy",
-    "note": "এটি একটি ডামি পেজ URL। প্রকৃত ফেসবুক পেজ লিংক দিয়ে এটি পরিবর্তন করে নিতে হবে।"
-  },
   "footerLinks": {
     "important": [
       { "label": "শিক্ষা মন্ত্রণালয়", "url": "https://moedu.gov.bd" },
@@ -23,8 +19,7 @@
       { "label": "শিক্ষক ও কর্মচারী", "url": "teachers.html" },
       { "label": "শিক্ষার্থী তথ্য কেন্দ্র", "url": "students.html" },
       { "label": "একাডেমিক", "url": "academic.html" },
-      { "label": "নোটিশ বোর্ড", "url": "notices.html" },
-      { "label": "ফটো গ্যালারি", "url": "gallery.html" }
+      { "label": "নোটিশ বোর্ড", "url": "notices.html" }
     ]
   },
   "navigation": [
@@ -33,7 +28,6 @@
     { "label": "শিক্ষার্থী তথ্য", "url": "students.html" },
     { "label": "একাডেমিক", "url": "academic.html" },
     { "label": "নোটিশ বোর্ড", "url": "notices.html" },
-    { "label": "গ্যালারি", "url": "gallery.html" },
     { "label": "ভর্তি", "url": "admission.html" },
     { "label": "ফলাফল", "url": "result.html" }
   ],

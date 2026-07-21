@@ -58,46 +58,9 @@
   border: 1px solid var(--color-border);
 }
 .info-card:hover, .info-card:focus-visible { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-/* টাচ ডিভাইসে হোভার আটকে থেকে জ্যাঙ্ক এড়াতে - ট্যাপে হালকা স্কেল রেসপন্স */
-@media (hover: none) {
-  .info-card:hover { transform: none; box-shadow: var(--shadow-sm); }
-  .info-card:active { transform: scale(0.97); }
-}
 .info-card .photo-wrap { aspect-ratio: 1/1; overflow: hidden; background: var(--color-sky-light); }
 .info-card img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-base); }
 .info-card:hover img { transform: scale(1.06); }
-
-/* ছবি না থাকলে/লোড ব্যর্থ হলে নামের অক্ষর দিয়ে অ্যাভাটার */
-.photo-wrap .avatar-fallback {
-  width: 100%; height: 100%;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: var(--color-white);
-}
-.modal-header .avatar-fallback {
-  width: 90px; height: 90px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--color-white);
-  border: 3px solid var(--color-sky-light);
-  flex-shrink: 0;
-}
-.message-card .avatar-fallback {
-  width: 84px; height: 84px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: var(--color-white);
-  border: 3px solid var(--color-sky-light);
-  flex-shrink: 0;
-}
 .info-card .card-body { padding: 0.9rem 1rem 1.1rem; }
 .info-card .card-name { font-weight: 700; color: var(--color-navy-deep); font-size: 1rem; margin-bottom: 0.2rem; }
 .info-card .card-role { font-size: 0.82rem; color: var(--color-ink-soft); font-family: var(--font-ui); }
@@ -155,7 +118,6 @@
   transition: transform var(--transition-base);
 }
 .modal-overlay.open .modal-box { transform: translateY(0) scale(1); }
-.modal-box.modal-wide { max-width: 720px; }
 .modal-close {
   position: absolute; top: 1rem; right: 1rem;
   width: 34px; height: 34px;
@@ -167,12 +129,11 @@
 }
 .modal-close:hover { background: var(--color-amber); color: var(--color-white); }
 .modal-header { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.2rem; }
-.modal-header.modal-header-noimg { display: block; }
 .modal-header img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-sky-light); }
 .modal-body dl { display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1rem; font-size: 0.9rem; }
 .modal-body dt { color: var(--color-ink-soft); font-family: var(--font-ui); }
 .modal-body dd { color: var(--color-ink); font-weight: 600; }
-.modal-body .address-note { margin-top: 1rem; font-size: 0.92rem; color: var(--color-ink-soft); border-top: 1px dashed var(--color-border); padding-top: 1rem; }
+.modal-body .bio { margin-top: 1rem; font-size: 0.92rem; color: var(--color-ink-soft); border-top: 1px dashed var(--color-border); padding-top: 1rem; }
 
 /* ===================== Skeleton shimmer (lazy loading placeholder) ===================== */
 .skeleton-card {

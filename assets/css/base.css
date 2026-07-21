@@ -21,9 +21,9 @@
   --color-danger:        #C0392B;
 
   /* ---- Typography ---- */
-  --font-display: 'Noto Serif Bengali', 'Noto Sans Bengali', sans-serif; /* শিরোনাম — স্পষ্ট, প্রফেশনাল */
-  --font-body:    'Noto Sans Bengali', 'Hind Siliguri', sans-serif;      /* মূল লেখা */
-  --font-ui:      'Poppins', 'Noto Sans Bengali', sans-serif;            /* সংখ্যা, লেবেল, বাটন */
+  --font-display: 'Tiro Bangla', serif;             /* শিরোনাম — মর্যাদাপূর্ণ */
+  --font-body:    'Hind Siliguri', 'Noto Sans Bengali', sans-serif; /* মূল লেখা */
+  --font-ui:      'Poppins', 'Hind Siliguri', sans-serif;           /* সংখ্যা, লেবেল, বাটন */
 
   --fs-h1: clamp(1.9rem, 1.5rem + 2vw, 3.2rem);
   --fs-h2: clamp(1.5rem, 1.2rem + 1.2vw, 2.3rem);
