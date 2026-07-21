@@ -1,0 +1,74 @@
+[
+  {
+    "id": "T001",
+    "name": "মোঃ আব্দুল করিম (ডামি নাম)",
+    "designation": "প্রধান শিক্ষক",
+    "subject": "প্রশাসন",
+    "photo": "assets/images/teachers/teacher1.jpg",
+    "qualification": "এম.এ, বি.এড",
+    "phone": "+৮৮০ ১৭xx-xxxxx১",
+    "email": "karim.dummy@example.com",
+    "address": "গ্রাম: তেলিখাল, ডাকঘর: তেলিখাল, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
+    "bloodGroup": "B+"
+  },
+  {
+    "id": "T002",
+    "name": "মোছাঃ সালমা বেগম (ডামি নাম)",
+    "designation": "সহকারী প্রধান শিক্ষক",
+    "subject": "বাংলা",
+    "photo": "assets/images/teachers/teacher2.jpg",
+    "qualification": "এম.এ (বাংলা), বি.এড",
+    "phone": "+৮৮০ ১৭xx-xxxxx২",
+    "email": "salma.dummy@example.com",
+    "address": "গ্রাম: রুস্তমপুর, ডাকঘর: কোম্পানীগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
+    "bloodGroup": "A+"
+  },
+  {
+    "id": "T003",
+    "name": "মোঃ জহিরুল ইসলাম (ডামি নাম)",
+    "designation": "সহকারী শিক্ষক",
+    "subject": "গণিত",
+    "photo": "assets/images/teachers/teacher3.jpg",
+    "qualification": "এম.এসসি (গণিত)",
+    "phone": "+৮৮০ ১৭xx-xxxxx৩",
+    "email": "zahirul.dummy@example.com",
+    "address": "গ্রাম: ভোলাগঞ্জ, ডাকঘর: ভোলাগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
+    "bloodGroup": "O+"
+  },
+  {
+    "id": "T004",
+    "name": "সুমাইয়া আক্তার (ডামি নাম)",
+    "designation": "সহকারী শিক্ষক",
+    "subject": "ইংরেজি",
+    "photo": "assets/images/teachers/teacher4.jpg",
+    "qualification": "বি.এ অনার্স, এম.এ (ইংরেজি)",
+    "phone": "+৮৮০ ১৭xx-xxxxx৪",
+    "email": "sumaiya.dummy@example.com",
+    "address": "গ্রাম: ইসলামপুর, ডাকঘর: কোম্পানীগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
+    "bloodGroup": "AB+"
+  },
+  {
+    "id": "T005",
+    "name": "মোঃ শফিকুল আলম (ডামি নাম)",
+    "designation": "সহকারী শিক্ষক",
+    "subject": "বিজ্ঞান",
+    "photo": "assets/images/teachers/teacher5.jpg",
+    "qualification": "এম.এসসি (পদার্থবিজ্ঞান)",
+    "phone": "+৮৮০ ১৭xx-xxxxx৫",
+    "email": "shafiqul.dummy@example.com",
+    "address": "গ্রাম: তেলিখাল, ডাকঘর: তেলিখাল, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
+    "bloodGroup": "B-"
+  },
+  {
+    "id": "T006",
+    "name": "নাজমা খাতুন (ডামি নাম)",
+    "designation": "অফিস সহকারী",
+    "subject": "প্রশাসনিক",
+    "photo": "assets/images/teachers/staff1.jpg",
+    "qualification": "এইচ.এস.সি, কম্পিউটার প্রশিক্ষণ",
+    "phone": "+৮৮০ ১৭xx-xxxxx৬",
+    "email": "nazma.dummy@example.com",
+    "address": "গ্রাম: নয়াবাজার, ডাকঘর: কোম্পানীগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
+    "bloodGroup": "O-"
+  }
+]

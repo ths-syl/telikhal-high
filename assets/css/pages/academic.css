@@ -1,0 +1,144 @@
+/* ===================== Tabs ===================== */
+.academic-tabs {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--color-border);
+}
+.academic-tab-btn {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.2rem;
+  color: var(--color-ink-soft);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color var(--transition-base), border-color var(--transition-base);
+}
+.academic-tab-btn:hover { color: var(--color-navy-deep); }
+.academic-tab-btn.active { color: var(--color-navy-deep); border-color: var(--color-amber); }
+.academic-panel { display: none; }
+.academic-panel.active { display: block; }
+
+/* ===================== Routine: class selector ===================== */
+.routine-class-select {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  min-height: 44px;
+  margin-bottom: 1.5rem;
+  min-width: 220px;
+}
+
+/* ===================== Routine table (desktop) ===================== */
+.routine-table-wrap { overflow-x: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.routine-table { width: 100%; border-collapse: collapse; background: var(--color-white); min-width: 600px; }
+.routine-table th, .routine-table td {
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.88rem;
+  text-align: left;
+  white-space: nowrap;
+}
+.routine-table th {
+  background: var(--color-navy-deep);
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+.routine-table td.day-label {
+  font-weight: 700;
+  color: var(--color-navy-deep);
+  background: var(--color-sky-light);
+}
+.routine-table tr:last-child td { border-bottom: none; }
+
+/* মোবাইলে টেবিলের বদলে দিনভিত্তিক কার্ড - horizontal scroll এড়াতে বেশি স্মুথ */
+@media (max-width: 720px) {
+  .routine-table-wrap { display: none; }
+  .routine-day-cards { display: block; }
+}
+@media (min-width: 721px) {
+  .routine-day-cards { display: none; }
+}
+.routine-day-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.routine-day-card .day-header {
+  background: var(--color-navy-deep);
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+}
+.routine-day-card ul { padding: 0.6rem 1rem; }
+.routine-day-card li {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-size: 0.9rem;
+}
+.routine-day-card li:last-child { border-bottom: none; }
+.routine-day-card .period-no {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  color: var(--color-amber-dark);
+  min-width: 1.4rem;
+}
+.routine-updated { font-size: 0.8rem; color: var(--color-ink-soft); font-family: var(--font-ui); margin-bottom: 1rem; }
+
+/* ===================== Calendar / Events ===================== */
+.event-list { display: flex; flex-direction: column; gap: 0.9rem; }
+.event-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 1.2rem;
+  border-left: 4px solid var(--color-amber);
+}
+.event-date {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  color: var(--color-navy-deep);
+  font-size: 0.85rem;
+  min-width: 92px;
+}
+.event-title { font-weight: 700; margin-bottom: 0.2rem; }
+.event-type-badge {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-paddy-green);
+  background: rgba(76,140,107,0.12);
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+}
+
+/* ===================== Holiday List ===================== */
+.holiday-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.holiday-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 1.2rem;
+  border-bottom: 3px solid var(--color-sky-blue);
+}
+.holiday-card .title { font-weight: 700; color: var(--color-navy-deep); margin-bottom: 0.3rem; }
+.holiday-card .date { font-size: 0.82rem; color: var(--color-ink-soft); font-family: var(--font-ui); }

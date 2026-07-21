@@ -1,0 +1,14 @@
+/* শিক্ষক ও কর্মচারী পেজ */
+.page-banner {
+  background: linear-gradient(135deg, var(--color-navy-deep), var(--color-navy-darker));
+  color: var(--color-white);
+  padding-block: 3rem;
+  text-align: center;
+}
+.page-banner h1 { color: var(--color-white); }
+.page-banner p { color: var(--color-sky-light); font-family: var(--font-ui); margin-top: 0.4rem; }
+
+.section-divider {
+  text-align: center;
+  margin: 3rem 0 1.5rem;
+}

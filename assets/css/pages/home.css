@@ -1,0 +1,8 @@
+/* হোমপেজ-নির্দিষ্ট ছোটখাটো স্টাইল সমন্বয় */
+#about-content {
+  font-size: 1.02rem;
+  color: var(--color-ink-soft);
+  max-width: 65ch;
+}
+.sidebar { position: sticky; top: 90px; }
+@media (max-width: 960px) { .sidebar { position: static; } }

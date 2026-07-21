@@ -1,0 +1,30 @@
+[
+  {
+    "id": "C001",
+    "name": "জনাব রফিকুল ইসলাম (ডামি নাম)",
+    "designation": "সভাপতি",
+    "photo": "assets/images/teachers/smc1.jpg",
+    "occupation": "ব্যবসায়ী ও সমাজসেবক"
+  },
+  {
+    "id": "C002",
+    "name": "জনাব মোঃ আব্দুল করিম (ডামি নাম)",
+    "designation": "প্রধান শিক্ষক (সদস্য সচিব)",
+    "photo": "assets/images/teachers/teacher1.jpg",
+    "occupation": "প্রধান শিক্ষক"
+  },
+  {
+    "id": "C003",
+    "name": "জনাবা রেহানা পারভীন (ডামি নাম)",
+    "designation": "অভিভাবক সদস্য",
+    "photo": "assets/images/teachers/smc2.jpg",
+    "occupation": "গৃহিণী"
+  },
+  {
+    "id": "C004",
+    "name": "জনাব ইকবাল হোসেন (ডামি নাম)",
+    "designation": "সাধারণ সদস্য",
+    "photo": "assets/images/teachers/smc3.jpg",
+    "occupation": "কৃষক প্রতিনিধি"
+  }
+]

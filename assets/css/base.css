@@ -1,0 +1,132 @@
+/* =========================================================
+   তেলিখাল উচ্চ বিদ্যালয় — Design Tokens
+   পরিবেশ থেকে অনুপ্রাণিত প্যালেট: ভোলাগঞ্জ চুনাপাথর পাহাড়,
+   পিয়াইন নদী, চা-বাগান ও ধানক্ষেতের রঙ
+   ========================================================= */
+
+:root {
+  /* ---- Core Palette ---- */
+  --color-navy-deep:     #0E3A5C;  /* গোধূলির পাহাড় — প্রাইমারি, হেডার */
+  --color-navy-darker:   #082943;  /* navy hover/active শেড */
+  --color-sky-blue:      #4FA3D1;  /* পিয়াইন নদীর জল — সেকেন্ডারি */
+  --color-sky-light:     #DDEEF8;  /* হালকা নীল ব্যাকগ্রাউন্ড টিন্ট */
+  --color-amber:         #E8912E;  /* চুনাপাথরের ধুলায় সূর্যাস্ত — অ্যাকসেন্ট/CTA */
+  --color-amber-dark:    #C97418;  /* amber hover */
+  --color-paddy-green:   #4C8C6B;  /* ধানক্ষেত/চা-বাগান — তৃতীয়, সাফল্য ট্যাগ */
+  --color-limestone:     #F7F5EF;  /* চুনাপাথরের সাদা — মূল ব্যাকগ্রাউন্ড */
+  --color-white:         #FFFFFF;
+  --color-ink:           #23303A;  /* মূল টেক্সট রঙ */
+  --color-ink-soft:      #55636C;  /* সেকেন্ডারি টেক্সট */
+  --color-border:        #E2E1D8;
+  --color-danger:        #C0392B;
+
+  /* ---- Typography ---- */
+  --font-display: 'Noto Serif Bengali', 'Noto Sans Bengali', sans-serif; /* শিরোনাম — স্পষ্ট, প্রফেশনাল */
+  --font-body:    'Noto Sans Bengali', 'Hind Siliguri', sans-serif;      /* মূল লেখা */
+  --font-ui:      'Poppins', 'Noto Sans Bengali', sans-serif;            /* সংখ্যা, লেবেল, বাটন */
+
+  --fs-h1: clamp(1.9rem, 1.5rem + 2vw, 3.2rem);
+  --fs-h2: clamp(1.5rem, 1.2rem + 1.2vw, 2.3rem);
+  --fs-h3: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* ---- Spacing / Radius / Shadow ---- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(14, 58, 92, 0.08);
+  --shadow-md: 0 8px 24px rgba(14, 58, 92, 0.12);
+  --shadow-lg: 0 16px 40px rgba(14, 58, 92, 0.18);
+
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --container-max: 1200px;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-ink);
+  background: var(--color-limestone);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-navy-deep);
+  line-height: 1.3;
+  font-weight: 700;
+}
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.section { padding-block: clamp(2.5rem, 2rem + 2vw, 5rem); }
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.section-title span {
+  display: inline-block;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid var(--color-amber);
+}
+
+/* ---- Reusable Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+}
+.btn-primary {
+  background: var(--color-amber);
+  color: var(--color-white);
+}
+.btn-primary:hover { background: var(--color-amber-dark); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--color-navy-deep);
+  color: var(--color-navy-deep);
+}
+.btn-outline:hover { background: var(--color-navy-deep); color: var(--color-white); }
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Focus visibility ---- */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--color-amber);
+  outline-offset: 2px;
+}
