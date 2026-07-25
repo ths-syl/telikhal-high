@@ -5,8 +5,8 @@
     "title": "১০০ মিটার দৌড় প্রতিযোগিতা",
     "date": "১৫-০৯-২০২৫",
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/sports-1.jpg", "image": "assets/images/gallery/sports-1.jpg" },
-      { "thumb": "assets/images/gallery/thumbs/sports-2.jpg", "image": "assets/images/gallery/sports-2.jpg" }
+      { "thumb": "assets/images/gallery/thumbs/sports-1.webp", "image": "assets/images/gallery/sports-1.webp" },
+      { "thumb": "assets/images/gallery/thumbs/sports-2.webp", "image": "assets/images/gallery/sports-2.webp" }
     ]
   },
   {
@@ -15,7 +15,7 @@
     "title": "পুরস্কার বিতরণী মুহূর্ত",
     "date": "১৫-০৯-২০২৫",
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/sports-3.jpg", "image": "assets/images/gallery/sports-3.jpg" }
+      { "thumb": "assets/images/gallery/thumbs/sports-3.webp", "image": "assets/images/gallery/sports-3.webp" }
     ]
   },
   {
@@ -24,9 +24,9 @@
     "title": "শিক্ষার্থীদের প্রজেক্ট প্রদর্শনী",
     "date": "২০-১১-২০২৫",
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/science-fair-1.jpg", "image": "assets/images/gallery/science-fair-1.jpg" },
-      { "thumb": "assets/images/gallery/thumbs/science-fair-2.jpg", "image": "assets/images/gallery/science-fair-2.jpg" },
-      { "thumb": "assets/images/gallery/thumbs/science-fair-3.jpg", "image": "assets/images/gallery/science-fair-3.jpg" }
+      { "thumb": "assets/images/gallery/thumbs/science-fair-1.webp", "image": "assets/images/gallery/science-fair-1.webp" },
+      { "thumb": "assets/images/gallery/thumbs/science-fair-2.webp", "image": "assets/images/gallery/science-fair-2.webp" },
+      { "thumb": "assets/images/gallery/thumbs/science-fair-3.webp", "image": "assets/images/gallery/science-fair-3.webp" }
     ]
   },
   {
@@ -35,8 +35,8 @@
     "title": "বার্ষিক পুরস্কার বিতরণী মঞ্চ",
     "date": "২৮-১২-২০২৫",
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/prize-1.jpg", "image": "assets/images/gallery/prize-1.jpg" },
-      { "thumb": "assets/images/gallery/thumbs/prize-2.jpg", "image": "assets/images/gallery/prize-2.jpg" }
+      { "thumb": "assets/images/gallery/thumbs/prize-1.webp", "image": "assets/images/gallery/prize-1.webp" },
+      { "thumb": "assets/images/gallery/thumbs/prize-2.webp", "image": "assets/images/gallery/prize-2.webp" }
     ]
   },
   {
@@ -45,8 +45,8 @@
     "title": "বার্ষিক সাংস্কৃতিক সন্ধ্যা",
     "date": "১৪-০৪-২০২৬",
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/cultural-1.jpg", "image": "assets/images/gallery/cultural-1.jpg" },
-      { "thumb": "assets/images/gallery/thumbs/cultural-2.jpg", "image": "assets/images/gallery/cultural-2.jpg" }
+      { "thumb": "assets/images/gallery/thumbs/cultural-1.webp", "image": "assets/images/gallery/cultural-1.webp" },
+      { "thumb": "assets/images/gallery/thumbs/cultural-2.webp", "image": "assets/images/gallery/cultural-2.webp" }
     ]
   },
   {
@@ -55,8 +55,8 @@
     "title": "বার্ষিক বৃক্ষরোপণ অভিযান",
     "date": "০৫-০৬-২০২৬",
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/tree-1.jpg", "image": "assets/images/gallery/tree-1.jpg" },
-      { "thumb": "assets/images/gallery/thumbs/tree-2.jpg", "image": "assets/images/gallery/tree-2.jpg" }
+      { "thumb": "assets/images/gallery/thumbs/tree-1.webp", "image": "assets/images/gallery/tree-1.webp" },
+      { "thumb": "assets/images/gallery/thumbs/tree-2.webp", "image": "assets/images/gallery/tree-2.webp" }
     ]
   },
   {
@@ -65,8 +65,8 @@
     "title": "বিদ্যালয়ের মূল ভবন ও খেলার মাঠ",
     "date": "০১-০১-২০২৬",
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/campus-1.jpg", "image": "assets/images/gallery/campus-1.jpg" },
-      { "thumb": "assets/images/gallery/thumbs/campus-2.jpg", "image": "assets/images/gallery/campus-2.jpg" }
+      { "thumb": "assets/images/gallery/thumbs/campus-1.webp", "image": "assets/images/gallery/campus-1.webp" },
+      { "thumb": "assets/images/gallery/thumbs/campus-2.webp", "image": "assets/images/gallery/campus-2.webp" }
     ]
   }
 ]

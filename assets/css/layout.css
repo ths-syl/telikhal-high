@@ -34,7 +34,7 @@
   align-items: center;
   gap: 0.8rem;
 }
-.brand img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; }
+.brand img { width: 54px; height: 54px; border-radius: 0%; object-fit: cover; }
 .brand-name h1 { font-size: 1.25rem; margin: 0; color: var(--color-navy-deep); }
 .brand-name p { font-size: 0.8rem; color: var(--color-ink-soft); font-family: var(--font-ui); }
 
@@ -83,7 +83,7 @@
   .nav-list { flex-direction: column; gap: 1.4rem; }
 }
 
-/* খালি জায়গায় ট্যাপ করলে মোবাইল মেনু বন্ধ করার ব্যাকড্রপ */
+
 .nav-backdrop {
   position: fixed;
   inset: 0;

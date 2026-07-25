@@ -32,7 +32,8 @@ async function renderHeaderFooter() {
   }
   const footerSocial = document.getElementById("footer-social");
   if (footerSocial) {
-    footerSocial.innerHTML = config.socialLinks.map((s) => `<a href="${s.url}" aria-label="${s.platform}">🔗</a>`).join("");
+    footerSocial.innerHTML = config.socialLinks.map((s) => `<a href="${s.url}" target="_blank"  aria-label="${s.platform}"><i class="fa-brands fa-${s.icon}"></i></a>`).join("");
+    /**footerSocial.innerHTML = config.socialLinks.map((s) => `<a href="${s.url}" aria-label="${s.platform}">🔗</a>`).join("");*/
   }
   const footerContact = document.getElementById("footer-contact");
   if (footerContact) {

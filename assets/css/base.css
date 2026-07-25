@@ -1,21 +1,19 @@
 /* =========================================================
    তেলিখাল উচ্চ বিদ্যালয় — Design Tokens
-   পরিবেশ থেকে অনুপ্রাণিত প্যালেট: ভোলাগঞ্জ চুনাপাথর পাহাড়,
-   পিয়াইন নদী, চা-বাগান ও ধানক্ষেতের রঙ
    ========================================================= */
 
 :root {
-  color-scheme: light; /* মোবাইল ব্রাউজারের অটো-ডার্ক-মোড/ফোর্স-ডার্ক ফিচার যেন সাইটের রঙ উল্টে/বিকৃত না করে */
+  color-scheme: light; 
 
   /* ---- Core Palette ---- */
-  --color-navy-deep:     #0E3A5C;  /* গোধূলির পাহাড় — প্রাইমারি, হেডার */
-  --color-navy-darker:   #082943;  /* navy hover/active শেড */
-  --color-sky-blue:      #4FA3D1;  /* পিয়াইন নদীর জল — সেকেন্ডারি */
-  --color-sky-light:     #DDEEF8;  /* হালকা নীল ব্যাকগ্রাউন্ড টিন্ট */
-  --color-amber:         #E8912E;  /* চুনাপাথরের ধুলায় সূর্যাস্ত — অ্যাকসেন্ট/CTA */
+  --color-navy-deep:     #0E3A5C;  /*  প্রাইমারি, হেডার */
+  --color-navy-darker:   #082943;  /*  hover/active শেড */
+  --color-sky-blue:      #4FA3D1;  /*  সেকেন্ডারি */
+  --color-sky-light:     #DDEEF8;  /*  ব্যাকগ্রাউন্ড টিন্ট */
+  --color-amber:         #E8912E;  /* অ্যাকসেন্ট/CTA */
   --color-amber-dark:    #C97418;  /* amber hover */
-  --color-paddy-green:   #4C8C6B;  /* ধানক্ষেত/চা-বাগান — তৃতীয়, সাফল্য ট্যাগ */
-  --color-limestone:     #F7F5EF;  /* চুনাপাথরের সাদা — মূল ব্যাকগ্রাউন্ড */
+  --color-paddy-green:   #4C8C6B;  
+  --color-limestone:     #F7F5EF;  /*মূল ব্যাকগ্রাউন্ড */
   --color-white:         #FFFFFF;
   --color-ink:           #23303A;  /* মূল টেক্সট রঙ */
   --color-ink-soft:      #55636C;  /* সেকেন্ডারি টেক্সট */
@@ -23,7 +21,7 @@
   --color-danger:        #C0392B;
 
   /* ---- Typography ---- */
-  --font-display: 'Noto Serif Bengali', 'Noto Sans Bengali', sans-serif; /* শিরোনাম — স্পষ্ট, প্রফেশনাল */
+  --font-display: 'Noto Serif Bengali', 'Noto Sans Bengali', sans-serif; /* শিরোনাম  */
   --font-body:    'Noto Sans Bengali', 'Hind Siliguri', sans-serif;      /* মূল লেখা */
   --font-ui:      'Poppins', 'Noto Sans Bengali', sans-serif;            /* সংখ্যা, লেবেল, বাটন */
 

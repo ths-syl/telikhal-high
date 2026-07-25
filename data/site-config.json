@@ -5,13 +5,13 @@
     "address": "তেলিখাল, কোম্পানীগঞ্জ, সিলেট, বাংলাদেশ"
   },
   "socialLinks": [
-    { "platform": "Facebook", "url": "https://www.facebook.com/telikhalhighschool.dummy", "icon": "facebook" },
+    { "platform": "Facebook", "url": "https://www.facebook.com/dilp.kantinath.9", "icon": "facebook-f" }, 
     { "platform": "YouTube", "url": "#", "icon": "youtube" },
     { "platform": "WhatsApp", "url": "#", "icon": "whatsapp" }
   ],
   "facebookPage": {
-    "pageUrl": "https://www.facebook.com/telikhalhighschool.dummy",
-    "note": "এটি একটি ডামি পেজ URL। প্রকৃত ফেসবুক পেজ লিংক দিয়ে এটি পরিবর্তন করে নিতে হবে।"
+    "pageUrl": "https://www.facebook.com/dilp.kantinath.9",
+    "note": ""
   },
   "footerLinks": {
     "important": [
@@ -39,17 +39,17 @@
   ],
   "heroSlides": [
     {
-      "image": "assets/images/hero-slides/slide1.jpg",
+      "image": "assets/images/hero-slides/slide1.webp",
       "title": "তেলিখাল উচ্চ বিদ্যালয়ে স্বাগতম",
       "subtitle": "জ্ঞান, নৈতিকতা ও ঐতিহ্যের সম্মিলনে গড়া একটি প্রতিষ্ঠান"
     },
     {
-      "image": "assets/images/hero-slides/slide2.jpg",
+      "image": "assets/images/hero-slides/slide2.webp",
       "title": "মানসম্মত শিক্ষা, উজ্জ্বল ভবিষ্যৎ",
-      "subtitle": "১৯৭৫ সাল থেকে শিক্ষার আলো ছড়িয়ে যাচ্ছি"
+      "subtitle": "১৯৯৮ সাল থেকে শিক্ষার আলো ছড়িয়ে যাচ্ছি"
     },
     {
-      "image": "assets/images/hero-slides/slide3.jpg",
+      "image": "assets/images/hero-slides/slide3.webp",
       "title": "প্রকৃতির কোলে জ্ঞানার্জন",
       "subtitle": "পিয়াইন নদী ও পাহাড়ের সান্নিধ্যে অবস্থিত একটি নয়নাভিরাম ক্যাম্পাস"
     }

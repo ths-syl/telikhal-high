@@ -32,7 +32,7 @@ async function renderHeaderFooter() {
       .join("");
 
   const footerSocial = document.getElementById("footer-social");
-  if (footerSocial) footerSocial.innerHTML = config.socialLinks.map((s) => `<a href="${s.url}" aria-label="${s.platform}">🔗</a>`).join("");
+  if (footerSocial) footerSocial.innerHTML = config.socialLinks.map((s) => `<a href="${s.url}" target="_blank"  aria-label="${s.platform}"><i class="fa-brands fa-${s.icon}"></i></a>`).join("");
 
   const footerContact = document.getElementById("footer-contact");
   if (footerContact)
