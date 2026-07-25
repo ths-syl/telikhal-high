@@ -1,0 +1,178 @@
+/* ===================== Search Form ===================== */
+.result-search-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.6rem;
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+.result-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.result-form-grid .full-width { grid-column: 1 / -1; }
+@media (max-width: 560px) {
+  .result-form-grid { grid-template-columns: 1fr; }
+}
+.result-form-grid label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.35rem;
+}
+.result-form-grid select,
+.result-form-grid input {
+  width: 100%;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  min-height: 44px;
+}
+.result-form-grid select:focus, .result-form-grid input:focus {
+  outline: none;
+  border-color: var(--color-sky-blue);
+}
+.result-submit-btn {
+  width: 100%;
+  margin-top: 1.4rem;
+  justify-content: center;
+  font-size: 0.95rem;
+  padding: 0.75rem;
+}
+
+.result-error {
+  max-width: 560px;
+  margin: 0 auto 1.5rem;
+  background: rgba(192, 57, 43, 0.08);
+  border: 1.5px solid var(--color-danger);
+  color: var(--color-danger);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ===================== Marksheet Card ===================== */
+.marksheet-card {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 1.8rem;
+  max-width: 720px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* watermark: আসল <img>, CSS background নয় — তাই প্রিন্ট সেটিং যাই থাকুক, সবসময় প্রিন্ট হবে */
+.marksheet-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  max-width: 320px;
+  opacity: 0.07;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.marksheet-content { position: relative; z-index: 1; }
+
+.marksheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--color-sky-light);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.marksheet-header-logo {
+  height: 58px;
+  width: auto;
+  max-width: 70px;
+  object-fit: contain;
+  border-radius: 0; /* গোল নয় — মার্কশিটে লোগো তার আসল আকৃতিতেই থাকবে */
+  flex-shrink: 0;
+}
+.marksheet-header h2 { margin-bottom: 0.2rem; }
+.marksheet-header p { font-family: var(--font-ui); font-size: 0.85rem; color: var(--color-ink-soft); }
+
+.marksheet-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  margin-bottom: 1.3rem;
+}
+.marksheet-meta-row strong { color: var(--color-navy-deep); }
+
+.marksheet-table-wrap { overflow-x: auto; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); margin-bottom: 1.5rem; }
+.marksheet-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+.marksheet-table th, .marksheet-table td {
+  padding: 0.65rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.88rem;
+}
+.marksheet-table th {
+  background: var(--color-navy-deep);
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.marksheet-table td.num { font-family: var(--font-ui); text-align: center; }
+.marksheet-table tr:last-child td { border-bottom: none; }
+.grade-f { color: var(--color-danger); font-weight: 700; }
+.component-fail-note {
+  font-size: 0.72rem;
+  color: var(--color-danger);
+  font-family: var(--font-ui);
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+/* ===================== GPA Summary ===================== */
+.gpa-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.gpa-summary-card {
+  text-align: center;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-sky-light);
+}
+.gpa-summary-card .label { font-family: var(--font-ui); font-size: 0.8rem; color: var(--color-ink-soft); }
+.gpa-summary-card .value { font-family: var(--font-ui); font-size: 1.6rem; font-weight: 700; color: var(--color-navy-deep); }
+.status-pass { color: var(--color-paddy-green) !important; }
+.status-fail { color: var(--color-danger) !important; }
+
+.marksheet-actions { text-align: center; }
+.marksheet-actions .btn { padding: 0.7rem 1.6rem; }
+
+/* ===================== Print styles ===================== */
+@media print {
+  .site-header, .site-footer, .page-banner, .result-search-card, .marksheet-actions, .nav-backdrop {
+    display: none !important;
+  }
+  body { background: var(--color-white); }
+  .marksheet-card { box-shadow: none; max-width: 100%; }
+  .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
+}

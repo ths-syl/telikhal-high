@@ -75,6 +75,13 @@
   border-bottom: 1px dashed var(--color-border);
 }
 .class-stat-row:first-child { padding-top: 0; }
+.group-wise-sub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.8rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
 
 /* ===================== Filter / Search Bar ===================== */
 .filter-bar {

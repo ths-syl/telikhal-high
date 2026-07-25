@@ -4,5 +4,67 @@
   color: var(--color-ink-soft);
   max-width: 65ch;
 }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.8rem;
+  align-items: center;
+}
+.about-photo {
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-md);
+  background-color: var(--color-sky-light); /* ছবি লোড না হলে হালকা রঙের প্লেসহোল্ডার */
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-sm);
+}
+@media (max-width: 760px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo { order: -1; } /* মোবাইলে ছবি টেক্সটের উপরে দেখাবে */
+}
 .sidebar { position: sticky; top: 90px; }
 @media (max-width: 960px) { .sidebar { position: static; } }
+
+/* ===================== News Ticker ===================== */
+.news-ticker {
+  display: flex;
+  align-items: center;
+  background: var(--color-navy-deep);
+  color: var(--color-white);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.news-ticker-label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-amber);
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 0.55rem 1rem;
+  z-index: 2;
+}
+.news-ticker-track-wrap {
+  flex: 1;
+  min-width: 0; /* ফ্লেক্স আইটেম হিসেবে এটা ছাড়া কন্টেন্ট overflow:hidden উপেক্ষা করে পুরো পেজ চওড়া করে ফেলত, তাই স্ক্রল দেখা যাচ্ছিল না */
+  overflow: hidden;
+  position: relative;
+}
+.news-ticker-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  will-change: transform;
+}
+.news-ticker-track a { color: var(--color-white); }
+.news-ticker-track a:hover { color: var(--color-amber); }
+.news-ticker-track .ticker-date {
+  color: var(--color-sky-light);
+  font-size: 0.78rem;
+  margin-right: 0.4rem;
+}

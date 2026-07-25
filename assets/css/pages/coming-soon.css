@@ -1,0 +1,25 @@
+.coming-soon-section {
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.25rem;
+}
+.coming-soon-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+.coming-soon-section h1 { margin-bottom: 0.8rem; }
+.coming-soon-section p {
+  max-width: 46ch;
+  color: var(--color-ink-soft);
+  margin-bottom: 1.8rem;
+}
+.coming-soon-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}

@@ -41,9 +41,24 @@
 .gallery-item img {
   width: 100%; height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-base);
+  transition: transform var(--transition-base), opacity 0.3s ease;
 }
 .gallery-item:hover img { transform: scale(1.08); }
+
+/* একাধিক ছবির ইভেন্ট কার্ডে সংখ্যা ব্যাজ */
+.gallery-count-badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: rgba(14, 58, 92, 0.85);
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 20px;
+  z-index: 2;
+}
 .gallery-item .overlay {
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(14,58,92,0.85), transparent 60%);
@@ -71,6 +86,40 @@
 .lightbox-content img { width: 100%; border-radius: var(--radius-md); margin-bottom: 1rem; max-height: 65vh; object-fit: contain; background: var(--color-ink); }
 .lightbox-content h3 { font-size: 1.1rem; }
 .lightbox-content .meta { color: var(--color-ink-soft); font-family: var(--font-ui); font-size: 0.85rem; margin-top: 0.3rem; }
+
+.lightbox-carousel { position: relative; }
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: rgba(14, 58, 92, 0.75);
+  color: var(--color-white);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-base);
+  z-index: 3;
+}
+.lightbox-nav:hover { background: var(--color-amber); }
+.lightbox-nav.prev { left: 0.6rem; }
+.lightbox-nav.next { right: 0.6rem; }
+
+.lightbox-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+.lightbox-dots button {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: all var(--transition-base);
+}
+.lightbox-dots button.active { background: var(--color-amber); width: 22px; border-radius: 5px; }
 
 /* ===================== Facebook Widget Section ===================== */
 .fb-widget-section {

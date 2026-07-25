@@ -1,6 +1,7 @@
 /* ===================== Tabs ===================== */
 .academic-tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.6rem;
   margin-bottom: 2rem;
   border-bottom: 2px solid var(--color-border);
@@ -20,8 +21,36 @@
 .academic-panel { display: none; }
 .academic-panel.active { display: block; }
 
-/* ===================== Routine: class selector ===================== */
-.routine-class-select {
+/* ===================== Sub-tabs (রুটিন প্যানেলের ভেতরে) ===================== */
+.academic-subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.3rem;
+}
+.academic-subtab-btn {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: var(--color-navy-deep);
+  background: var(--color-sky-light);
+  transition: background var(--transition-base), color var(--transition-base);
+}
+.academic-subtab-btn:hover { background: var(--color-sky-blue); color: var(--color-white); }
+.academic-subtab-btn.active { background: var(--color-navy-deep); color: var(--color-white); }
+.academic-subpanel { display: none; }
+.academic-subpanel.active { display: block; }
+
+/* ===================== Class / Group Selector ===================== */
+.academic-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.academic-select {
   font-family: var(--font-ui);
   font-size: 16px;
   padding: 0.6rem 1rem;
@@ -29,74 +58,65 @@
   border: 1.5px solid var(--color-border);
   background: var(--color-white);
   min-height: 44px;
-  margin-bottom: 1.5rem;
-  min-width: 220px;
+  min-width: 200px;
 }
 
-/* ===================== Routine table (desktop) ===================== */
-.routine-table-wrap { overflow-x: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
-.routine-table { width: 100%; border-collapse: collapse; background: var(--color-white); min-width: 600px; }
-.routine-table th, .routine-table td {
-  padding: 0.75rem 0.9rem;
-  border-bottom: 1px solid var(--color-border);
-  font-size: 0.88rem;
-  text-align: left;
-  white-space: nowrap;
-}
-.routine-table th {
-  background: var(--color-navy-deep);
-  color: var(--color-white);
-  font-family: var(--font-ui);
-  font-weight: 600;
-}
-.routine-table td.day-label {
-  font-weight: 700;
-  color: var(--color-navy-deep);
-  background: var(--color-sky-light);
-}
-.routine-table tr:last-child td { border-bottom: none; }
-
-/* মোবাইলে টেবিলের বদলে দিনভিত্তিক কার্ড - horizontal scroll এড়াতে বেশি স্মুথ */
-@media (max-width: 720px) {
-  .routine-table-wrap { display: none; }
-  .routine-day-cards { display: block; }
-}
-@media (min-width: 721px) {
-  .routine-day-cards { display: none; }
-}
-.routine-day-card {
+/* ===================== PDF Resource Card (রুটিন/ক্যালেন্ডার) ===================== */
+.pdf-resource-card {
   background: var(--color-white);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-.routine-day-card .day-header {
-  background: var(--color-navy-deep);
-  color: var(--color-white);
-  font-family: var(--font-ui);
-  font-weight: 600;
-  padding: 0.7rem 1rem;
-  font-size: 0.9rem;
-}
-.routine-day-card ul { padding: 0.6rem 1rem; }
-.routine-day-card li {
+  padding: 1.3rem 1.5rem;
   display: flex;
-  gap: 0.6rem;
-  padding: 0.45rem 0;
-  border-bottom: 1px dashed var(--color-border);
-  font-size: 0.9rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid var(--color-sky-blue);
 }
-.routine-day-card li:last-child { border-bottom: none; }
-.routine-day-card .period-no {
+.pdf-resource-card-highlight { border-left-color: var(--color-amber); }
+.pdf-resource-title { font-weight: 700; color: var(--color-navy-deep); font-size: 1.02rem; margin-bottom: 0.2rem; }
+.pdf-resource-sub { font-size: 0.85rem; color: var(--color-ink-soft); font-family: var(--font-ui); }
+
+.pdf-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: var(--font-ui);
-  font-weight: 700;
-  color: var(--color-amber-dark);
-  min-width: 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-white);
+  background: var(--color-amber);
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-base);
+  white-space: nowrap;
 }
+.pdf-link-btn:hover { background: var(--color-amber-dark); }
+.pdf-link-btn-sm { padding: 0.4rem 0.85rem; font-size: 0.8rem; }
+
+/* ===================== Subject List (সিলেবাস/পাঠ্যপুস্তক) ===================== */
+.subject-resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.subject-resource-row {
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  padding: 0.8rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.subject-name { font-weight: 600; color: var(--color-ink); font-size: 0.95rem; }
+
+/* ===================== Calendar Highlights (গুরুত্বপূর্ণ দিন ও ছুটি) ===================== */
 .routine-updated { font-size: 0.8rem; color: var(--color-ink-soft); font-family: var(--font-ui); margin-bottom: 1rem; }
 
-/* ===================== Calendar / Events ===================== */
 .event-list { display: flex; flex-direction: column; gap: 0.9rem; }
 .event-item {
   display: flex;
@@ -127,7 +147,6 @@
   border-radius: 20px;
 }
 
-/* ===================== Holiday List ===================== */
 .holiday-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -142,3 +161,8 @@
 }
 .holiday-card .title { font-weight: 700; color: var(--color-navy-deep); margin-bottom: 0.3rem; }
 .holiday-card .date { font-size: 0.82rem; color: var(--color-ink-soft); font-family: var(--font-ui); }
+
+@media (max-width: 500px) {
+  .pdf-resource-card { flex-direction: column; align-items: flex-start; }
+  .pdf-link-btn { width: 100%; justify-content: center; }
+}
