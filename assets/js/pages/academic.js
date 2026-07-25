@@ -1,7 +1,10 @@
 import { fetchJSON, showLoading, showError } from "../core/fetchData.js";
 import { initNavbar } from "../components/navbar.js";
+import { initScrollReveal } from "../core/scrollReveal.js";
 
-const CLASS_ORDER = ["৬ষ্ঠ শ্রেণি", "৭ম শ্রেণি", "৮ম শ্রেণি", "৯ম শ্রেণি (বিজ্ঞান)", "১০ম শ্রেণি (বিজ্ঞান)"];
+let academicData = null;
+const CLASS_ORDER = ["৬ষ্ঠ শ্রেণি", "৭ম শ্রেণি", "৮ম শ্রেণি", "৯ম শ্রেণি", "১০ম শ্রেণি"];
+const GROUP_NAMES = ["বিজ্ঞান", "মানবিক", "ব্যবসায় শিক্ষা"];
 
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
@@ -48,79 +51,166 @@ function initTabs() {
   });
 }
 
-let routineData = null;
+function initSubTabs() {
+  const subTabBtns = document.querySelectorAll(".academic-subtab-btn");
+  const subPanels = document.querySelectorAll(".academic-subpanel");
 
-function renderRoutineForClass(className) {
-  const tableWrap = document.getElementById("routine-table-wrap");
-  const dayCardsWrap = document.getElementById("routine-day-cards");
-  if (!routineData) return;
-
-  const classData = routineData.classes.find((c) => c.className === className);
-  if (!classData) return;
-
-  // ডেস্কটপ টেবিল
-  const allSubjects = classData.days.map((d) => d.periods);
-  const maxPeriods = Math.max(...allSubjects.map((p) => p.length));
-
-  let tableHTML = `<table class="routine-table"><thead><tr><th>দিন</th>`;
-  for (let i = 1; i <= maxPeriods; i++) tableHTML += `<th>${i} নং ক্লাস</th>`;
-  tableHTML += `</tr></thead><tbody>`;
-  classData.days.forEach((d) => {
-    tableHTML += `<tr><td class="day-label">${d.day}</td>`;
-    for (let i = 0; i < maxPeriods; i++) tableHTML += `<td>${d.periods[i] || "-"}</td>`;
-    tableHTML += `</tr>`;
+  subTabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      subTabBtns.forEach((b) => b.classList.remove("active"));
+      subPanels.forEach((p) => p.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.subtarget).classList.add("active");
+    });
   });
-  tableHTML += `</tbody></table>`;
-  tableWrap.innerHTML = tableHTML;
+}
 
-  // মোবাইল দিনভিত্তিক কার্ড
-  dayCardsWrap.innerHTML = classData.days
+function getOrderedClasses() {
+  const present = academicData.classes.map((c) => c.class);
+  return CLASS_ORDER.filter((c) => present.includes(c));
+}
+
+function getClassData(className) {
+  return academicData.classes.find((c) => c.class === className);
+}
+
+/**
+ * class + (প্রযোজ্য হলে) group নির্বাচনের জন্য দুটো <select> বসায় এবং
+ * নির্বাচন পরিবর্তন হলে onChange(classData, groupName|null) কল করে।
+ */
+function buildClassGroupSelector(containerId, classSelectId, groupSelectId, onChange) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = `
+    <select class="academic-select" id="${classSelectId}" aria-label="শ্রেণি নির্বাচন করুন"></select>
+    <select class="academic-select" id="${groupSelectId}" aria-label="বিভাগ নির্বাচন করুন" style="display:none;"></select>
+  `;
+  const classSelect = document.getElementById(classSelectId);
+  const groupSelect = document.getElementById(groupSelectId);
+
+  const orderedClasses = getOrderedClasses();
+  classSelect.innerHTML = orderedClasses.map((c) => `<option value="${c}">${c}</option>`).join("");
+
+  function handleClassChange() {
+    const classData = getClassData(classSelect.value);
+    if (classData.hasGroups) {
+      groupSelect.style.display = "";
+      groupSelect.innerHTML = GROUP_NAMES.map((g) => `<option value="${g}">${g}</option>`).join("");
+      onChange(classData, groupSelect.value);
+    } else {
+      groupSelect.style.display = "none";
+      onChange(classData, null);
+    }
+  }
+
+  classSelect.addEventListener("change", handleClassChange);
+  groupSelect.addEventListener("change", () => onChange(getClassData(classSelect.value), groupSelect.value));
+
+  handleClassChange();
+}
+
+/* ===================== ক্লাস রুটিন ===================== */
+function renderRoutineLink(classData, groupName) {
+  const wrap = document.getElementById("routine-link-wrap");
+  const pdfUrl = groupName ? classData.groups[groupName].routinePdf : classData.routinePdf;
+  const label = groupName ? `${classData.class} (${groupName})` : classData.class;
+
+  wrap.innerHTML = `
+    <div class="pdf-resource-card">
+      <div>
+        <p class="pdf-resource-title">${label} — ক্লাস রুটিন</p>
+        <p class="pdf-resource-sub">গুগল ড্রাইভ থেকে সরাসরি দেখুন বা ডাউনলোড করুন</p>
+      </div>
+      <a class="pdf-link-btn" href="${pdfUrl}" target="_blank" rel="noopener">📄 পিডিএফ দেখুন</a>
+    </div>
+  `;
+}
+
+async function initRoutine() {
+  buildClassGroupSelector("routine-selector", "routine-class-select", "routine-group-select", renderRoutineLink);
+}
+
+/* ===================== পরীক্ষার রুটিন ===================== */
+function renderExamRoutineLink(classData, groupName) {
+  const wrap = document.getElementById("exam-routine-link-wrap");
+  const pdfUrl = groupName ? classData.groups[groupName].examRoutinePdf : classData.examRoutinePdf;
+  const label = groupName ? `${classData.class} (${groupName})` : classData.class;
+
+  wrap.innerHTML = `
+    <div class="pdf-resource-card">
+      <div>
+        <p class="pdf-resource-title">${label} — পরীক্ষার রুটিন</p>
+        <p class="pdf-resource-sub">গুগল ড্রাইভ থেকে সরাসরি দেখুন বা ডাউনলোড করুন</p>
+      </div>
+      <a class="pdf-link-btn" href="${pdfUrl}" target="_blank" rel="noopener">📄 পিডিএফ দেখুন</a>
+    </div>
+  `;
+}
+
+async function initExamRoutine() {
+  buildClassGroupSelector("exam-routine-selector", "exam-routine-class-select", "exam-routine-group-select", renderExamRoutineLink);
+}
+
+/* ===================== বার্ষিক ক্যালেন্ডার ===================== */
+async function initCalendarPdf() {
+  const wrap = document.getElementById("calendar-pdf-wrap");
+  wrap.innerHTML = `
+    <div class="pdf-resource-card pdf-resource-card-highlight">
+      <div>
+        <p class="pdf-resource-title">বার্ষিক একাডেমিক ক্যালেন্ডার ২০২৬</p>
+        <p class="pdf-resource-sub">সম্পূর্ণ বছরের ছুটি, পরীক্ষা ও গুরুত্বপূর্ণ দিনের তালিকা</p>
+      </div>
+      <a class="pdf-link-btn" href="${academicData.calendarPdf}" target="_blank" rel="noopener">📄 পিডিএফ দেখুন</a>
+    </div>
+  `;
+}
+
+/* ===================== সিলেবাস ও পাঠ্যপুস্তক (একই কাঠামো) ===================== */
+function subjectListHTML(subjects, pdfField, btnLabel) {
+  return subjects
     .map(
-      (d) => `
-    <div class="routine-day-card">
-      <div class="day-header">${d.day}</div>
-      <ul>
-        ${d.periods.map((p, i) => `<li><span class="period-no">${i + 1}.</span> ${p}</li>`).join("")}
-      </ul>
+      (s) => `
+    <div class="subject-resource-row reveal-on-scroll">
+      <span class="subject-name">${s.subject}</span>
+      <a class="pdf-link-btn pdf-link-btn-sm" href="${s[pdfField]}" target="_blank" rel="noopener">📄 ${btnLabel}</a>
     </div>
   `
     )
     .join("");
 }
 
-async function initRoutine() {
-  const wrap = document.getElementById("routine-content");
-  showLoading(wrap, "রুটিন লোড হচ্ছে...");
-
-  routineData = await fetchJSON("routine.json");
-  if (!routineData) return showError(wrap);
-
-  wrap.innerHTML = `
-    <p class="routine-updated">সর্বশেষ হালনাগাদ: ${routineData.updatedOn}</p>
-    <select class="routine-class-select" id="routine-class-select" aria-label="শ্রেণি নির্বাচন করুন"></select>
-    <div class="routine-table-wrap" id="routine-table-wrap"></div>
-    <div class="routine-day-cards" id="routine-day-cards"></div>
-  `;
-
-  const presentClasses = routineData.classes.map((c) => c.className);
-  const ordered = CLASS_ORDER.filter((c) => presentClasses.includes(c));
-  const select = document.getElementById("routine-class-select");
-  select.innerHTML = ordered.map((c) => `<option value="${c}">${c}</option>`).join("");
-
-  select.addEventListener("change", () => renderRoutineForClass(select.value));
-  renderRoutineForClass(ordered[0]);
+function renderSyllabus(classData, groupName) {
+  const wrap = document.getElementById("syllabus-list-wrap");
+  const subjects = groupName ? classData.groups[groupName].subjects : classData.subjects;
+  wrap.innerHTML = subjectListHTML(subjects, "syllabusPdf", "সিলেবাস দেখুন");
+  initScrollReveal(wrap);
 }
 
+function renderTextbooks(classData, groupName) {
+  const wrap = document.getElementById("textbook-list-wrap");
+  const subjects = groupName ? classData.groups[groupName].subjects : classData.subjects;
+  wrap.innerHTML = subjectListHTML(subjects, "textbookPdf", "বই দেখুন");
+  initScrollReveal(wrap);
+}
+
+async function initSyllabus() {
+  buildClassGroupSelector("syllabus-selector", "syllabus-class-select", "syllabus-group-select", renderSyllabus);
+}
+
+async function initTextbooks() {
+  buildClassGroupSelector("textbook-selector", "textbook-class-select", "textbook-group-select", renderTextbooks);
+}
+
+/* ===================== গুরুত্বপূর্ণ দিন ও ছুটি (calendar.json থেকে সহায়ক তথ্য) ===================== */
 function toBnDigits(num) {
   const bn = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
   return String(num).replace(/\d/g, (d) => bn[d]);
 }
 
-async function initCalendar() {
+async function initCalendarHighlights() {
   const eventsEl = document.getElementById("event-list");
   const holidaysEl = document.getElementById("holiday-grid");
   const yearEl = document.getElementById("academic-year-label");
-  showLoading(eventsEl, "ক্যালেন্ডার লোড হচ্ছে...");
+  if (!eventsEl || !holidaysEl) return;
 
   const data = await fetchJSON("calendar.json");
   if (!data) return showError(eventsEl);
@@ -130,7 +220,7 @@ async function initCalendar() {
   eventsEl.innerHTML = data.events
     .map(
       (e) => `
-    <div class="event-item">
+    <div class="event-item reveal-on-scroll">
       <div class="event-date">${e.date}</div>
       <div>
         <p class="event-title">${e.title}</p>
@@ -144,18 +234,36 @@ async function initCalendar() {
   holidaysEl.innerHTML = data.holidays
     .map(
       (h) => `
-    <div class="holiday-card">
+    <div class="holiday-card reveal-on-scroll">
       <p class="title">${h.title}</p>
       <p class="date">${h.date}</p>
     </div>
   `
     )
     .join("");
+
+  initScrollReveal(eventsEl);
+  initScrollReveal(holidaysEl);
+}
+
+async function initAcademicPage() {
+  const wrap = document.getElementById("routine-link-wrap");
+  showLoading(wrap, "একাডেমিক রিসোর্স লোড হচ্ছে...");
+
+  academicData = await fetchJSON("academic-resources.json");
+  if (!academicData) return showError(wrap);
+
+  initRoutine();
+  initExamRoutine();
+  initCalendarPdf();
+  initSyllabus();
+  initTextbooks();
+  initCalendarHighlights();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   renderHeaderFooter();
   initTabs();
-  initRoutine();
-  initCalendar();
+  initSubTabs();
+  initAcademicPage();
 });

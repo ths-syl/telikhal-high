@@ -2,6 +2,7 @@ import { fetchJSON, showLoading, showError } from "../core/fetchData.js";
 import { openModal } from "../components/modal.js";
 import { initNavbar } from "../components/navbar.js";
 import { bindAvatarFallbacks } from "../core/avatar.js";
+import { initScrollReveal } from "../core/scrollReveal.js";
 
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
@@ -34,16 +35,22 @@ async function renderHeaderFooter() {
   initNavbar();
 }
 
+/**
+ * ছবির স্পেসিফিকেশন (teachers.json / committee.json এর photo ফিল্ড):
+ *   ফরম্যাট: WebP
+ *   ডাইমেনশন: 400x400px (1:1 বর্গাকার হেডশট)
+ *   ম্যাক্স সাইজ: ~40-60KB প্রতি ছবি
+ */
 function teacherCardHTML(t) {
   return `
-    <div class="info-card" tabindex="0" data-id="${t.id}" role="button" aria-label="${t.name} এর বিস্তারিত দেখুন">
+    <div class="info-card reveal-on-scroll" tabindex="0" data-id="${t.id}" role="button" aria-label="${t.name} এর বিস্তারিত দেখুন">
       <div class="photo-wrap">
         <img class="avatar-img" data-name="${t.name}" src="${t.photo}" alt="${t.name}" loading="lazy">
       </div>
       <div class="card-body">
         <p class="card-name">${t.name}</p>
         <p class="card-role">${t.designation}</p>
-        <span class="card-tag">${t.subject}</span>
+        ${t.category === "শিক্ষক" ? `<span class="card-tag">${t.subject}</span>` : ""}
       </div>
     </div>
   `;
@@ -51,7 +58,7 @@ function teacherCardHTML(t) {
 
 function committeeCardHTML(c) {
   return `
-    <div class="info-card" tabindex="0" data-id="${c.id}" role="button" aria-label="${c.name} এর বিস্তারিত দেখুন">
+    <div class="info-card reveal-on-scroll" tabindex="0" data-id="${c.id}" role="button" aria-label="${c.name} এর বিস্তারিত দেখুন">
       <div class="photo-wrap">
         <img class="avatar-img" data-name="${c.name}" src="${c.photo}" alt="${c.name}" loading="lazy">
       </div>
@@ -75,7 +82,7 @@ function openTeacherModal(t) {
     </div>
     <div class="modal-body">
       <dl>
-        <dt>বিষয়</dt><dd>${t.subject}</dd>
+        ${t.category === "শিক্ষক" ? `<dt>বিষয়</dt><dd>${t.subject}</dd>` : ""}
         <dt>শিক্ষাগত যোগ্যতা</dt><dd>${t.qualification}</dd>
         <dt>ফোন</dt><dd>${t.phone}</dd>
         <dt>ইমেইল</dt><dd>${t.email}</dd>
@@ -117,6 +124,7 @@ async function renderTeachers() {
 
   gridEl.innerHTML = teachers.map(teacherCardHTML).join("");
   bindAvatarFallbacks(gridEl);
+  initScrollReveal(gridEl);
 
   gridEl.querySelectorAll(".info-card").forEach((card) => {
     const teacher = teachers.find((t) => t.id === card.dataset.id);
@@ -138,6 +146,7 @@ async function renderCommittee() {
 
   gridEl.innerHTML = committee.map(committeeCardHTML).join("");
   bindAvatarFallbacks(gridEl);
+  initScrollReveal(gridEl);
 
   gridEl.querySelectorAll(".info-card").forEach((card) => {
     const member = committee.find((c) => c.id === card.dataset.id);

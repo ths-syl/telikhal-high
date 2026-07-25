@@ -3,6 +3,8 @@ import { initHeroSlider } from "../components/slider.js";
 import { renderNoticeWidget } from "../components/noticeWidget.js";
 import { initNavbar } from "../components/navbar.js";
 import { bindAvatarFallbacks } from "../core/avatar.js";
+import { parseBnDate } from "../core/domUtils.js";
+import { initScrollReveal } from "../core/scrollReveal.js";
 
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
@@ -57,6 +59,17 @@ async function renderAboutAndMessages() {
   const aboutEl = document.getElementById("about-content");
   if (aboutEl) aboutEl.textContent = info.aboutSchool;
 
+  const aboutPhotoEl = document.getElementById("about-photo");
+  if (aboutPhotoEl && info.aboutPhoto) {
+    aboutPhotoEl.style.backgroundImage = `url('${info.aboutPhoto}')`;
+  }
+
+  /**
+   * ছবির স্পেসিফিকেশন (headmasterMessage.photo / smcPresidentMessage.photo):
+   *   ফরম্যাট: WebP
+   *   ডাইমেনশন: 200x200px (1:1 বৃত্তাকার ছবি হিসেবে দেখানো হয়)
+   *   ম্যাক্স সাইজ: ~30KB প্রতি ছবি
+   */
   const headmasterEl = document.getElementById("headmaster-message");
   if (headmasterEl) {
     const h = info.headmasterMessage;
@@ -101,7 +114,7 @@ async function renderAchievements() {
   el.innerHTML = data
     .map(
       (a) => `
-    <div class="achievement-card">
+    <div class="achievement-card reveal-on-scroll">
       <div class="icon">${icons[a.icon] || "🏅"}</div>
       <div class="year">${a.year}</div>
       <h4>${a.title}</h4>
@@ -109,6 +122,7 @@ async function renderAchievements() {
     </div>`
     )
     .join("");
+  initScrollReveal(el);
 }
 
 async function renderNotableStudents() {
@@ -117,10 +131,16 @@ async function renderNotableStudents() {
   if (!el) return;
   if (!data) return showError(el);
 
+  /**
+   * ছবির স্পেসিফিকেশন (notable-students.json এর photo ফিল্ড — কৃতি/প্রাক্তন শিক্ষার্থী):
+   *   ফরম্যাট: WebP
+   *   ডাইমেনশন: 400x400px (1:1 বর্গাকার হেডশট)
+   *   ম্যাক্স সাইজ: ~40-60KB প্রতি ছবি
+   */
   el.innerHTML = data
     .map(
       (s) => `
-    <div class="info-card">
+    <div class="info-card reveal-on-scroll">
       <div class="photo-wrap">
         <img class="avatar-img" data-name="${s.name}" src="${s.photo}" alt="${s.name}" loading="lazy">
       </div>
@@ -133,6 +153,7 @@ async function renderNotableStudents() {
     )
     .join("");
   bindAvatarFallbacks(el);
+  initScrollReveal(el);
 }
 
 async function renderNotices() {
@@ -141,11 +162,67 @@ async function renderNotices() {
   renderNoticeWidget(el, data);
 }
 
+async function renderNewsTicker() {
+  const el = document.getElementById("news-ticker");
+  if (!el) return;
+
+  const notices = await fetchJSON("notices.json");
+  if (!notices || notices.length === 0) return;
+
+  const latestTwo = [...notices].sort((a, b) => parseBnDate(b.date) - parseBnDate(a.date)).slice(0, 2);
+
+  const itemsHTML = latestTwo
+    .map((n) => `<a href="notices.html#${n.id}"><span class="ticker-date">${n.date}</span>${n.title}</a>`)
+    .join("");
+
+  // seamless লুপের জন্য কন্টেন্ট দুইবার বসানো হয়েছে
+  el.innerHTML = `
+    <span class="news-ticker-label">📢 সর্বশেষ নোটিশ</span>
+    <div class="news-ticker-track-wrap">
+      <div class="news-ticker-track" id="news-ticker-track">${itemsHTML}${itemsHTML}</div>
+    </div>
+  `;
+
+  startTickerAnimation();
+}
+
+/**
+ * CSS @keyframes এর বদলে requestAnimationFrame দিয়ে স্ক্রল করানো হয় —
+ * এতে base.css এর গ্লোবাল prefers-reduced-motion override (যেটা সব CSS animation
+ * বন্ধ করে দেয়, এবং কিছু dev-preview এনভায়রনমেন্টে ভুলবশত ট্রু হয়ে যায়) এর কারণে
+ * টিকার আটকে/ফ্রিজ হয়ে থাকার সমস্যা হয় না।
+ */
+function startTickerAnimation() {
+  const track = document.getElementById("news-ticker-track");
+  if (!track) return;
+
+  const speed = 40; // পিক্সেল/সেকেন্ড
+  let lastTime = null;
+  let offset = 0;
+  const singleCopyWidth = track.scrollWidth / 2; // কন্টেন্ট দুইবার বসানো, তাই অর্ধেক = এক কপির প্রস্থ
+
+  function step(timestamp) {
+    if (lastTime === null) lastTime = timestamp;
+    const delta = (timestamp - lastTime) / 1000;
+    lastTime = timestamp;
+
+    offset -= speed * delta;
+    if (Math.abs(offset) >= singleCopyWidth) offset += singleCopyWidth;
+
+    track.style.transform = `translateX(${offset}px)`;
+    requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderHeaderFooter();
   renderHero();
+  renderNewsTicker();
   renderAboutAndMessages();
   renderAchievements();
   renderNotableStudents();
   renderNotices();
+  initScrollReveal(document); // স্ট্যাটিক সেকশন (about-grid, message-card, sidebar) রিভিল করার জন্য
 });

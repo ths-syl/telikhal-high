@@ -1,6 +1,7 @@
 import { fetchJSON, showLoading, showError } from "../core/fetchData.js";
 import { debounce, parseBnDate } from "../core/domUtils.js";
 import { initNavbar } from "../components/navbar.js";
+import { initScrollReveal } from "../core/scrollReveal.js";
 
 const PAGE_SIZE = 6;
 let allNotices = [];
@@ -57,7 +58,7 @@ function getFilteredNotices() {
 
 function noticeItemHTML(n) {
   return `
-    <div class="notice-board-item ${n.isImportant ? "is-important" : ""}" id="${n.id}" data-id="${n.id}">
+    <div class="notice-board-item reveal-on-scroll ${n.isImportant ? "is-important" : ""}" id="${n.id}" data-id="${n.id}">
       <div class="notice-meta-row">
         <span class="notice-date">📅 ${n.date}</span>
         <span class="notice-category-badge">${n.category}</span>
@@ -90,6 +91,7 @@ function renderList() {
 
   const visible = filtered.slice(0, visibleCount);
   listEl.innerHTML = visible.map(noticeItemHTML).join("");
+  initScrollReveal(listEl);
 
   listEl.querySelectorAll(".notice-toggle-btn").forEach((btn) => {
     btn.addEventListener("click", () => {

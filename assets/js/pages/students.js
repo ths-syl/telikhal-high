@@ -2,6 +2,8 @@ import { fetchJSON, showLoading, showError } from "../core/fetchData.js";
 import { debounce } from "../core/domUtils.js";
 import { openModal } from "../components/modal.js";
 import { initNavbar } from "../components/navbar.js";
+import { initScrollReveal } from "../core/scrollReveal.js";
+import { initCountUp } from "../core/countUp.js";
 
 const PAGE_SIZE = 8;
 let allStudents = [];
@@ -41,87 +43,99 @@ async function renderHeaderFooter() {
 
 const CLASS_ORDER = ["৬ষ্ঠ", "৭ম", "৮ম", "৯ম", "১০ম"];
 
-function renderStats(students) {
+function renderStats(stat) {
   const overviewEl = document.getElementById("stats-overview");
   const classWiseEl = document.getElementById("stats-classwise");
   if (!overviewEl || !classWiseEl) return;
 
-  const total = students.length;
-  const boys = students.filter((s) => s.gender === "ছেলে").length;
-  const girls = students.filter((s) => s.gender === "মেয়ে").length;
-  const scholarshipCount = students.filter((s) => s.scholarship).length;
-  const feeWaiverCount = students.filter((s) => s.feeWaiver).length;
+  const { total, boys, girls, scholarship, feeWaiver } = stat.overview;
 
   overviewEl.innerHTML = `
-    <div class="stat-card">
+    <div class="stat-card reveal-on-scroll">
       <div class="stat-label">সর্বমোট শিক্ষার্থী</div>
-      <div class="stat-number">${toBnDigits(total)} জন</div>
+      <div class="stat-number"><span class="count-up" data-count-target="${total}">০</span> জন</div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card reveal-on-scroll">
       <div class="stat-label">মোট ছাত্র / ছাত্রী</div>
-      <div class="stat-number stat-number-sm">ছাত্র: ${toBnDigits(boys)} | ছাত্রী: ${toBnDigits(girls)}</div>
+      <div class="stat-number stat-number-sm">ছাত্র: <span class="count-up" data-count-target="${boys}">০</span> | ছাত্রী: <span class="count-up" data-count-target="${girls}">০</span></div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card reveal-on-scroll">
       <div class="stat-label">উপবৃত্তি প্রাপ্ত</div>
-      <div class="stat-number">${toBnDigits(scholarshipCount)} জন</div>
+      <div class="stat-number"><span class="count-up" data-count-target="${scholarship}">০</span> জন</div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card reveal-on-scroll">
       <div class="stat-label">বেতন মওকুফ (মোট)</div>
-      <div class="stat-number">${toBnDigits(feeWaiverCount)} জন</div>
+      <div class="stat-number"><span class="count-up" data-count-target="${feeWaiver}">০</span> জন</div>
     </div>
   `;
 
-  const classesPresent = [...new Set(students.map((s) => s.class))];
+  const classesPresent = stat.classWise.map((c) => c.class);
   const orderedClasses = CLASS_ORDER.filter((c) => classesPresent.includes(c));
 
-  classWiseEl.innerHTML = orderedClasses.map((cls) => classStatCardHTML(students.filter((s) => s.class === cls), cls)).join("");
+  classWiseEl.innerHTML = orderedClasses
+    .map((cls) => classStatCardHTML(stat.classWise.find((c) => c.class === cls)))
+    .join("");
+
+  initScrollReveal(overviewEl);
+  initScrollReveal(classWiseEl);
+  initCountUp(overviewEl);
+  initCountUp(classWiseEl);
 }
 
-function genderSplit(list) {
-  const boys = list.filter((s) => s.gender === "ছেলে").length;
-  const girls = list.filter((s) => s.gender === "মেয়ে").length;
-  return `(ছাত্র: ${toBnDigits(boys)} | ছাত্রী: ${toBnDigits(girls)})`;
+function genderSplitText(obj) {
+  return `(ছাত্র: <span class="count-up" data-count-target="${obj.boys}">০</span> | ছাত্রী: <span class="count-up" data-count-target="${obj.girls}">০</span>)`;
 }
 
-function classStatCardHTML(students, className) {
-  const total = students.length;
-  const muslim = students.filter((s) => s.religion === "মুসলিম");
-  const hindu = students.filter((s) => s.religion === "হিন্দু");
-  const scholarship = students.filter((s) => s.scholarship);
-  const fullFree = students.filter((s) => s.feeWaiver === "ফুল ফ্রি").length;
-  const halfFree = students.filter((s) => s.feeWaiver === "হাফ ফ্রি").length;
-  const feeWaiverTotal = fullFree + halfFree;
+function classStatCardHTML(c) {
+  const muslim = c.religion["মুসলিম"];
+  const hindu = c.religion["হিন্দু"];
+  const feeWaiverTotal = c.feeWaiver.fullFree + c.feeWaiver.halfFree;
+
+  const groupWiseHTML = c.groupWise
+    ? `
+        <div class="class-stat-row">
+          <span>📚 বিভাগভিত্তিক শিক্ষার্থী সংখ্যা</span>
+          <span></span>
+        </div>
+        <div class="class-stat-sub group-wise-sub">
+          ${Object.entries(c.groupWise)
+            .map(([group, count]) => `<span>${group}: <span class="count-up" data-count-target="${count}">০</span> জন</span>`)
+            .join(" | ")}
+        </div>
+      `
+    : "";
 
   return `
-    <div class="class-stat-card">
+    <div class="class-stat-card reveal-on-scroll">
       <div class="class-stat-header">
-        <span>${className} শ্রেণি</span>
-        <span class="class-stat-badge">${toBnDigits(total)} জন</span>
+        <span>${c.class} শ্রেণি</span>
+        <span class="class-stat-badge"><span class="count-up" data-count-target="${c.total}">০</span> জন</span>
       </div>
       <div class="class-stat-body">
         <div class="class-stat-row">
           <span>🕌 মুসলিম শিক্ষার্থী</span>
-          <span>${toBnDigits(muslim.length)} জন</span>
+          <span><span class="count-up" data-count-target="${muslim.total}">০</span> জন</span>
         </div>
-        <div class="class-stat-sub">${genderSplit(muslim)}</div>
+        <div class="class-stat-sub">${genderSplitText(muslim)}</div>
 
         <div class="class-stat-row">
           <span>🪔 হিন্দু শিক্ষার্থী</span>
-          <span>${toBnDigits(hindu.length)} জন</span>
+          <span><span class="count-up" data-count-target="${hindu.total}">০</span> জন</span>
         </div>
-        <div class="class-stat-sub">${genderSplit(hindu)}</div>
+        <div class="class-stat-sub">${genderSplitText(hindu)}</div>
 
         <div class="class-stat-row">
           <span>💰 উপবৃত্তি প্রাপ্ত</span>
-          <span>${toBnDigits(scholarship.length)} জন</span>
+          <span><span class="count-up" data-count-target="${c.scholarship.total}">০</span> জন</span>
         </div>
-        <div class="class-stat-sub">${genderSplit(scholarship)}</div>
+        <div class="class-stat-sub">${genderSplitText(c.scholarship)}</div>
 
         <div class="class-stat-row">
           <span>🎫 ফ্রি-শিপ (বেতন মাফ)</span>
-          <span>${toBnDigits(feeWaiverTotal)} জন</span>
+          <span><span class="count-up" data-count-target="${feeWaiverTotal}">০</span> জন</span>
         </div>
-        <div class="class-stat-sub">(ফুল ফ্রি: ${toBnDigits(fullFree)} | হাফ ফ্রি: ${toBnDigits(halfFree)})</div>
+        <div class="class-stat-sub">(ফুল ফ্রি: <span class="count-up" data-count-target="${c.feeWaiver.fullFree}">০</span> | হাফ ফ্রি: <span class="count-up" data-count-target="${c.feeWaiver.halfFree}">০</span>)</div>
+        ${groupWiseHTML}
       </div>
     </div>
   `;
@@ -156,7 +170,7 @@ function getFilteredStudents() {
 function studentCardHTML(s) {
   const groupText = s.group ? ` (${s.group})` : "";
   return `
-    <div class="student-list-card" tabindex="0" data-id="${s.id}" role="button" aria-label="${s.name} এর বিস্তারিত দেখুন">
+    <div class="student-list-card reveal-on-scroll" tabindex="0" data-id="${s.id}" role="button" aria-label="${s.name} এর বিস্তারিত দেখুন">
       <div class="student-avatar-icon">🎓</div>
       <p class="student-name">${s.name}</p>
       <p class="student-meta">শ্রেণী: ${s.class}${groupText} | রোল: ${s.roll}</p>
@@ -212,6 +226,8 @@ function renderGrid() {
     });
   });
 
+  initScrollReveal(gridEl);
+
   if (visibleCount < filtered.length) {
     loadMoreWrap.innerHTML = `<button class="btn btn-primary" id="load-more-btn">আরও দেখুন</button>`;
     document.getElementById("load-more-btn").addEventListener("click", () => {
@@ -252,13 +268,21 @@ function bindFilterEvents() {
 
 async function initStudents() {
   const gridEl = document.getElementById("students-grid");
+  const statsOverviewEl = document.getElementById("stats-overview");
   showLoading(gridEl, "শিক্ষার্থীদের তথ্য লোড হচ্ছে...");
+  showLoading(statsOverviewEl, "পরিসংখ্যান লোড হচ্ছে...");
 
-  const students = await fetchJSON("students.json");
+  const [students, stat] = await Promise.all([fetchJSON("students.json"), fetchJSON("studentstat.json")]);
+
+  if (!stat) {
+    showError(statsOverviewEl);
+  } else {
+    renderStats(stat);
+  }
+
   if (!students) return showError(gridEl);
 
   allStudents = students;
-  renderStats(students);
   populateFilterOptions(students);
   bindFilterEvents();
   renderGrid();
