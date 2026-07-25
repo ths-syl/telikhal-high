@@ -9,7 +9,8 @@
     "phone": "+৮৮০ ১৭xx-xxxxx১",
     "email": "karim.dummy@example.com",
     "address": "গ্রাম: তেলিখাল, ডাকঘর: তেলিখাল, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "B+"
+    "bloodGroup": "B+",
+    "category": "শিক্ষক"
   },
   {
     "id": "T002",
@@ -21,7 +22,8 @@
     "phone": "+৮৮০ ১৭xx-xxxxx২",
     "email": "salma.dummy@example.com",
     "address": "গ্রাম: রুস্তমপুর, ডাকঘর: কোম্পানীগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "A+"
+    "bloodGroup": "A+",
+    "category": "শিক্ষক"
   },
   {
     "id": "T003",
@@ -33,7 +35,8 @@
     "phone": "+৮৮০ ১৭xx-xxxxx৩",
     "email": "zahirul.dummy@example.com",
     "address": "গ্রাম: ভোলাগঞ্জ, ডাকঘর: ভোলাগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "O+"
+    "bloodGroup": "O+",
+    "category": "শিক্ষক"
   },
   {
     "id": "T004",
@@ -45,7 +48,8 @@
     "phone": "+৮৮০ ১৭xx-xxxxx৪",
     "email": "sumaiya.dummy@example.com",
     "address": "গ্রাম: ইসলামপুর, ডাকঘর: কোম্পানীগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "AB+"
+    "bloodGroup": "AB+",
+    "category": "শিক্ষক"
   },
   {
     "id": "T005",
@@ -57,7 +61,8 @@
     "phone": "+৮৮০ ১৭xx-xxxxx৫",
     "email": "shafiqul.dummy@example.com",
     "address": "গ্রাম: তেলিখাল, ডাকঘর: তেলিখাল, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "B-"
+    "bloodGroup": "B-",
+    "category": "শিক্ষক"
   },
   {
     "id": "T006",
@@ -69,6 +74,7 @@
     "phone": "+৮৮০ ১৭xx-xxxxx৬",
     "email": "nazma.dummy@example.com",
     "address": "গ্রাম: নয়াবাজার, ডাকঘর: কোম্পানীগঞ্জ, উপজেলা: কোম্পানীগঞ্জ, জেলা: সিলেট",
-    "bloodGroup": "O-"
+    "bloodGroup": "O-",
+    "category": "কর্মচারী"
   }
 ]

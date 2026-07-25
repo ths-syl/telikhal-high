@@ -4,79 +4,69 @@
     "category": "বার্ষিক ক্রীড়া প্রতিযোগিতা",
     "title": "১০০ মিটার দৌড় প্রতিযোগিতা",
     "date": "১৫-০৯-২০২৫",
-    "image": "assets/images/gallery/sports-1.jpg",
-    "thumb": "assets/images/gallery/thumbs/sports-1.jpg"
+    "images": [
+      { "thumb": "assets/images/gallery/thumbs/sports-1.jpg", "image": "assets/images/gallery/sports-1.jpg" },
+      { "thumb": "assets/images/gallery/thumbs/sports-2.jpg", "image": "assets/images/gallery/sports-2.jpg" }
+    ]
   },
   {
     "id": "G002",
     "category": "বার্ষিক ক্রীড়া প্রতিযোগিতা",
     "title": "পুরস্কার বিতরণী মুহূর্ত",
     "date": "১৫-০৯-২০২৫",
-    "image": "assets/images/gallery/sports-2.jpg",
-    "thumb": "assets/images/gallery/thumbs/sports-2.jpg"
+    "images": [
+      { "thumb": "assets/images/gallery/thumbs/sports-3.jpg", "image": "assets/images/gallery/sports-3.jpg" }
+    ]
   },
   {
     "id": "G003",
     "category": "বিজ্ঞান মেলা",
     "title": "শিক্ষার্থীদের প্রজেক্ট প্রদর্শনী",
     "date": "২০-১১-২০২৫",
-    "image": "assets/images/gallery/science-fair-1.jpg",
-    "thumb": "assets/images/gallery/thumbs/science-fair-1.jpg"
+    "images": [
+      { "thumb": "assets/images/gallery/thumbs/science-fair-1.jpg", "image": "assets/images/gallery/science-fair-1.jpg" },
+      { "thumb": "assets/images/gallery/thumbs/science-fair-2.jpg", "image": "assets/images/gallery/science-fair-2.jpg" },
+      { "thumb": "assets/images/gallery/thumbs/science-fair-3.jpg", "image": "assets/images/gallery/science-fair-3.jpg" }
+    ]
   },
   {
     "id": "G004",
-    "category": "বিজ্ঞান মেলা",
-    "title": "বিজয়ীদের সাথে অতিথিবৃন্দ",
-    "date": "২০-১১-২০২৫",
-    "image": "assets/images/gallery/science-fair-2.jpg",
-    "thumb": "assets/images/gallery/thumbs/science-fair-2.jpg"
-  },
-  {
-    "id": "G005",
     "category": "পুরস্কার বিতরণী অনুষ্ঠান",
     "title": "বার্ষিক পুরস্কার বিতরণী মঞ্চ",
     "date": "২৮-১২-২০২৫",
-    "image": "assets/images/gallery/prize-1.jpg",
-    "thumb": "assets/images/gallery/thumbs/prize-1.jpg"
+    "images": [
+      { "thumb": "assets/images/gallery/thumbs/prize-1.jpg", "image": "assets/images/gallery/prize-1.jpg" },
+      { "thumb": "assets/images/gallery/thumbs/prize-2.jpg", "image": "assets/images/gallery/prize-2.jpg" }
+    ]
   },
   {
-    "id": "G006",
-    "category": "পুরস্কার বিতরণী অনুষ্ঠান",
-    "title": "কৃতি শিক্ষার্থীদের সংবর্ধনা",
-    "date": "২৮-১২-২০২৫",
-    "image": "assets/images/gallery/prize-2.jpg",
-    "thumb": "assets/images/gallery/thumbs/prize-2.jpg"
-  },
-  {
-    "id": "G007",
+    "id": "G005",
     "category": "সাংস্কৃতিক অনুষ্ঠান",
     "title": "বার্ষিক সাংস্কৃতিক সন্ধ্যা",
     "date": "১৪-০৪-২০২৬",
-    "image": "assets/images/gallery/cultural-1.jpg",
-    "thumb": "assets/images/gallery/thumbs/cultural-1.jpg"
+    "images": [
+      { "thumb": "assets/images/gallery/thumbs/cultural-1.jpg", "image": "assets/images/gallery/cultural-1.jpg" },
+      { "thumb": "assets/images/gallery/thumbs/cultural-2.jpg", "image": "assets/images/gallery/cultural-2.jpg" }
+    ]
   },
   {
-    "id": "G008",
-    "category": "সাংস্কৃতিক অনুষ্ঠান",
-    "title": "নৃত্য পরিবেশনা",
-    "date": "১৪-০৪-২০২৬",
-    "image": "assets/images/gallery/cultural-2.jpg",
-    "thumb": "assets/images/gallery/thumbs/cultural-2.jpg"
+    "id": "G006",
+    "category": "বৃক্ষরোপণ কর্মসূচি",
+    "title": "বার্ষিক বৃক্ষরোপণ অভিযান",
+    "date": "০৫-০৬-২০২৬",
+    "images": [
+      { "thumb": "assets/images/gallery/thumbs/tree-1.jpg", "image": "assets/images/gallery/tree-1.jpg" },
+      { "thumb": "assets/images/gallery/thumbs/tree-2.jpg", "image": "assets/images/gallery/tree-2.jpg" }
+    ]
   },
   {
-    "id": "G009",
+    "id": "G007",
     "category": "ক্যাম্পাস",
-    "title": "বিদ্যালয়ের মূল ভবন",
+    "title": "বিদ্যালয়ের মূল ভবন ও খেলার মাঠ",
     "date": "০১-০১-২০২৬",
-    "image": "assets/images/gallery/campus-1.jpg",
-    "thumb": "assets/images/gallery/thumbs/campus-1.jpg"
-  },
-  {
-    "id": "G010",
-    "category": "ক্যাম্পাস",
-    "title": "খেলার মাঠ",
-    "date": "০১-০১-২০২৬",
-    "image": "assets/images/gallery/campus-2.jpg",
-    "thumb": "assets/images/gallery/thumbs/campus-2.jpg"
+    "images": [
+      { "thumb": "assets/images/gallery/thumbs/campus-1.jpg", "image": "assets/images/gallery/campus-1.jpg" },
+      { "thumb": "assets/images/gallery/thumbs/campus-2.jpg", "image": "assets/images/gallery/campus-2.jpg" }
+    ]
   }
 ]

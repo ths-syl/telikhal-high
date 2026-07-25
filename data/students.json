@@ -5,13 +5,9 @@
     "roll": "০১",
     "class": "৬ষ্ঠ",
     "section": "ক",
-    "gender": "ছেলে",
     "group": null,
     "guardian": "মোঃ হাসান আলী",
-    "religion": "মুসলিম",
     "bloodGroup": "A+",
-    "scholarship": true,
-    "feeWaiver": null,
     "address": "তেলিখাল, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -20,13 +16,9 @@
     "roll": "০২",
     "class": "৬ষ্ঠ",
     "section": "ক",
-    "gender": "মেয়ে",
     "group": null,
     "guardian": "মোঃ কামাল আক্তার",
-    "religion": "মুসলিম",
     "bloodGroup": "B+",
-    "scholarship": false,
-    "feeWaiver": null,
     "address": "রুস্তমপুর, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -35,13 +27,9 @@
     "roll": "০৩",
     "class": "৬ষ্ঠ",
     "section": "খ",
-    "gender": "ছেলে",
     "group": null,
     "guardian": "মোঃ আহমেদ হোসেন",
-    "religion": "মুসলিম",
     "bloodGroup": "O+",
-    "scholarship": false,
-    "feeWaiver": null,
     "address": "ভোলাগঞ্জ, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -50,13 +38,9 @@
     "roll": "০৪",
     "class": "৭ম",
     "section": "ক",
-    "gender": "মেয়ে",
     "group": null,
     "guardian": "মোঃ ইসলাম উদ্দিন",
-    "religion": "হিন্দু",
     "bloodGroup": "AB+",
-    "scholarship": false,
-    "feeWaiver": "হাফ ফ্রি",
     "address": "ইসলামপুর, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -65,13 +49,9 @@
     "roll": "০৫",
     "class": "৭ম",
     "section": "ক",
-    "gender": "ছেলে",
     "group": null,
     "guardian": "মোঃ হাসান মিয়া",
-    "religion": "মুসলিম",
     "bloodGroup": "A-",
-    "scholarship": true,
-    "feeWaiver": "ফুল ফ্রি",
     "address": "নয়াবাজার, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -80,13 +60,9 @@
     "roll": "০৬",
     "class": "৭ম",
     "section": "খ",
-    "gender": "মেয়ে",
     "group": null,
     "guardian": "মোঃ শাহজাহান",
-    "religion": "মুসলিম",
     "bloodGroup": "B-",
-    "scholarship": false,
-    "feeWaiver": null,
     "address": "পূর্বাশা, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -95,13 +71,9 @@
     "roll": "০৭",
     "class": "৮ম",
     "section": "ক",
-    "gender": "ছেলে",
     "group": null,
     "guardian": "মোঃ খান সাহেব",
-    "religion": "মুসলিম",
     "bloodGroup": "O-",
-    "scholarship": false,
-    "feeWaiver": null,
     "address": "সুন্দাউরা, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -110,13 +82,9 @@
     "roll": "০৮",
     "class": "৮ম",
     "section": "ক",
-    "gender": "মেয়ে",
     "group": null,
     "guardian": "মোঃ ফেরদৌস আলম",
-    "religion": "হিন্দু",
     "bloodGroup": "AB+",
-    "scholarship": false,
-    "feeWaiver": null,
     "address": "তেলিখাল, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -125,13 +93,9 @@
     "roll": "০৯",
     "class": "৮ম",
     "section": "খ",
-    "gender": "ছেলে",
     "group": null,
     "guardian": "মোঃ হোসেন আলী",
-    "religion": "মুসলিম",
     "bloodGroup": "A+",
-    "scholarship": true,
-    "feeWaiver": "হাফ ফ্রি",
     "address": "রুস্তমপুর, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -140,13 +104,9 @@
     "roll": "১০",
     "class": "৯ম",
     "section": "বিজ্ঞান",
-    "gender": "মেয়ে",
     "group": "বিজ্ঞান",
     "guardian": "মোঃ জাহাঙ্গীর আলম",
-    "religion": "মুসলিম",
     "bloodGroup": "B+",
-    "scholarship": false,
-    "feeWaiver": "ফুল ফ্রি",
     "address": "ভোলাগঞ্জ, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -155,13 +115,9 @@
     "roll": "১১",
     "class": "৯ম",
     "section": "বিজ্ঞান",
-    "gender": "ছেলে",
     "group": "বিজ্ঞান",
     "guardian": "মোঃ আল হাসান",
-    "religion": "মুসলিম",
     "bloodGroup": "O+",
-    "scholarship": false,
-    "feeWaiver": null,
     "address": "ইসলামপুর, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -170,13 +126,9 @@
     "roll": "১২",
     "class": "৯ম",
     "section": "মানবিক",
-    "gender": "মেয়ে",
     "group": "মানবিক",
     "guardian": "মোঃ খাতুন মিয়া",
-    "religion": "হিন্দু",
     "bloodGroup": "AB+",
-    "scholarship": false,
-    "feeWaiver": null,
     "address": "নয়াবাজার, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -185,13 +137,9 @@
     "roll": "১৩",
     "class": "৯ম",
     "section": "ব্যবসায় শিক্ষা",
-    "gender": "ছেলে",
     "group": "ব্যবসায় শিক্ষা",
     "guardian": "মোঃ ইসলাম শেখ",
-    "religion": "মুসলিম",
     "bloodGroup": "A-",
-    "scholarship": true,
-    "feeWaiver": null,
     "address": "পূর্বাশা, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -200,13 +148,9 @@
     "roll": "১৪",
     "class": "১০ম",
     "section": "বিজ্ঞান",
-    "gender": "মেয়ে",
     "group": "বিজ্ঞান",
     "guardian": "মোঃ জাহান আলী",
-    "religion": "মুসলিম",
     "bloodGroup": "B-",
-    "scholarship": false,
-    "feeWaiver": "হাফ ফ্রি",
     "address": "সুন্দাউরা, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -215,13 +159,9 @@
     "roll": "১৫",
     "class": "১০ম",
     "section": "বিজ্ঞান",
-    "gender": "ছেলে",
     "group": "বিজ্ঞান",
     "guardian": "মোঃ হাসান রাজা",
-    "religion": "মুসলিম",
     "bloodGroup": "O-",
-    "scholarship": false,
-    "feeWaiver": "ফুল ফ্রি",
     "address": "তেলিখাল, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -230,13 +170,9 @@
     "roll": "১৬",
     "class": "১০ম",
     "section": "মানবিক",
-    "gender": "মেয়ে",
     "group": "মানবিক",
     "guardian": "মোঃ বেগম আলী",
-    "religion": "হিন্দু",
     "bloodGroup": "AB+",
-    "scholarship": false,
-    "feeWaiver": null,
     "address": "রুস্তমপুর, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -245,13 +181,9 @@
     "roll": "১৭",
     "class": "১০ম",
     "section": "ব্যবসায় শিক্ষা",
-    "gender": "ছেলে",
     "group": "ব্যবসায় শিক্ষা",
     "guardian": "মোঃ তৌহিদ মিয়া",
-    "religion": "মুসলিম",
     "bloodGroup": "A+",
-    "scholarship": true,
-    "feeWaiver": null,
     "address": "ভোলাগঞ্জ, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -260,13 +192,9 @@
     "roll": "১৮",
     "class": "৬ষ্ঠ",
     "section": "ক",
-    "gender": "মেয়ে",
     "group": null,
     "guardian": "মোঃ আক্তার হোসেন",
-    "religion": "মুসলিম",
     "bloodGroup": "B+",
-    "scholarship": false,
-    "feeWaiver": null,
     "address": "ইসলামপুর, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -275,13 +203,9 @@
     "roll": "১৯",
     "class": "৭ম",
     "section": "ক",
-    "gender": "ছেলে",
     "group": null,
     "guardian": "মোঃ রিফাত আলী",
-    "religion": "মুসলিম",
     "bloodGroup": "O+",
-    "scholarship": false,
-    "feeWaiver": "হাফ ফ্রি",
     "address": "নয়াবাজার, কোম্পানীগঞ্জ, সিলেট"
   },
   {
@@ -290,13 +214,9 @@
     "roll": "২০",
     "class": "৮ম",
     "section": "ক",
-    "gender": "মেয়ে",
     "group": null,
     "guardian": "মোঃ ইসলাম উদ্দিন",
-    "religion": "হিন্দু",
     "bloodGroup": "AB+",
-    "scholarship": false,
-    "feeWaiver": "ফুল ফ্রি",
     "address": "পূর্বাশা, কোম্পানীগঞ্জ, সিলেট"
   }
 ]

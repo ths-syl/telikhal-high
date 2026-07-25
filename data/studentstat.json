@@ -1,0 +1,81 @@
+{
+  "overview": {
+    "total": 335,
+    "boys": 163,
+    "girls": 172,
+    "scholarship": 113,
+    "feeWaiver": 68
+  },
+  "classWise": [
+    {
+      "class": "৬ষ্ঠ",
+      "total": 84,
+      "boys": 40,
+      "girls": 44,
+      "religion": {
+        "মুসলিম": { "total": 69, "boys": 32, "girls": 37 },
+        "হিন্দু": { "total": 15, "boys": 8, "girls": 7 }
+      },
+      "scholarship": { "total": 18, "boys": 9, "girls": 9 },
+      "feeWaiver": { "fullFree": 10, "halfFree": 6 }
+    },
+    {
+      "class": "৭ম",
+      "total": 76,
+      "boys": 36,
+      "girls": 40,
+      "religion": {
+        "মুসলিম": { "total": 63, "boys": 30, "girls": 33 },
+        "হিন্দু": { "total": 13, "boys": 6, "girls": 7 }
+      },
+      "scholarship": { "total": 20, "boys": 10, "girls": 10 },
+      "feeWaiver": { "fullFree": 8, "halfFree": 7 }
+    },
+    {
+      "class": "৮ম",
+      "total": 70,
+      "boys": 33,
+      "girls": 37,
+      "religion": {
+        "মুসলিম": { "total": 58, "boys": 27, "girls": 31 },
+        "হিন্দু": { "total": 12, "boys": 6, "girls": 6 }
+      },
+      "scholarship": { "total": 22, "boys": 11, "girls": 11 },
+      "feeWaiver": { "fullFree": 9, "halfFree": 5 }
+    },
+    {
+      "class": "৯ম",
+      "total": 58,
+      "boys": 28,
+      "girls": 30,
+      "religion": {
+        "মুসলিম": { "total": 48, "boys": 23, "girls": 25 },
+        "হিন্দু": { "total": 10, "boys": 5, "girls": 5 }
+      },
+      "scholarship": { "total": 27, "boys": 13, "girls": 14 },
+      "feeWaiver": { "fullFree": 12, "halfFree": 8 },
+      "groupWise": {
+        "বিজ্ঞান": 24,
+        "মানবিক": 22,
+        "ব্যবসায় শিক্ষা": 12
+      }
+    },
+    {
+      "class": "১০ম",
+      "total": 47,
+      "boys": 26,
+      "girls": 21,
+      "religion": {
+        "মুসলিম": { "total": 39, "boys": 22, "girls": 17 },
+        "হিন্দু": { "total": 8, "boys": 4, "girls": 4 }
+      },
+      "scholarship": { "total": 26, "boys": 14, "girls": 12 },
+      "feeWaiver": { "fullFree": 11, "halfFree": 8 },
+      "groupWise": {
+        "বিজ্ঞান": 19,
+        "মানবিক": 17,
+        "ব্যবসায় শিক্ষা": 11
+      }
+    }
+  ]
+}
