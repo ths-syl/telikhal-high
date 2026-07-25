@@ -5,6 +5,8 @@
    ========================================================= */
 
 :root {
+  color-scheme: light; /* মোবাইল ব্রাউজারের অটো-ডার্ক-মোড/ফোর্স-ডার্ক ফিচার যেন সাইটের রঙ উল্টে/বিকৃত না করে */
+
   /* ---- Core Palette ---- */
   --color-navy-deep:     #0E3A5C;  /* গোধূলির পাহাড় — প্রাইমারি, হেডার */
   --color-navy-darker:   #082943;  /* navy hover/active শেড */
@@ -123,6 +125,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---- Scroll Reveal Utility ---- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ---- Focus visibility ---- */

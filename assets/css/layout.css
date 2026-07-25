@@ -77,10 +77,23 @@
     padding: 5rem 1.5rem 2rem;
     box-shadow: var(--shadow-lg);
     transition: right var(--transition-base);
+    z-index: 200;
   }
   .navbar.open { right: 0; }
   .nav-list { flex-direction: column; gap: 1.4rem; }
 }
+
+/* খালি জায়গায় ট্যাপ করলে মোবাইল মেনু বন্ধ করার ব্যাকড্রপ */
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 58, 92, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+  z-index: 190;
+}
+.nav-backdrop.open { opacity: 1; visibility: visible; }
 
 /* ===================== Hero Slider ===================== */
 .hero-slider {
