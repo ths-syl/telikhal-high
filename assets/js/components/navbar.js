@@ -6,12 +6,28 @@ function initNavbar() {
   const navbar = document.querySelector(".navbar");
   if (!toggleBtn || !navbar) return;
 
+  // খালি জায়গায় ট্যাপ করলে মেনু বন্ধ করার জন্য একটা ব্যাকড্রপ
+  const backdrop = document.createElement("div");
+  backdrop.className = "nav-backdrop";
+  document.body.appendChild(backdrop);
+
+  function openMenu() {
+    navbar.classList.add("open");
+    backdrop.classList.add("open");
+  }
+  function closeMenu() {
+    navbar.classList.remove("open");
+    backdrop.classList.remove("open");
+  }
+
   toggleBtn.addEventListener("click", () => {
-    navbar.classList.toggle("open");
+    navbar.classList.contains("open") ? closeMenu() : openMenu();
   });
 
+  backdrop.addEventListener("click", closeMenu);
+
   navbar.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => navbar.classList.remove("open"));
+    link.addEventListener("click", closeMenu);
   });
 
   // বর্তমান পেজ অনুযায়ী active লিংক হাইলাইট

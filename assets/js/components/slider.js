@@ -1,5 +1,10 @@
 /**
  * অটো-স্লাইডিং হিরো ব্যানার। site-config.json এর heroSlides থেকে ডাটা আসে।
+ *
+ * ছবির স্পেসিফিকেশন (heroSlides[].image):
+ *   ফরম্যাট: WebP
+ *   ডাইমেনশন: 1600x800px (2:1 অনুপাত) — ফুল-উইথ ল্যান্ডস্কেপ
+ *   ম্যাক্স সাইজ: ~150-200KB প্রতি ছবি (মাত্র ৩টা ছবি হোমপেজে সরাসরি লোড হয়, তাই মানও একটু ভালো রাখা যায়)
  */
 function initHeroSlider(containerEl, slides, intervalMs = 5000) {
   if (!containerEl || !slides || slides.length === 0) return;
