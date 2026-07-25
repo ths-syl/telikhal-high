@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-<title>নোটিশ বোর্ড | তেলিখাল উচ্চ বিদ্যালয়</title>
-<meta name="description" content="তেলিখাল উচ্চ বিদ্যালয়ের সকল নোটিশ ও পিডিএফ কপি">
+<title>ভর্তি তথ্য | তেলিখাল উচ্চ বিদ্যালয়</title>
+<meta name="description" content="তেলিখাল উচ্চ বিদ্যালয়ের ভর্তি সংক্রান্ত তথ্য শীঘ্রই আসছে">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,9 +13,7 @@
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/layout.css">
 <link rel="stylesheet" href="assets/css/components.css">
-<link rel="stylesheet" href="assets/css/pages/teachers.css">
-<link rel="stylesheet" href="assets/css/pages/students.css">
-<link rel="stylesheet" href="assets/css/pages/notices.css">
+<link rel="stylesheet" href="assets/css/pages/coming-soon.css">
 </head>
 <body>
 
@@ -30,8 +28,6 @@
   <div class="header-main">
     <div class="container">
       <div class="brand">
-        <!-- ছবির স্পেসিফিকেশন (লোগো): ফরম্যাট PNG (transparent) অথবা SVG — WebP নয়, কারণ লোগো ছোট ও transparency/sharpness জরুরি
-             ডাইমেনশন: 512x512px সোর্স (দেখানো হয় 54x54px এ) | ম্যাক্স সাইজ: ~30-50KB (SVG হলে আরও ছোট) -->
         <img class="school-logo" src="assets/images/logo/school-logo.png" alt="স্কুল লোগো" onerror="this.src='https://via.placeholder.com/54x54.png?text=Logo'">
         <div class="brand-name">
           <h1 class="school-name-bn">তেলিখাল উচ্চ বিদ্যালয়</h1>
@@ -46,28 +42,16 @@
   </div>
 </header>
 
-<!-- ===================== Page Banner ===================== -->
-<section class="page-banner">
-  <div class="container">
-    <h1>নোটিশ বোর্ড</h1>
-    <p>বিদ্যালয়ের সকল নোটিশ ও পিডিএফ কপি — সর্বশেষ নোটিশ সবার উপরে</p>
-  </div>
-</section>
-
+<!-- ===================== Coming Soon ===================== -->
 <div class="container">
-  <section class="section">
-
-    <!-- Filter / Search -->
-    <div class="notice-filter-bar">
-      <select id="filter-category" aria-label="ক্যাটাগরি অনুযায়ী ফিল্টার"></select>
-      <input type="search" id="filter-search" placeholder="নোটিশের শিরোনাম দিয়ে খুঁজুন..." aria-label="নোটিশ সার্চ করুন">
+  <section class="coming-soon-section">
+    <div class="coming-soon-icon">🚧</div>
+    <h1>ভর্তি তথ্য শীঘ্রই আসছে</h1>
+    <p>এই পেজে ভর্তি প্রক্রিয়া, প্রয়োজনীয় কাগজপত্র ও আবেদনের বিস্তারিত তথ্য শীঘ্রই যুক্ত করা হবে। আপডেটের জন্য নোটিশ বোর্ডে চোখ রাখুন।</p>
+    <div class="coming-soon-actions">
+      <a href="index.html" class="btn btn-outline">হোমপেজে ফিরে যান</a>
+      <a href="notices.html" class="btn btn-primary">নোটিশ বোর্ড দেখুন</a>
     </div>
-    <p class="result-count" id="result-count" style="margin-bottom:1rem;"></p>
-
-    <!-- Notice List -->
-    <div class="notice-board-list" id="notice-board-list"></div>
-    <div class="load-more-wrap" id="load-more-wrap"></div>
-
   </section>
 </div>
 
@@ -100,6 +84,6 @@
   </div>
 </footer>
 
-<script type="module" src="assets/js/pages/notices.js"></script>
+<script type="module" src="assets/js/pages/coming-soon.js"></script>
 </body>
 </html>

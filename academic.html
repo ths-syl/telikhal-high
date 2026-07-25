@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
 <title>একাডেমিক | তেলিখাল উচ্চ বিদ্যালয়</title>
-<meta name="description" content="তেলিখাল উচ্চ বিদ্যালয়ের ক্লাস রুটিন, বার্ষিক ক্যালেন্ডার ও ছুটির তালিকা">
+<meta name="description" content="তেলিখাল উচ্চ বিদ্যালয়ের ক্লাস রুটিন, বার্ষিক ক্যালেন্ডার, সিলেবাস ও পাঠ্যপুস্তক">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,6 +29,8 @@
   <div class="header-main">
     <div class="container">
       <div class="brand">
+        <!-- ছবির স্পেসিফিকেশন (লোগো): ফরম্যাট PNG (transparent) অথবা SVG — WebP নয়, কারণ লোগো ছোট ও transparency/sharpness জরুরি
+             ডাইমেনশন: 512x512px সোর্স (দেখানো হয় 54x54px এ) | ম্যাক্স সাইজ: ~30-50KB (SVG হলে আরও ছোট) -->
         <img class="school-logo" src="assets/images/logo/school-logo.png" alt="স্কুল লোগো" onerror="this.src='https://via.placeholder.com/54x54.png?text=Logo'">
         <div class="brand-name">
           <h1 class="school-name-bn">তেলিখাল উচ্চ বিদ্যালয়</h1>
@@ -46,7 +49,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>একাডেমিক তথ্য</h1>
-    <p>ক্লাস রুটিন, বার্ষিক ক্যালেন্ডার ও ছুটির তালিকা</p>
+    <p>ক্লাস রুটিন, বার্ষিক ক্যালেন্ডার, সিলেবাস ও পাঠ্যপুস্তক — সব গুগল ড্রাইভ পিডিএফ লিংকের মাধ্যমে</p>
   </div>
 </section>
 
@@ -55,24 +58,52 @@
 
     <!-- Tabs -->
     <div class="academic-tabs">
-      <button class="academic-tab-btn active" data-target="panel-routine">ক্লাস রুটিন</button>
+      <button class="academic-tab-btn active" data-target="panel-routine">রুটিন</button>
       <button class="academic-tab-btn" data-target="panel-calendar">বার্ষিক ক্যালেন্ডার</button>
+      <button class="academic-tab-btn" data-target="panel-syllabus">সিলেবাস</button>
+      <button class="academic-tab-btn" data-target="panel-textbook">পাঠ্যপুস্তক</button>
     </div>
 
-    <!-- Routine Panel -->
+    <!-- ===== Routine Panel (২টা সাব-ট্যাব: ক্লাস রুটিন ও পরীক্ষার রুটিন) ===== -->
     <div class="academic-panel active" id="panel-routine">
-      <div id="routine-content"></div>
+      <div class="academic-subtabs">
+        <button class="academic-subtab-btn active" data-subtarget="subpanel-class-routine">ক্লাস রুটিন</button>
+        <button class="academic-subtab-btn" data-subtarget="subpanel-exam-routine">পরীক্ষার রুটিন</button>
+      </div>
+
+      <div class="academic-subpanel active" id="subpanel-class-routine">
+        <div class="academic-selector" id="routine-selector"></div>
+        <div id="routine-link-wrap"></div>
+      </div>
+
+      <div class="academic-subpanel" id="subpanel-exam-routine">
+        <div class="academic-selector" id="exam-routine-selector"></div>
+        <div id="exam-routine-link-wrap"></div>
+      </div>
     </div>
 
-    <!-- Calendar Panel -->
+    <!-- ===== Calendar Panel ===== -->
     <div class="academic-panel" id="panel-calendar">
-      <p class="routine-updated" id="academic-year-label"></p>
+      <div id="calendar-pdf-wrap"></div>
 
+      <p class="routine-updated" id="academic-year-label" style="margin-top:2rem;"></p>
       <div class="section-title" style="text-align:left; margin-bottom:1rem;"><h3><span>গুরুত্বপূর্ণ দিন ও ইভেন্ট</span></h3></div>
       <div class="event-list" id="event-list"></div>
 
       <div class="section-title" style="text-align:left; margin: 2rem 0 1rem;"><h3><span>সাধারণ ছুটির তালিকা</span></h3></div>
       <div class="holiday-grid" id="holiday-grid"></div>
+    </div>
+
+    <!-- ===== Syllabus Panel ===== -->
+    <div class="academic-panel" id="panel-syllabus">
+      <div class="academic-selector" id="syllabus-selector"></div>
+      <div class="subject-resource-list" id="syllabus-list-wrap"></div>
+    </div>
+
+    <!-- ===== Textbook Panel ===== -->
+    <div class="academic-panel" id="panel-textbook">
+      <div class="academic-selector" id="textbook-selector"></div>
+      <div class="subject-resource-list" id="textbook-list-wrap"></div>
     </div>
 
   </section>

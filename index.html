@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
 <title>তেলিখাল উচ্চ বিদ্যালয় | কোম্পানীগঞ্জ, সিলেট</title>
 <meta name="description" content="তেলিখাল উচ্চ বিদ্যালয়, কোম্পানীগঞ্জ, সিলেট — এর অফিসিয়াল ওয়েবসাইট">
 
@@ -27,6 +28,8 @@
   <div class="header-main">
     <div class="container">
       <div class="brand">
+        <!-- ছবির স্পেসিফিকেশন (লোগো): ফরম্যাট PNG (transparent) অথবা SVG — WebP নয়, কারণ লোগো ছোট ও transparency/sharpness জরুরি
+             ডাইমেনশন: 512x512px সোর্স (দেখানো হয় 54x54px এ) | ম্যাক্স সাইজ: ~30-50KB (SVG হলে আরও ছোট) -->
         <img class="school-logo" src="assets/images/logo/school-logo.png" alt="স্কুল লোগো" onerror="this.src='https://via.placeholder.com/54x54.png?text=Logo'">
         <div class="brand-name">
           <h1 class="school-name-bn">তেলিখাল উচ্চ বিদ্যালয়</h1>
@@ -44,6 +47,9 @@
 <!-- ===================== Hero Slider ===================== -->
 <section class="hero-slider" id="hero-slider" aria-label="প্রধান স্লাইডার"></section>
 
+<!-- ===================== News Ticker (সর্বশেষ নোটিশ) ===================== -->
+<div class="news-ticker" id="news-ticker" aria-label="সর্বশেষ নোটিশ"></div>
+
 <!-- ===================== Main Content + Sidebar ===================== -->
 <div class="container">
   <div class="home-grid section">
@@ -53,15 +59,22 @@
       <!-- About -->
       <section class="section" id="about">
         <div class="section-title"><h2><span>বিদ্যালয় পরিচিতি</span></h2></div>
-        <p id="about-content">লোড হচ্ছে...</p>
+        <div class="about-grid reveal-on-scroll">
+          <p id="about-content">লোড হচ্ছে...</p>
+          <!--
+            ছবির স্পেসিফিকেশন (school-info.json এর aboutPhoto):
+            ফরম্যাট: WebP | ডাইমেনশন: 800x600px (4:3, ল্যান্ডস্কেপ ক্যাম্পাস ছবি) | ম্যাক্স সাইজ: ~100KB
+          -->
+          <div class="about-photo" id="about-photo"></div>
+        </div>
       </section>
 
       <!-- Messages -->
       <section class="section">
         <div class="section-title"><h2><span>বাণী</span></h2></div>
         <div class="message-grid">
-          <div class="message-card" id="headmaster-message"></div>
-          <div class="message-card" id="smc-message"></div>
+          <div class="message-card reveal-on-scroll" id="headmaster-message"></div>
+          <div class="message-card reveal-on-scroll" id="smc-message"></div>
         </div>
       </section>
 
@@ -80,14 +93,14 @@
       <!-- Map -->
       <section class="section">
         <div class="section-title"><h2><span>বিদ্যালয়ের অবস্থান</span></h2></div>
-        <div class="map-widget" id="map-widget"></div>
+        <div class="map-widget reveal-on-scroll" id="map-widget"></div>
       </section>
 
     </div>
 
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="sidebar-widget">
+      <div class="sidebar-widget reveal-on-scroll">
         <h3>📌 নোটিশ বোর্ড</h3>
         <div id="notice-widget-body"></div>
         <a href="notices.html" class="btn btn-outline" style="margin-top:1rem; width:100%; justify-content:center;">সকল নোটিশ দেখুন</a>
