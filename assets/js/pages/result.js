@@ -3,12 +3,12 @@ import { initNavbar } from "../components/navbar.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
 
 /**
- * ⚠️ এখানে আপনার ডিপ্লয় করা Google Apps Script Web App এর /exec URL বসান।
- * (Apps Script এডিটরে Deploy > New deployment > Web app করার পর যে URL পাবেন)
+ * ⚠️  Google Apps Script Web App এর /exec URL 
  */
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyiyXBUnfHOg8Z098EVpYKvYAnIdfAeDTjDxnIWcuu1xN1Q1j7KUwYWxavb-KlZgPfR6Q/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbznGyudras3QpvQ-P701PKfP4P1JFoEs9XOqnYE2Bsu4F0xjx-z2qJNjOTTP6n9b7JK/exec";
 
 let schoolInfo = null;
+let schoolInfoPromise = null;
 
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
@@ -42,11 +42,15 @@ async function renderHeaderFooter() {
   initNavbar();
 }
 
+function classNeedsGroup(studentClass) {
+  return studentClass === "৯ম" || studentClass === "১০ম";
+}
+
 function toggleGroupField() {
   const classSelect = document.getElementById("rf-class");
   const groupField = document.getElementById("rf-group-field");
   const groupSelect = document.getElementById("rf-group");
-  const needsGroup = classSelect.value === "৯ম" || classSelect.value === "১০ম";
+  const needsGroup = classNeedsGroup(classSelect.value);
   groupField.style.display = needsGroup ? "" : "none";
   groupSelect.required = needsGroup;
 }
@@ -63,6 +67,10 @@ function clearError() {
   document.getElementById("result-error").style.display = "none";
 }
 
+function dashIfNA(hasPart, value) {
+  return hasPart ? value : "–";
+}
+
 function subjectRowHTML(s) {
   const gradeClass = s.grade === "F" ? "grade-f" : "";
   const componentNote = s.componentFail
@@ -71,35 +79,46 @@ function subjectRowHTML(s) {
   return `
     <tr>
       <td>${s.name}${componentNote}</td>
-      <td class="num">${s.examTotal} / ${s.examMax}</td>
-      <td class="num">${s.ca} / ২০</td>
-      <td class="num">${s.finalMark.toFixed(1)}</td>
+      <td class="num">${dashIfNA(s.hasCq, s.cq)}</td>
+      <td class="num">${dashIfNA(s.hasMcq, s.mcq)}</td>
+      <td class="num">${dashIfNA(s.hasPractical, s.practical)}</td>
+      <td class="num">${s.ca}</td>
+      <td class="num">${s.rawTotal}</td>
+      <td class="num">${s.classMax}</td>
       <td class="num ${gradeClass}">${s.grade}</td>
       <td class="num ${gradeClass}">${s.gpa.toFixed(2)}</td>
     </tr>
   `;
 }
 
+function todayBnDate() {
+  const now = new Date();
+  const bn = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+  const toBn = (n) => String(n).replace(/\d/g, (d) => bn[d]);
+  const dd = toBn(String(now.getDate()).padStart(2, "0"));
+  const mm = toBn(String(now.getMonth() + 1).padStart(2, "0"));
+  const yyyy = toBn(now.getFullYear());
+  return `${dd}-${mm}-${yyyy}`;
+}
+
 function renderMarksheet(data) {
   const wrap = document.getElementById("marksheet-wrap");
   const statusClass = data.status === "Pass" ? "status-pass" : "status-fail";
   const statusText = data.status === "Pass" ? "উত্তীর্ণ (Pass)" : "অনুত্তীর্ণ (Fail)";
+  const meritText = data.status === "Pass" ? `${data.merit}` : "প্রযোজ্য নয়";
 
   wrap.innerHTML = `
     <div class="marksheet-card reveal-on-scroll" id="printable-marksheet">
-      <!--
-        watermark একটা আসল <img> এলিমেন্ট হিসেবে বসানো হয়েছে (CSS background-image নয়) —
-        কারণ ব্রাউজারের "Print backgrounds/graphics" অপশন বন্ধ থাকলে CSS background প্রিন্টে
-        বাদ পড়ে যায়, কিন্তু সাধারণ <img> কনটেন্ট সবসময় প্রিন্ট হয়, ডিভাইস/ব্রাউজার নির্বিশেষে।
-      -->
+      <!-- watermark: আসল <img>, CSS background নয় — তাই "Print backgrounds" অপশন বন্ধ থাকলেও প্রিন্ট হবে -->
       <img class="marksheet-watermark" src="${schoolInfo.logo}" alt="" aria-hidden="true">
 
       <div class="marksheet-content">
         <div class="marksheet-header">
           <img class="marksheet-header-logo" src="${schoolInfo.logo}" alt="স্কুল লোগো" onerror="this.style.display='none'">
-          <div>
+          <div class="marksheet-header-text">
             <h2>${schoolInfo.schoolName.bn}</h2>
-            <p>একাডেমিক মার্কশিট — কোম্পানীগঞ্জ, সিলেট</p>
+            <p class="marksheet-address">${schoolInfo.address.full} | EIIN: ${schoolInfo.eiin}</p>
+            <p class="marksheet-doc-label">একাডেমিক মার্কশিট</p>
           </div>
         </div>
 
@@ -117,7 +136,17 @@ function renderMarksheet(data) {
         <div class="marksheet-table-wrap">
           <table class="marksheet-table">
             <thead>
-              <tr><th>বিষয়</th><th>পরীক্ষার নম্বর</th><th>ধারাবাহিক মূল্যায়ন</th><th>মোট</th><th>গ্রেড</th><th>জিপিএ</th></tr>
+              <tr>
+                <th>বিষয়</th>
+                <th>CQ</th>
+                <th>MCQ</th>
+                <th>Practical</th>
+                <th>ধারাবাহিক<br>মূল্যায়ন</th>
+                <th>মোট</th>
+                <th>সর্বোচ্চ<br>(ক্লাস)</th>
+                <th>গ্রেড</th>
+                <th>জিপিএ</th>
+              </tr>
             </thead>
             <tbody>
               ${data.subjects.map(subjectRowHTML).join("")}
@@ -127,14 +156,46 @@ function renderMarksheet(data) {
 
         <div class="gpa-summary-grid">
           <div class="gpa-summary-card">
+            <div class="label">সর্বমোট নম্বর</div>
+            <div class="value">${data.grandTotal}</div>
+          </div>
+          <div class="gpa-summary-card">
+            <div class="label">শ্রেণির সর্বোচ্চ মোট নম্বর</div>
+            <div class="value">${data.classTopperTotal}</div>
+          </div>
+          <div class="gpa-summary-card">
+            <div class="label">মেধাক্রম</div>
+            <div class="value">${meritText}</div>
+          </div>
+          <div class="gpa-summary-card">
             <div class="label">চূড়ান্ত জিপিএ</div>
             <div class="value">${data.finalGPA.toFixed(2)}</div>
           </div>
-          <div class="gpa-summary-card">
+          <div class="gpa-summary-card gpa-summary-wide">
             <div class="label">ফলাফল</div>
             <div class="value ${statusClass}">${statusText}</div>
           </div>
         </div>
+
+        <div class="marksheet-comment">
+          <span class="comment-label">শ্রেণিশিক্ষকের মন্তব্য:</span>
+          <span class="comment-text">${data.comment || "—"}</span>
+        </div>
+
+        <div class="marksheet-signatures">
+          <div class="signature-box">
+            <img class="signature-img" src="${schoolInfo.headmasterSignature || ""}" alt="প্রধান শিক্ষকের স্বাক্ষর" onerror="this.style.display='none'">
+            <div class="signature-line"></div>
+            <p>প্রধান শিক্ষকের স্বাক্ষর</p>
+          </div>
+          <div class="signature-box">
+            <div class="signature-blank"></div>
+            <div class="signature-line"></div>
+            <p>অভিভাবকের স্বাক্ষর</p>
+          </div>
+        </div>
+
+        <p class="marksheet-print-date">এই মার্কশিট ডাউনলোড করা হয়েছে: ${todayBnDate()}</p>
 
         <div class="marksheet-actions">
           <button class="btn btn-primary" id="print-btn">🖨️ Print / Save as PDF</button>
@@ -154,7 +215,6 @@ async function handleSearchSubmit(e) {
   const year = document.getElementById("rf-year").value;
   const exam = document.getElementById("rf-exam").value;
   const studentClass = document.getElementById("rf-class").value;
-  const group = document.getElementById("rf-group").value;
   const roll = document.getElementById("rf-roll").value.trim();
   const pin = document.getElementById("rf-pin").value.trim();
 
@@ -164,7 +224,10 @@ async function handleSearchSubmit(e) {
 
   try {
     const params = new URLSearchParams({ year, exam, studentClass, roll, pin });
-    if (group) params.set("group", group);
+    // বিভাগ শুধু ৯ম/১০ম শ্রেণির জন্যই পাঠানো হবে — নাহলে ৬ষ্ঠ-৮ম এর ফলাফলেও ভুলভাবে বিভাগ দেখানো হয়
+    if (classNeedsGroup(studentClass)) {
+      params.set("group", document.getElementById("rf-group").value);
+    }
 
     const response = await fetch(`${APPS_SCRIPT_URL}?${params.toString()}`);
     const data = await response.json();
@@ -172,6 +235,7 @@ async function handleSearchSubmit(e) {
     if (!data.success) {
       showError(data.message || "ফলাফল পাওয়া যায়নি।");
     } else {
+      if (!schoolInfo) await schoolInfoPromise; // দ্রুত সাবমিট করলেও schoolInfo লোড শেষ হওয়া নিশ্চিত করা
       document.getElementById("marksheet-wrap").innerHTML = "";
       renderMarksheet(data);
     }
@@ -190,6 +254,6 @@ function initForm() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderHeaderFooter();
+  schoolInfoPromise = renderHeaderFooter();
   initForm();
 });

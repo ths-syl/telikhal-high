@@ -66,12 +66,11 @@
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   padding: 1.8rem;
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
   overflow: hidden;
 }
 
-/* watermark: আসল <img>, CSS background নয় — তাই প্রিন্ট সেটিং যাই থাকুক, সবসময় প্রিন্ট হবে */
 .marksheet-watermark {
   position: absolute;
   top: 50%;
@@ -88,26 +87,41 @@
 }
 .marksheet-content { position: relative; z-index: 1; }
 
+/* ---- Header: লোগো + নাম, নিচে ঠিকানা/EIIN, তারপর আলাদা "একাডেমিক মার্কশিট" লেবেল ---- */
 .marksheet-header {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
-  text-align: left;
   border-bottom: 2px solid var(--color-sky-light);
   padding-bottom: 1.2rem;
   margin-bottom: 1.2rem;
 }
 .marksheet-header-logo {
-  height: 58px;
+  height: 64px;
   width: auto;
-  max-width: 70px;
+  max-width: 72px;
   object-fit: contain;
-  border-radius: 0; /* গোল নয় — মার্কশিটে লোগো তার আসল আকৃতিতেই থাকবে */
+  border-radius: 0; /* গোল নয় */
   flex-shrink: 0;
 }
-.marksheet-header h2 { margin-bottom: 0.2rem; }
-.marksheet-header p { font-family: var(--font-ui); font-size: 0.85rem; color: var(--color-ink-soft); }
+.marksheet-header-text h2 { margin-bottom: 0.15rem; }
+.marksheet-address {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.4rem;
+}
+.marksheet-doc-label {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-navy-deep);
+  background: var(--color-sky-light);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+}
 
 .marksheet-meta-row {
   display: flex;
@@ -120,49 +134,86 @@
 }
 .marksheet-meta-row strong { color: var(--color-navy-deep); }
 
+/* ---- Table (দুই-স্তরের হেডার: প্রাপ্ত/সর্বোচ্চ সাব-কলাম) ---- */
 .marksheet-table-wrap { overflow-x: auto; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); margin-bottom: 1.5rem; }
-.marksheet-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+.marksheet-table { width: 100%; border-collapse: collapse; min-width: 760px; }
 .marksheet-table th, .marksheet-table td {
-  padding: 0.65rem 0.9rem;
-  text-align: left;
+  padding: 0.6rem 0.7rem;
+  text-align: center;
   border-bottom: 1px solid var(--color-border);
-  font-size: 0.88rem;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  font-size: 0.85rem;
 }
+.marksheet-table td:first-child, .marksheet-table th:first-child { text-align: left; }
 .marksheet-table th {
   background: var(--color-navy-deep);
   color: var(--color-white);
   font-family: var(--font-ui);
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
 }
-.marksheet-table td.num { font-family: var(--font-ui); text-align: center; }
 .marksheet-table tr:last-child td { border-bottom: none; }
 .grade-f { color: var(--color-danger); font-weight: 700; }
 .component-fail-note {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--color-danger);
   font-family: var(--font-ui);
   font-weight: 500;
   margin-top: 0.2rem;
+  text-align: left;
 }
 
-/* ===================== GPA Summary ===================== */
+/* ---- Summary Cards ---- */
 .gpa-summary-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
   margin-bottom: 1.5rem;
 }
 .gpa-summary-card {
   text-align: center;
-  padding: 1rem;
+  padding: 0.9rem 0.6rem;
   border-radius: var(--radius-md);
   background: var(--color-sky-light);
 }
-.gpa-summary-card .label { font-family: var(--font-ui); font-size: 0.8rem; color: var(--color-ink-soft); }
-.gpa-summary-card .value { font-family: var(--font-ui); font-size: 1.6rem; font-weight: 700; color: var(--color-navy-deep); }
+.gpa-summary-wide { grid-column: 1 / -1; }
+.gpa-summary-card .label { font-family: var(--font-ui); font-size: 0.76rem; color: var(--color-ink-soft); }
+.gpa-summary-card .value { font-family: var(--font-ui); font-size: 1.35rem; font-weight: 700; color: var(--color-navy-deep); }
 .status-pass { color: var(--color-paddy-green) !important; }
 .status-fail { color: var(--color-danger) !important; }
+
+/* ---- মন্তব্য ---- */
+.marksheet-comment {
+  background: var(--color-limestone);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+.comment-label { font-weight: 700; color: var(--color-navy-deep); margin-right: 0.4rem; }
+.comment-text { color: var(--color-ink-soft); }
+
+/* ---- স্বাক্ষর ---- */
+.marksheet-signatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.signature-box { text-align: center; }
+.signature-img { height: 50px; object-fit: contain; margin-bottom: 0.2rem; }
+.signature-blank { height: 50px; }
+.signature-line { border-top: 1.5px solid var(--color-ink); margin: 0 0.5rem; }
+.signature-box p { font-family: var(--font-ui); font-size: 0.78rem; color: var(--color-ink-soft); margin-top: 0.3rem; }
+
+.marksheet-print-date {
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 1.2rem;
+}
 
 .marksheet-actions { text-align: center; }
 .marksheet-actions .btn { padding: 0.7rem 1.6rem; }
@@ -175,4 +226,10 @@
   body { background: var(--color-white); }
   .marksheet-card { box-shadow: none; max-width: 100%; }
   .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
+}
+
+@media (max-width: 560px) {
+  .marksheet-header { flex-direction: column; text-align: center; }
+  .gpa-summary-grid { grid-template-columns: 1fr 1fr; }
+  .marksheet-signatures { grid-template-columns: 1fr; gap: 2rem; }
 }
