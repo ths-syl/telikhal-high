@@ -6,7 +6,7 @@ import { initScrollReveal } from "../core/scrollReveal.js";
  * ⚠️ এখানে আপনার ডিপ্লয় করা Google Apps Script Web App এর /exec URL বসান।
  * (Apps Script এডিটরে Deploy > New deployment > Web app করার পর যে URL পাবেন)
  */
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/আপনার_ডিপ্লয়মেন্ট_আইডি/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyiyXBUnfHOg8Z098EVpYKvYAnIdfAeDTjDxnIWcuu1xN1Q1j7KUwYWxavb-KlZgPfR6Q/exec";
 
 let schoolInfo = null;
 
