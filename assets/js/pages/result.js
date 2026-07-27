@@ -193,9 +193,9 @@ function renderMarksheet(data) {
             <div class="signature-line"></div>
             <p>অভিভাবকের স্বাক্ষর</p>
           </div>
+          <p class="marksheet-print-date"> ${todayBnDate()}</p>
         </div>
 
-        <p class="marksheet-print-date">এই মার্কশিট ডাউনলোড করা হয়েছে: ${todayBnDate()}</p>
 
         <div class="marksheet-actions">
           <button class="btn btn-primary" id="print-btn">🖨️ Print / Save as PDF</button>
