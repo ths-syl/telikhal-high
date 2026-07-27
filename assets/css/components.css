@@ -112,6 +112,27 @@
   padding: 0.2rem 0.6rem;
   border-radius: 20px;
 }
+.info-card .card-hint {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: var(--color-sky-blue);
+  margin-top: 0.45rem;
+}
+
+/* মোবাইলে ফুল-ব্লিড স্কোয়ার ছবি অনেক বড় লাগছিল — তাই ছোট, বৃত্তাকার, বর্ডারযুক্ত করা হলো */
+@media (max-width: 600px) {
+  .info-card .photo-wrap {
+    aspect-ratio: 1/1;
+    width: 62%;
+    max-width: 108px;
+    margin: 1rem auto 0;
+    border-radius: 50%;
+    border: 3px solid var(--color-sky-light);
+    box-shadow: var(--shadow-sm);
+  }
+  .info-card .card-body { text-align: center; }
+  .info-card .photo-wrap .avatar-fallback { font-size: 1.6rem; }
+}
 
 /* ===================== Achievement Cards ===================== */
 .achievement-grid {

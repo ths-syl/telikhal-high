@@ -83,7 +83,9 @@
   .nav-list { flex-direction: column; gap: 1.4rem; }
 }
 
-
+/* খালি জায়গায় ট্যাপ করলে মোবাইল মেনু বন্ধ করার ব্যাকড্রপ
+   (z-index অবশ্যই .site-header এর z-index (100) এর চেয়ে কম হতে হবে,
+   নাহলে stacking context এর কারণে এটা navbar এর লিংকের উপরে বসে ট্যাপ আটকে দেয়) */
 .nav-backdrop {
   position: fixed;
   inset: 0;
@@ -101,6 +103,11 @@
   height: min(72vh, 560px);
   overflow: hidden;
   color: var(--color-white);
+}
+/* মোবাইলে 72vh অনেক লম্বা/সরু বক্স হয়ে যায়, ফলে ল্যান্ডস্কেপ ছবি cover করতে গিয়ে
+   অতিরিক্ত ক্রপ/জুম হয়ে দেখাচ্ছিল — তাই মোবাইলে উচ্চতা কমিয়ে আনা হলো */
+@media (max-width: 600px) {
+  .hero-slider { height: 42vh; min-height: 240px; max-height: 320px; }
 }
 .hero-slide {
   position: absolute;

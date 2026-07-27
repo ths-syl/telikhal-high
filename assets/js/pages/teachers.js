@@ -51,6 +51,7 @@ function teacherCardHTML(t) {
         <p class="card-name">${t.name}</p>
         <p class="card-role">${t.designation}</p>
         ${t.category === "শিক্ষক" ? `<span class="card-tag">${t.subject}</span>` : ""}
+        <p class="card-hint"> বিস্তারিত দেখুন</p>
       </div>
     </div>
   `;

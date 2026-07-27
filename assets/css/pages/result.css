@@ -224,8 +224,30 @@
     display: none !important;
   }
   body { background: var(--color-white); }
-  .marksheet-card { box-shadow: none; max-width: 100%; }
+  .marksheet-card { box-shadow: none; max-width: 100%; padding: 0.6rem; }
   .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
+
+  /* টেবিলের min-width বাদ দিয়ে fixed-layout করা হচ্ছে, যাতে A4-এর বাইরে গিয়ে
+     ডান পাশের কলাম (গ্রেড/জিপিএ) কেটে না যায় — কলামগুলো নির্দিষ্ট % ভাগ করে দেওয়া আছে */
+  .marksheet-table-wrap { overflow: visible; box-shadow: none; }
+  .marksheet-table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 0.68rem;
+  }
+  .marksheet-table th, .marksheet-table td {
+    padding: 0.3rem 0.25rem;
+    word-break: break-word;
+  }
+  .marksheet-table th:nth-child(1), .marksheet-table td:nth-child(1) { width: 24%; }
+  .marksheet-table th:nth-child(n+2), .marksheet-table td:nth-child(n+2) { width: 9.5%; }
+
+  .marksheet-watermark { width: 45%; }
+  .gpa-summary-card { padding: 0.6rem 0.4rem; }
+  .gpa-summary-card .value { font-size: 1.1rem; }
+
+  @page { size: A4; margin: 10mm; }
 }
 
 @media (max-width: 560px) {

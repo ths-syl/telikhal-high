@@ -117,7 +117,7 @@ function renderRoutineLink(classData, groupName) {
   wrap.innerHTML = `
     <div class="pdf-resource-card">
       <div>
-        <p class="pdf-resource-title">${label} — ক্লাস রুটিন</p>
+        <p class="pdf-resource-title">${label} — ক্লাস রুটিন ${academicData?.academicYear}</p>
         <p class="pdf-resource-sub">গুগল ড্রাইভ থেকে সরাসরি দেখুন বা ডাউনলোড করুন</p>
       </div>
       <a class="pdf-link-btn" href="${pdfUrl}" target="_blank" rel="noopener">📄 পিডিএফ দেখুন</a>
@@ -138,7 +138,7 @@ function renderExamRoutineLink(classData, groupName) {
   wrap.innerHTML = `
     <div class="pdf-resource-card">
       <div>
-        <p class="pdf-resource-title">${label} — পরীক্ষার রুটিন</p>
+        <p class="pdf-resource-title">${label} — পরীক্ষার রুটিন ${academicData?.academicYear}</p>
         <p class="pdf-resource-sub">গুগল ড্রাইভ থেকে সরাসরি দেখুন বা ডাউনলোড করুন</p>
       </div>
       <a class="pdf-link-btn" href="${pdfUrl}" target="_blank" rel="noopener">📄 পিডিএফ দেখুন</a>
@@ -156,7 +156,7 @@ async function initCalendarPdf() {
   wrap.innerHTML = `
     <div class="pdf-resource-card pdf-resource-card-highlight">
       <div>
-        <p class="pdf-resource-title">বার্ষিক একাডেমিক ক্যালেন্ডার ২০২৬</p>
+        <p class="pdf-resource-title">বার্ষিক একাডেমিক ক্যালেন্ডার ${academicData?.academicYear}</p>
         <p class="pdf-resource-sub">সম্পূর্ণ বছরের ছুটি, পরীক্ষা ও গুরুত্বপূর্ণ দিনের তালিকা</p>
       </div>
       <a class="pdf-link-btn" href="${academicData.calendarPdf}" target="_blank" rel="noopener">📄 পিডিএফ দেখুন</a>
@@ -170,7 +170,7 @@ function subjectListHTML(subjects, pdfField, btnLabel) {
     .map(
       (s) => `
     <div class="subject-resource-row reveal-on-scroll">
-      <span class="subject-name">${s.subject}</span>
+      <span class="subject-name">${s.subject}  — ${academicData?.academicYear} শিক্ষাবর্ষ </span>
       <a class="pdf-link-btn pdf-link-btn-sm" href="${s[pdfField]}" target="_blank" rel="noopener">📄 ${btnLabel}</a>
     </div>
   `
