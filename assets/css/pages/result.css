@@ -198,14 +198,14 @@
 .marksheet-signatures {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
 }
 .signature-box { text-align: center; }
-.signature-img { height: 50px; object-fit: contain; margin-bottom: 0.2rem; }
-.signature-blank { height: 50px; }
-.signature-line { border-top: 1.5px solid var(--color-ink); margin: 0 0.5rem; }
-.signature-box p { font-family: var(--font-ui); font-size: 0.78rem; color: var(--color-ink-soft); margin-top: 0.3rem; }
+.signature-img { height: 40px; object-fit: contain; margin-bottom: 0.2rem; }
+.signature-blank { height: 40px; }
+.signature-line { border-top: 1px solid var(--color-ink); margin: 0 0.5rem; }
+.signature-box p { font-family: var(--font-ui); font-size: 0.58rem; color: var(--color-ink-soft); margin-top: 0.2rem; }
 
 .marksheet-print-date {
   text-align: center;
