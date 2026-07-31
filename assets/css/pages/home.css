@@ -23,7 +23,7 @@
   .about-photo { order: -1; } /* মোবাইলে ছবি টেক্সটের উপরে দেখাবে */
 }
 .sidebar { position: sticky; top: 90px; }
-@media (max-width: 960px) { .sidebar { position: static; } }
+@media (max-width: 760px) { .sidebar { position: static; } }
 
 /* ===================== Achievement Mini Widget (সাইডবার) ===================== */
 .achievement-mini-grid {
