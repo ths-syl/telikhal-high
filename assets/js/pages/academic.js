@@ -138,7 +138,7 @@ function renderExamRoutineLink(classData, groupName) {
   wrap.innerHTML = `
     <div class="pdf-resource-card">
       <div>
-        <p class="pdf-resource-title">${label} — পরীক্ষার রুটিন ${academicData?.academicYear}</p>
+        <p class="pdf-resource-title">${label} —${academicData?.examName} পরীক্ষার রুটিন ${academicData?.academicYear}</p>
         <p class="pdf-resource-sub">গুগল ড্রাইভ থেকে সরাসরি দেখুন বা ডাউনলোড করুন</p>
       </div>
       <a class="pdf-link-btn" href="${pdfUrl}" target="_blank" rel="noopener">📄 পিডিএফ দেখুন</a>
@@ -164,17 +164,29 @@ async function initCalendarPdf() {
   `;
 }
 
-/* ===================== সিলেবাস ও পাঠ্যপুস্তক (একই কাঠামো) ===================== */
+
 function subjectListHTML(subjects, pdfField, btnLabel) {
   return subjects
-    .map(
-      (s) => `
+    .map((s) => {
+      if (pdfField === "textbookPdf" && s.textbookParts) {
+        return s.textbookParts
+          .map(
+            (part) => `
     <div class="subject-resource-row reveal-on-scroll">
-      <span class="subject-name">${s.subject}  — ${academicData?.academicYear} শিক্ষাবর্ষ </span>
-      <a class="pdf-link-btn pdf-link-btn-sm" href="${s[pdfField]}" target="_blank" rel="noopener">📄 ${btnLabel}</a>
+      <span class="subject-name">${part.name}</span>
+      <a class="pdf-link-btn pdf-link-btn-sm" href="${part.textbookPdf}" target="_blank" rel="noopener">📄 ${btnLabel}</a>
     </div>
   `
-    )
+          )
+          .join("");
+      }
+      return `
+    <div class="subject-resource-row reveal-on-scroll">
+      <span class="subject-name">${s.subject}</span>
+      <a class="pdf-link-btn pdf-link-btn-sm" href="${s[pdfField]}" target="_blank" rel="noopener">📄 ${btnLabel}</a>
+    </div>
+  `;
+    })
     .join("");
 }
 

@@ -1,72 +1,133 @@
 [
   {
     "id": "G001",
-    "category": "বার্ষিক ক্রীড়া প্রতিযোগিতা",
-    "title": "১০০ মিটার দৌড় প্রতিযোগিতা",
-    "date": "১৫-০৯-২০২৫",
+    "category": "ক্যাম্পাস",
+    "title": "বিদ্যালয়ের মূল ভবন ও খেলার মাঠ",
+    "date": "",
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/sports-1.webp", "image": "assets/images/gallery/sports-1.webp" },
-      { "thumb": "assets/images/gallery/thumbs/sports-2.webp", "image": "assets/images/gallery/sports-2.webp" }
+      { "thumb": "assets/images/gallery/campus-1.webp", "image": "assets/images/gallery/campus-1.webp" }
     ]
   },
   {
     "id": "G002",
-    "category": "বার্ষিক ক্রীড়া প্রতিযোগিতা",
-    "title": "পুরস্কার বিতরণী মুহূর্ত",
-    "date": "১৫-০৯-২০২৫",
+    "category": "সহশিক্ষা কার্যক্রম",
+    "title": "বিতর্ক প্রতিযোগিতা",
+    "date": null,
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/sports-3.webp", "image": "assets/images/gallery/sports-3.webp" }
+      { "thumb": "assets/images/gallery/debate-1.webp", "image": "assets/images/gallery/debate-1.webp" }
     ]
   },
   {
     "id": "G003",
     "category": "বিজ্ঞান মেলা",
     "title": "শিক্ষার্থীদের প্রজেক্ট প্রদর্শনী",
-    "date": "২০-১১-২০২৫",
+    "date": null,
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/science-fair-1.webp", "image": "assets/images/gallery/science-fair-1.webp" },
-      { "thumb": "assets/images/gallery/thumbs/science-fair-2.webp", "image": "assets/images/gallery/science-fair-2.webp" },
-      { "thumb": "assets/images/gallery/thumbs/science-fair-3.webp", "image": "assets/images/gallery/science-fair-3.webp" }
+      { "thumb": "assets/images/gallery/science-fair-1.webp", "image": "assets/images/gallery/science-fair-1.webp" },
+      { "thumb": "assets/images/gallery/science-fair-2.webp", "image": "assets/images/gallery/science-fair-2.webp" },
+      { "thumb": "assets/images/gallery/science-fair-3.webp", "image": "assets/images/gallery/science-fair-3.webp" }
     ]
   },
   {
     "id": "G004",
-    "category": "পুরস্কার বিতরণী অনুষ্ঠান",
-    "title": "বার্ষিক পুরস্কার বিতরণী মঞ্চ",
-    "date": "২৮-১২-২০২৫",
+    "category": "অভিবাবক সমাবেশ",
+    "title": "বিদ্যালয়ের শিক্ষার্থীদের অভিভাবক সমাবেশ",
+    "date": null,
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/prize-1.webp", "image": "assets/images/gallery/prize-1.webp" },
-      { "thumb": "assets/images/gallery/thumbs/prize-2.webp", "image": "assets/images/gallery/prize-2.webp" }
+      { "thumb": "assets/images/gallery/meeting-1.webp", "image": "assets/images/gallery/meeting-1.webp" },
+      { "thumb": "assets/images/gallery/meeting-2.webp", "image": "assets/images/gallery/meeting-2.webp" }
     ]
   },
   {
     "id": "G005",
-    "category": "সাংস্কৃতিক অনুষ্ঠান",
-    "title": "বার্ষিক সাংস্কৃতিক সন্ধ্যা",
-    "date": "১৪-০৪-২০২৬",
+    "category": "সহশিক্ষা কার্যক্রম",
+    "title": "বিদ্যালয়ের ক্রিকেট টিম",
+    "date": null,
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/cultural-1.webp", "image": "assets/images/gallery/cultural-1.webp" },
-      { "thumb": "assets/images/gallery/thumbs/cultural-2.webp", "image": "assets/images/gallery/cultural-2.webp" }
+      { "thumb": "assets/images/gallery/event-3.webp", "image": "assets/images/gallery/event-3.webp" }
     ]
   },
   {
     "id": "G006",
     "category": "বৃক্ষরোপণ কর্মসূচি",
     "title": "বার্ষিক বৃক্ষরোপণ অভিযান",
-    "date": "০৫-০৬-২০২৬",
+    "date": null,
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/tree-1.webp", "image": "assets/images/gallery/tree-1.webp" },
-      { "thumb": "assets/images/gallery/thumbs/tree-2.webp", "image": "assets/images/gallery/tree-2.webp" }
+      { "thumb": "assets/images/gallery/tree-1.webp", "image": "assets/images/gallery/tree-1.webp" },
+      { "thumb": "assets/images/gallery/tree-2.webp", "image": "assets/images/gallery/tree-2.webp" }
     ]
   },
   {
     "id": "G007",
-    "category": "ক্যাম্পাস",
-    "title": "বিদ্যালয়ের মূল ভবন ও খেলার মাঠ",
-    "date": "০১-০১-২০২৬",
+    "category": "বার্ষিক ক্রীড়া-সাংস্কৃতিক প্রতিযোগিতা", 
+    "title": "বার্ষিক পুরস্কার বিতরণী অনুষ্ঠান",
+    "date": null,
     "images": [
-      { "thumb": "assets/images/gallery/thumbs/campus-1.webp", "image": "assets/images/gallery/campus-1.webp" },
-      { "thumb": "assets/images/gallery/thumbs/campus-2.webp", "image": "assets/images/gallery/campus-2.webp" }
+      { "thumb": "assets/images/gallery/event-1.webp", "image": "assets/images/gallery/event-1.webp" },
+      { "thumb": "assets/images/gallery/event-2.webp", "image": "assets/images/gallery/event-2.webp" }
+    ]
+  },
+  {
+    "id": "G008",
+    "category": "বিদ্যালয়ের অর্জন",
+    "title": "উপজেলা পর্যায়ে শ্রেষ্ঠ স্কাউট শিক্ষক নির্বাচিত হয়েছেন জনাব, মোঃ জিয়াউর রহমান",
+    "date": "২০২৬",
+    "images": [
+      { "thumb": "assets/images/gallery/achievement-1.webp", "image": "assets/images/gallery/achievement-1.webp" }
+    ]
+  },
+  {
+    "id": "G009",
+    "category": "বিদ্যালয়ের অর্জন",
+    "title": "উপজেলা পর্যায়ে শ্রেষ্ঠ প্রতিষ্ঠান প্রধান নির্বাচিত হয়েছেন জনাব, মোঃ দিলীপ কান্তি নাথ, প্রধান শিক্ষক",
+    "date": "২০২৩",
+    "images": [
+      { "thumb": "assets/images/gallery/achievement-2.webp", "image": "assets/images/gallery/achievement-2.webp" }
+    ]
+  },
+  {
+    "id": "G010",
+    "category": "বিদ্যালয়ের অর্জন",
+    "title": "উপজেলা পর্যায়ে শ্রেষ্ঠ শ্রেনি শিক্ষক নির্বাচিত হয়েছেন জনাব, মোঃ জিয়াউর রহমান",
+    "date": "২০২২",
+    "images": [
+      { "thumb": "assets/images/gallery/achievement-3.webp", "image": "assets/images/gallery/achievement-3.webp" }
+    ]
+  },
+  {
+    "id": "G011",
+    "category": "বিদ্যালয়ের অর্জন",
+    "title": "জাতীয় বিজ্ঞান ও প্রযুক্তি সপ্তাহ ২০২১ উপলক্ষে প্রকল্প উপস্থাপনায় শিক্ষার্থীদের ১ম পুরষ্কার অর্জন",
+    "date": "২০২১",
+    "images": [
+      { "thumb": "assets/images/gallery/achievement-4.webp", "image": "assets/images/gallery/achievement-4.webp" }
+    ]
+  },
+  {
+    "id": "G012",
+    "category": "ক্যাম্পাস",
+    "title": "শ্রেনিকক্ষে পাঠদানরত শিক্ষার্থীরা",
+    "date": "",
+    "images": [
+      { "thumb": "assets/images/gallery/class-1.webp", "image": "assets/images/gallery/class-1.webp" }
+    ]
+  },
+  {
+    "id": "G013",
+    "category": "ক্যাম্পাস",
+    "title": "বিজ্ঞান ল্যাব এ শিক্ষার্থীরা পরীক্ষা-নিরীক্ষা করছে",
+    "date": "",
+    "images": [
+      { "thumb": "assets/images/gallery/lab-1.webp", "image": "assets/images/gallery/lab-1.webp" }
+    ]
+  },
+  {
+    "id": "G014",
+    "category": "ক্যাম্পাস",
+    "title": "শিক্ষকমন্ডলীর একাংশ",
+    "date": "",
+    "images": [
+      { "thumb": "assets/images/gallery/group-1.webp", "image": "assets/images/gallery/group-1.webp" }
     ]
   }
 ]

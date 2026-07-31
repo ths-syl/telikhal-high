@@ -1,23 +1,20 @@
 [
   {
-    "id": "N001",
-    "name": "jarif",
-    "batch": "এস.এস.সি ২০২৩",
-    "achievement": "জিপিএ-৫ প্রাপ্ত এবং জেলা বিজ্ঞান মেলায় প্রথম স্থান অধিকারী",
-    "photo": "assets/images/achievers/achiever.webp"
-  },
-  {
-    "id": "N002",
-    "name": "jarif",
+    "name": "মোঃ আরিফুল ইসলাম",
     "batch": "এস.এস.সি ২০২২",
-    "achievement": "জাতীয় গণিত অলিম্পিয়াডে বিভাগীয় পর্যায়ে চ্যাম্পিয়ন",
-    "photo": "assets/images/achievers/achiever.webp"
+    "achievement": "এসএসসি পরীক্ষায় জিপিএ-৫ এবং সাধারন বৃত্তি অর্জন ",
+    "photo": "assets/images/achievers/achiever1.webp"
   },
   {
-    "id": "N003",
-    "name": "jarif",
-    "batch": "এস.এস.সি ২০২৪",
-    "achievement": "সদ্য সমাপ্ত এস.এস.সি পরীক্ষায় উপজেলার মধ্যে সর্বোচ্চ নম্বর অর্জনকারী",
-    "photo": "assets/images/achievers/achiever.webp" 
+    "name": "মারুফ আহমেদ",
+    "batch": "এস.এস.সি ২০২২",
+    "achievement": "এসএসসি পরীক্ষায় জিপিএ-৫ অর্জন",
+    "photo": "assets/images/achievers/achiever2.webp"
+  },
+  {
+    "name": "নাদিয়া আক্তার",
+    "batch": "এস.এস.সি ২০২২",
+    "achievement": "এসএসসি পরীক্ষায় জিপিএ-৫ অর্জন",
+    "photo": "assets/images/achievers/achiever3.webp" 
   }
 ]

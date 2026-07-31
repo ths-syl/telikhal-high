@@ -134,25 +134,6 @@
   .info-card .photo-wrap .avatar-fallback { font-size: 1.6rem; }
 }
 
-/* ===================== Achievement Cards ===================== */
-.achievement-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.2rem;
-}
-.achievement-card {
-  background: var(--color-white);
-  border-radius: var(--radius-md);
-  padding: 1.4rem;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-  border-bottom: 3px solid var(--color-amber);
-}
-.achievement-card .icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
-.achievement-card .year { font-family: var(--font-ui); font-size: 0.78rem; color: var(--color-sky-blue); font-weight: 700; }
-.achievement-card h4 { font-size: 1rem; margin: 0.4rem 0; }
-.achievement-card p { font-size: 0.85rem; color: var(--color-ink-soft); }
-
 /* ===================== Modal ===================== */
 .modal-overlay {
   position: fixed; inset: 0;

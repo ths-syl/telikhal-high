@@ -63,6 +63,7 @@
 .marksheet-card {
   position: relative;
   background: var(--color-white);
+  border: 1.5px solid var(--color-sky-blue);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   padding: 1.8rem;
@@ -163,24 +164,29 @@
   text-align: left;
 }
 
-/* ---- Summary Cards ---- */
+/* ---- Summary Cards (সবগুলো এক সারিতে, ছোট করে — জায়গা বাঁচাতে) ---- */
 .gpa-summary-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
 }
 .gpa-summary-card {
   text-align: center;
-  padding: 0.9rem 0.6rem;
-  border-radius: var(--radius-md);
+  padding: 0.55rem 0.3rem;
+  border-radius: var(--radius-sm);
   background: var(--color-sky-light);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
-.gpa-summary-wide { grid-column: 1 / -1; }
-.gpa-summary-card .label { font-family: var(--font-ui); font-size: 0.76rem; color: var(--color-ink-soft); }
-.gpa-summary-card .value { font-family: var(--font-ui); font-size: 1.35rem; font-weight: 700; color: var(--color-navy-deep); }
+.gpa-summary-card .label { font-family: var(--font-ui); font-size: 0.65rem; color: var(--color-ink-soft); line-height: 1.2; }
+.gpa-summary-card .value { font-family: var(--font-ui); font-size: 1.02rem; font-weight: 700; color: var(--color-navy-deep); }
 .status-pass { color: var(--color-paddy-green) !important; }
 .status-fail { color: var(--color-danger) !important; }
+
+@media (max-width: 560px) {
+  .gpa-summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* ---- মন্তব্য ---- */
 .marksheet-comment {
@@ -202,7 +208,7 @@
   margin-bottom: 1rem;
 }
 .signature-box { text-align: center; }
-.signature-img { height: 50px; object-fit: contain; margin-bottom: 0.2rem; }
+.signature-img { display: block; height: 50px; margin: 0 auto 0.2rem; object-fit: contain; }
 .signature-blank { height: 50px; }
 .signature-line { border-top: 1.5px solid var(--color-ink); margin: 0 0.5rem; }
 .signature-box p { font-family: var(--font-ui); font-size: 0.78rem; color: var(--color-ink-soft); margin-top: 0.3rem; }
@@ -223,13 +229,28 @@
   .site-header, .site-footer, .page-banner, .result-search-card, .marksheet-actions, .nav-backdrop {
     display: none !important;
   }
+  /* ব্রাউজারের "Print backgrounds" সেটিং বন্ধ থাকলেও যেন গ্রিড/ব্যাজের রঙ প্রিন্টে
+     মুছে না যায় — সব এলিমেন্টে জোর করে প্রিন্ট-কালার-এডজাস্ট চালু করা হলো */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
   body { background: var(--color-white); }
-  .marksheet-card { box-shadow: none; max-width: 100%; padding: 0.6rem; }
+  .marksheet-card { box-shadow: none; max-width: 100%; padding: 0.6rem; border-width: 1px; }
   .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
+
+  /* এক পাতায় ফিট করাতে হেডার/মেটা/কমেন্ট/স্বাক্ষরের স্পেসিং কমানো হলো */
+  .marksheet-header { padding-bottom: 0.6rem; margin-bottom: 0.6rem; }
+  .marksheet-meta-row { margin-bottom: 0.6rem; }
+  .marksheet-comment { padding: 0.5rem 0.7rem; margin-bottom: 0.7rem; font-size: 0.8rem; }
+  .marksheet-signatures { margin-bottom: 0.5rem; gap: 1rem; }
+  .marksheet-print-date { margin-bottom: 0.5rem; }
 
   /* টেবিলের min-width বাদ দিয়ে fixed-layout করা হচ্ছে, যাতে A4-এর বাইরে গিয়ে
      ডান পাশের কলাম (গ্রেড/জিপিএ) কেটে না যায় — কলামগুলো নির্দিষ্ট % ভাগ করে দেওয়া আছে */
-  .marksheet-table-wrap { overflow: visible; box-shadow: none; }
+  .marksheet-table-wrap { overflow: visible; box-shadow: none; margin-bottom: 0.8rem; }
   .marksheet-table {
     min-width: 0;
     width: 100%;
@@ -244,7 +265,7 @@
   .marksheet-table th:nth-child(n+2), .marksheet-table td:nth-child(n+2) { width: 9.5%; }
 
   .marksheet-watermark { width: 45%; }
-  .gpa-summary-card { padding: 0.6rem 0.4rem; }
+  .gpa-summary-card { padding: 0.4rem 0.3rem; }
   .gpa-summary-card .value { font-size: 1.1rem; }
 
   @page { size: A4; margin: 10mm; }
@@ -252,6 +273,5 @@
 
 @media (max-width: 560px) {
   .marksheet-header { flex-direction: column; text-align: center; }
-  .gpa-summary-grid { grid-template-columns: 1fr 1fr; }
   .marksheet-signatures { grid-template-columns: 1fr; gap: 2rem; }
 }

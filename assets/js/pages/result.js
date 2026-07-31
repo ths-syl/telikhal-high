@@ -3,7 +3,7 @@ import { initNavbar } from "../components/navbar.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
 
 /**
- * ⚠️  Google Apps Script Web App এর /exec URL 
+ * ⚠️  Google Apps Script Web App এর /exec 
  */
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbznGyudras3QpvQ-P701PKfP4P1JFoEs9XOqnYE2Bsu4F0xjx-z2qJNjOTTP6n9b7JK/exec";
 
@@ -33,7 +33,7 @@ async function renderHeaderFooter() {
       .join("");
 
   const footerSocial = document.getElementById("footer-social");
-  if (footerSocial) footerSocial.innerHTML = config.socialLinks.map((s) => `<a href="${s.url}" target="_blank"  aria-label="${s.platform}"><i class="fa-brands fa-${s.icon}"></i></a>`).join("");
+  if (footerSocial) footerSocial.innerHTML = config.socialLinks.map((s) => `<a href="${s.url}" target="_blank"  aria-label="${s.platform}"><i class="fa-brands fa-${s.icon}"></i></a>`).join(""); 
 
   const footerContact = document.getElementById("footer-contact");
   if (footerContact)
@@ -67,14 +67,51 @@ function clearError() {
   document.getElementById("result-error").style.display = "none";
 }
 
+const BN_DIGITS = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+function toBnDigits(num) {
+  return String(num).replace(/\d/g, (d) => BN_DIGITS[d]);
+}
+
 function dashIfNA(hasPart, value) {
   return hasPart ? value : "–";
 }
 
 function subjectRowHTML(s) {
   const gradeClass = s.grade === "F" ? "grade-f" : "";
+
+  if (s.isMultiPaper) {
+    const subjectShortName = s.name.split(" (")[0];
+    return s.papers
+      .map((p, idx) => {
+        const componentNote =
+          idx === 0 && s.componentFail
+            ? `<div class="component-fail-note">* কোনো একটি অংশে (সৃজনশীল/বহুনির্বাচনি) ন্যূনতম ৩৩% পাসমার্ক পাননি</div>`
+            : "";
+        const mergedCells =
+          idx === 0
+            ? `
+              <td class="num" rowspan="2">${s.rawTotal}</td>
+              <td class="num" rowspan="2">${s.classMax}</td>
+              <td class="num ${gradeClass}" rowspan="2">${s.grade}</td>
+              <td class="num ${gradeClass}" rowspan="2">${s.gpa.toFixed(2)}</td>
+            `
+            : "";
+        return `
+          <tr>
+            <td>${subjectShortName} - ${p.label}${componentNote}</td>
+            <td class="num">${p.cq === null ? "–" : p.cq}</td>
+            <td class="num">${p.mcq === null ? "–" : p.mcq}</td>
+            <td class="num">–</td>
+            <td class="num">${p.ca}</td>
+            ${mergedCells}
+          </tr>
+        `;
+      })
+      .join("");
+  }
+
   const componentNote = s.componentFail
-    ? `<div class="component-fail-note">* কোনো একটি অংশে (CQ/MCQ/Practical) ন্যূনতম ৩৩% পাসমার্ক পাননি</div>`
+    ? `<div class="component-fail-note">* কোনো একটি অংশে (সৃজনশীল/বহুনির্বাচনি/ব্যবহারিক) ন্যূনতম ৩৩% পাসমার্ক পাননি</div>`
     : "";
   return `
     <tr>
@@ -93,11 +130,9 @@ function subjectRowHTML(s) {
 
 function todayBnDate() {
   const now = new Date();
-  const bn = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
-  const toBn = (n) => String(n).replace(/\d/g, (d) => bn[d]);
-  const dd = toBn(String(now.getDate()).padStart(2, "0"));
-  const mm = toBn(String(now.getMonth() + 1).padStart(2, "0"));
-  const yyyy = toBn(now.getFullYear());
+  const dd = toBnDigits(String(now.getDate()).padStart(2, "0"));
+  const mm = toBnDigits(String(now.getMonth() + 1).padStart(2, "0"));
+  const yyyy = toBnDigits(now.getFullYear());
   return `${dd}-${mm}-${yyyy}`;
 }
 
@@ -129,7 +164,7 @@ function renderMarksheet(data) {
         </div>
         <div class="marksheet-meta-row">
           <span>পরীক্ষা: <strong>${data.meta.exam}</strong></span>
-          <span>শিক্ষাবর্ষ: <strong>${data.meta.year}</strong></span>
+          <span>শিক্ষাবর্ষ: <strong>${toBnDigits(data.meta.year)}</strong></span>
           <span>শাখা: <strong>${data.student.section || "-"}</strong></span>
         </div>
 
@@ -138,9 +173,9 @@ function renderMarksheet(data) {
             <thead>
               <tr>
                 <th>বিষয়</th>
-                <th>CQ</th>
-                <th>MCQ</th>
-                <th>Practical</th>
+                <th>সৃজনশীল</th>
+                <th>বহুনির্বাচনি</th>
+                <th>ব্যবহারিক</th>
                 <th>ধারাবাহিক<br>মূল্যায়ন</th>
                 <th>মোট</th>
                 <th>সর্বোচ্চ<br>(ক্লাস)</th>
@@ -171,7 +206,7 @@ function renderMarksheet(data) {
             <div class="label">চূড়ান্ত জিপিএ</div>
             <div class="value">${data.finalGPA.toFixed(2)}</div>
           </div>
-          <div class="gpa-summary-card gpa-summary-wide">
+          <div class="gpa-summary-card">
             <div class="label">ফলাফল</div>
             <div class="value ${statusClass}">${statusText}</div>
           </div>
@@ -193,9 +228,9 @@ function renderMarksheet(data) {
             <div class="signature-line"></div>
             <p>অভিভাবকের স্বাক্ষর</p>
           </div>
-          <p class="marksheet-print-date"> ${todayBnDate()}</p>
         </div>
 
+        <p class="marksheet-print-date">এই মার্কশিট ডাউনলোড করা হয়েছে: ${todayBnDate()}</p>
 
         <div class="marksheet-actions">
           <button class="btn btn-primary" id="print-btn">🖨️ Print / Save as PDF</button>

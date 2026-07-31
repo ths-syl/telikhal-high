@@ -7,7 +7,7 @@
   "socialLinks": [
     { "platform": "Facebook", "url": "https://www.facebook.com/dilp.kantinath.9", "icon": "facebook-f" }, 
     { "platform": "YouTube", "url": "#", "icon": "youtube" },
-    { "platform": "WhatsApp", "url": "wa.me/+8801728708585", "icon": "whatsapp" }
+    { "platform": "WhatsApp", "url": "https://wa.me/+8801728708585", "icon": "whatsapp" }
   ],
   "facebookPage": {
     "pageUrl": "https://www.facebook.com/dilp.kantinath.9",
@@ -24,6 +24,7 @@
       { "label": "শিক্ষার্থী তথ্য কেন্দ্র", "url": "students.html" },
       { "label": "একাডেমিক", "url": "academic.html" },
       { "label": "নোটিশ বোর্ড", "url": "notices.html" },
+      { "label": "নিয়মাবলী", "url": "regulations.html" },
       { "label": "ফটো গ্যালারি", "url": "gallery.html" }
     ]
   },
@@ -33,6 +34,7 @@
     { "label": "শিক্ষার্থী তথ্য", "url": "students.html" },
     { "label": "একাডেমিক", "url": "academic.html" },
     { "label": "নোটিশ বোর্ড", "url": "notices.html" },
+    { "label": "নিয়মাবলী", "url": "regulations.html" },
     { "label": "গ্যালারি", "url": "gallery.html" },
     { "label": "ভর্তি", "url": "admission.html" },
     { "label": "ফলাফল", "url": "result.html" }

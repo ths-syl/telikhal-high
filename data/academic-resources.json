@@ -1,6 +1,7 @@
 {
   "academicYear": "২০২৬",
-  "calendarPdf": "https://drive.google.com/file/d/DUMMY_ANNUAL_CALENDAR_2026/view",
+  "examName":"অর্ধবার্ষিক",
+  "calendarPdf": "https://drive.google.com/file/d/1zFog8hW8CTZtDNXvBbLPaxS2pecTlEHv/view?usp=sharing",
   "classes": [
     {
       "class": "৬ষ্ঠ শ্রেণি",
@@ -8,14 +9,36 @@
       "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_6/view",
       "subjects": [
         {
-          "subject": "বাংলা",
+           "subject": "বাংলা ",
           "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_1/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_1/view"
-        },
+          "textbookParts": [
+            {
+              "name": "চারুপাঠ",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_BANGLA1/view"
+            },
+            {
+              "name": "আনন্দপাঠ",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_BANGLA2/view"
+            },
+            {
+              "name": "বাংলা ব্যাকরন ও নির্মিতি",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_BANGLA2/view"
+            }
+          ]
+        }, 
         {
-          "subject": "ইংরেজি",
+         "subject": "English",
           "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_2/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_2/view"
+          "textbookParts": [
+            {
+              "name": "English For Today",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_ENGLISH1/view"
+            },
+            {
+              "name": "English Grammar and Composition",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_ENGLISH2/view"
+            }
+          ]
         },
         {
           "subject": "গণিত",
@@ -28,12 +51,17 @@
           "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_4/view"
         },
         {
-          "subject": "সমাজ বিজ্ঞান",
+          "subject": "বাংলাদেশ ও বিশ্বপরিচয়",
           "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_5/view",
           "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_5/view"
         },
         {
-          "subject": "ধর্ম শিক্ষা",
+          "subject": "ইসলাম শিক্ষা",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_6/view"
+        },
+          {
+          "subject": "হিন্দুধর্ম শিক্ষা",
           "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
           "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_6/view"
         },
@@ -43,108 +71,162 @@
           "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_7/view"
         },
         {
-          "subject": "শারীরিক শিক্ষা",
+          "subject": "কৃষি শিক্ষা",
           "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_8/view",
           "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_8/view"
         }
       ],
       "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_6/view"
     },
-    {
+        {
       "class": "৭ম শ্রেণি",
       "hasGroups": false,
-      "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_7/view",
+      "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_6/view",
       "subjects": [
         {
-          "subject": "বাংলা",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_7_1/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_7_1/view"
-        },
+           "subject": "বাংলা ",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_1/view",
+          "textbookParts": [
+            {
+              "name": "সপ্তবর্ণা",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_BANGLA1/view"
+            },
+            {
+              "name": "আনন্দপাঠ",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_BANGLA2/view"
+            },
+            {
+              "name": "বাংলা ব্যাকরন ও নির্মিতি",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_BANGLA2/view"
+            }
+          ]
+        }, 
         {
-          "subject": "ইংরেজি",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_7_2/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_7_2/view"
+         "subject": "English",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_2/view",
+          "textbookParts": [
+            {
+              "name": "English For Today",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_ENGLISH1/view"
+            },
+            {
+              "name": "English Grammar and Composition",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_ENGLISH2/view"
+            }
+          ]
         },
         {
           "subject": "গণিত",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_7_3/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_7_3/view"
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_3/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_3/view"
         },
         {
           "subject": "বিজ্ঞান",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_7_4/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_7_4/view"
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_4/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_4/view"
         },
         {
-          "subject": "সমাজ বিজ্ঞান",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_7_5/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_7_5/view"
+          "subject": "বাংলাদেশ ও বিশ্বপরিচয়",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_5/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_5/view"
         },
         {
-          "subject": "ধর্ম শিক্ষা",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_7_6/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_7_6/view"
+          "subject": "ইসলাম শিক্ষা",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_6/view"
+        },
+          {
+          "subject": "হিন্দুধর্ম শিক্ষা",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_6/view"
         },
         {
           "subject": "তথ্য ও যোগাযোগ প্রযুক্তি",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_7_7/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_7_7/view"
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_7/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_7/view"
         },
         {
-          "subject": "শারীরিক শিক্ষা",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_7_8/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_7_8/view"
+          "subject": "কৃষি শিক্ষা",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_8/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_8/view"
         }
       ],
-      "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_7/view"
+      "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_6/view"
     },
-    {
+        {
       "class": "৮ম শ্রেণি",
       "hasGroups": false,
-      "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_8/view",
+      "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_6/view",
       "subjects": [
         {
-          "subject": "বাংলা",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_8_1/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_8_1/view"
-        },
+           "subject": "বাংলা ",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_1/view",
+          "textbookParts": [
+            {
+              "name": "সাহিত্য-কণিকা",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_BANGLA1/view"
+            },
+            {
+              "name": "আনন্দপাঠ",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_BANGLA2/view"
+            },
+            {
+              "name": "বাংলা ব্যাকরন ও নির্মিতি",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_BANGLA2/view"
+            }
+          ]
+        }, 
         {
-          "subject": "ইংরেজি",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_8_2/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_8_2/view"
+         "subject": "English",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_2/view",
+          "textbookParts": [
+            {
+              "name": "English For Today",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_ENGLISH1/view"
+            },
+            {
+              "name": "English Grammar and Composition",
+              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_ENGLISH2/view"
+            }
+          ]
         },
         {
           "subject": "গণিত",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_8_3/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_8_3/view"
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_3/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_3/view"
         },
         {
           "subject": "বিজ্ঞান",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_8_4/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_8_4/view"
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_4/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_4/view"
         },
         {
-          "subject": "সমাজ বিজ্ঞান",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_8_5/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_8_5/view"
+          "subject": "বাংলাদেশ ও বিশ্বপরিচয়",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_5/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_5/view"
         },
         {
-          "subject": "ধর্ম শিক্ষা",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_8_6/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_8_6/view"
+          "subject": "ইসলাম শিক্ষা",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_6/view"
+        },
+        {
+          "subject": "হিন্দুধর্ম শিক্ষা",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_6/view"
         },
         {
           "subject": "তথ্য ও যোগাযোগ প্রযুক্তি",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_8_7/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_8_7/view"
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_7/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_7/view"
         },
         {
-          "subject": "শারীরিক শিক্ষা",
-          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_8_8/view",
-          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_8_8/view"
+          "subject": "কৃষি শিক্ষা",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_8/view",
+          "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_6_8/view"
         }
       ],
-      "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_8/view"
+      "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_6/view"
     },
     {
       "class": "৯ম শ্রেণি",
@@ -154,39 +236,86 @@
           "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_9_SCI/view",
           "subjects": [
             {
-              "subject": "বাংলা",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_1/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_SCI_1/view"
+           "subject": "বাংলা ",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_1/view",
+          "textbookParts": [
+            {
+              "name": "বাংলা সাহিত্য",
+              "textbookPdf": "https://drive.google.com/file/d/1yjdxHcyFeQLBKLD8tykuqGABh_CaCXIn/view"
             },
             {
-              "subject": "ইংরেজি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_2/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_SCI_2/view"
+              "name": "বাংলা সহপাঠ",
+              "textbookPdf": "https://drive.google.com/file/d/1NqVcm3tt4olBGRPqi_tVksF__yknMNL8/view"
             },
             {
-              "subject": "উচ্চতর গণিত",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_3/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_SCI_3/view"
+              "name": "বাংলা ব্যাকরন ও নির্মিতি",
+              "textbookPdf": "https://drive.google.com/file/d/1yqoG73PYj6F8xlB-WTNfGSUk9Yf1z_tR/view"
+            }
+          ]
+        }, 
+        {
+         "subject": "English",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_2/view",
+          "textbookParts": [
+            {
+              "name": "English For Today",
+              "textbookPdf": "https://drive.google.com/file/d/119HUFSrDZ9GrG_cLGAgVVzM4XMPkA_1g/view"
+            },
+            {
+              "name": "English Grammar and Composition",
+              "textbookPdf": "https://drive.google.com/file/d/1bcIWidHEPsNpwx4Q9EXHdCbFA6HBQWbr/view"
+            }
+          ]
+        },
+            {
+              "subject": "গণিত",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_3/view",
+              "textbookPdf": "https://drive.google.com/file/d/1-Dj-9Y1Q79AWN7fViMR8fj4jvzDVNYYl/view"
             },
             {
               "subject": "পদার্থবিজ্ঞান",
               "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_4/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_SCI_4/view"
+              "textbookPdf": "https://drive.google.com/file/d/13P5E08HcNbpALj8-aC-RUCy0d3iwodet/view"
             },
             {
               "subject": "রসায়ন",
               "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_5/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_SCI_5/view"
+              "textbookPdf": "https://drive.google.com/file/d/1lbgge3uWpQmuHOBvlxJ4AuPP2Na1RYQ8/view"
             },
             {
               "subject": "জীববিজ্ঞান",
               "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_6/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_SCI_6/view"
+              "textbookPdf": "https://drive.google.com/file/d/11WRMSWpqi4KtgxClDCBXely2XdiAhoju/view"
+            },
+            {
+              "subject": "উচ্চতর গণিত",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_3/view",
+              "textbookPdf": "https://drive.google.com/file/d/18osCGwa0nHp-q3XgkjEFcoBqteORdiXE/view"
+            },
+            {
+              "subject": "বাংলাদেশ ও বিশ্বপরিচয়",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_5/view",
+              "textbookPdf": "https://drive.google.com/file/d/1y8nVlBXO8JA7yCVka_kaf2xFQZl5alS2/view"
+            },
+            {
+              "subject": "ইসলাম শিক্ষা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+              "textbookPdf": "https://drive.google.com/file/d/1-2tcr1JJFEB56yOlVhqRpssKJOIaXNM6/view"
+            },
+            {
+              "subject": "হিন্দুধর্ম শিক্ষা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+              "textbookPdf": "https://drive.google.com/file/d/1hoqjWrhNdcWEcOmzX5x9-g9Zeav85RTl/view"
             },
             {
               "subject": "তথ্য ও যোগাযোগ প্রযুক্তি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_7/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_SCI_7/view"
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_7/view",
+              "textbookPdf": "https://drive.google.com/file/d/1jgAhqSmR6zXZzcSr0fpkWbcw3_07pPGe/view"
+            },
+            {
+              "subject": "কৃষি শিক্ষা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_8/view",
+              "textbookPdf": "https://drive.google.com/file/d/1vcbOBJYqqH9RrWM7q1FTSAWkFwhrhSwj/view"
             }
           ],
           "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_9_SCI/view"
@@ -195,203 +324,260 @@
           "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_9_HUM/view",
           "subjects": [
             {
-              "subject": "বাংলা",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_HUM_1/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_HUM_1/view"
+           "subject": "বাংলা ",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_1/view",
+          "textbookParts": [
+            {
+              "name": "বাংলা সাহিত্য",
+              "textbookPdf": "https://drive.google.com/file/d/1yjdxHcyFeQLBKLD8tykuqGABh_CaCXIn/view"
             },
             {
-              "subject": "ইংরেজি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_HUM_2/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_HUM_2/view"
+              "name": "বাংলা সহপাঠ",
+              "textbookPdf": "https://drive.google.com/file/d/1NqVcm3tt4olBGRPqi_tVksF__yknMNL8/view"
             },
             {
-              "subject": "ইতিহাস",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_HUM_3/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_HUM_3/view"
+              "name": "বাংলা ব্যাকরন ও নির্মিতি",
+              "textbookPdf": "https://drive.google.com/file/d/1yqoG73PYj6F8xlB-WTNfGSUk9Yf1z_tR/view"
+            }
+          ]
+        }, 
+        {
+          "subject": "English",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_2/view",
+          "textbookParts": [
+            {
+              "name": "English For Today",
+              "textbookPdf": "https://drive.google.com/file/d/119HUFSrDZ9GrG_cLGAgVVzM4XMPkA_1g/view"
             },
             {
-              "subject": "ভূগোল",
+              "name": "English Grammar and Composition",
+              "textbookPdf": "https://drive.google.com/file/d/1bcIWidHEPsNpwx4Q9EXHdCbFA6HBQWbr/view"
+            }
+          ]
+        },
+            {
+              "subject": "গণিত",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_3/view",
+              "textbookPdf": "https://drive.google.com/file/d/1-Dj-9Y1Q79AWN7fViMR8fj4jvzDVNYYl/view"
+            },
+            {
+              "subject": "ভূগোল ও পরিবেশ",
               "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_HUM_4/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_HUM_4/view"
+              "textbookPdf": "https://drive.google.com/file/d/1IBxZA_tZ8Ayhcm0s7IAOXaju0iFt2Xsc/view"
             },
             {
-              "subject": "পৌরনীতি",
+              "subject": "পৌরনীতি ও নাগরিকতা",
               "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_HUM_5/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_HUM_5/view"
+              "textbookPdf": "https://drive.google.com/file/d/1h5OQIDlC4TuOQjbaqlTVXa7QKUhAAAla/view"
+            },
+            {
+              "subject": "বাংলাদেশের ইতিহাস ও বিশ্বসভ্যতা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_5/view",
+              "textbookPdf": "https://drive.google.com/file/d/1fIva2037ZxRmu3kZRgRevoWt18yBo_22/view"
             },
             {
               "subject": "অর্থনীতি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_HUM_6/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_HUM_6/view"
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_HUM_6/view",
+              "textbookPdf": "https://drive.google.com/file/d/1pr8PKw5S_eBcmwzBMmIzmsuqfjTX0iTo/view"
+            },
+            {
+              "subject": "বিজ্ঞান",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_4/view",
+              "textbookPdf": "https://drive.google.com/file/d/1AYg7uY_WjVYJmoskhb0-D58iFPvgwmpJ/view"
+            },
+            {
+              "subject": "ইসলাম শিক্ষা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+              "textbookPdf": "https://drive.google.com/file/d/1-2tcr1JJFEB56yOlVhqRpssKJOIaXNM6/view"
+            },
+            {
+              "subject": "হিন্দুধর্ম শিক্ষা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+              "textbookPdf": "https://drive.google.com/file/d/1hoqjWrhNdcWEcOmzX5x9-g9Zeav85RTl/view"
             },
             {
               "subject": "তথ্য ও যোগাযোগ প্রযুক্তি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_HUM_7/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_HUM_7/view"
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_7/view",
+              "textbookPdf": "https://drive.google.com/file/d/1jgAhqSmR6zXZzcSr0fpkWbcw3_07pPGe/view"
             }
           ],
           "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_9_HUM/view"
-        },
-        "ব্যবসায় শিক্ষা": {
-          "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_9_BUS/view",
-          "subjects": [
-            {
-              "subject": "বাংলা",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_BUS_1/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_BUS_1/view"
-            },
-            {
-              "subject": "ইংরেজি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_BUS_2/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_BUS_2/view"
-            },
-            {
-              "subject": "হিসাববিজ্ঞান",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_BUS_3/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_BUS_3/view"
-            },
-            {
-              "subject": "ব্যবসায় উদ্যোগ",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_BUS_4/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_BUS_4/view"
-            },
-            {
-              "subject": "ফিন্যান্স ও ব্যাংকিং",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_BUS_5/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_BUS_5/view"
-            },
-            {
-              "subject": "তথ্য ও যোগাযোগ প্রযুক্তি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_BUS_6/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_9_BUS_6/view"
-            }
-          ],
-          "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_9_BUS/view"
         }
       }
     },
     {
       "class": "১০ম শ্রেণি",
       "hasGroups": true,
-      "groups": {
-        "বিজ্ঞান": {
-          "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_10_SCI/view",
+              "বিজ্ঞান": {
+          "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_9_SCI/view",
           "subjects": [
             {
-              "subject": "বাংলা",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_SCI_1/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_SCI_1/view"
+           "subject": "বাংলা ",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_1/view",
+          "textbookParts": [
+            {
+              "name": "বাংলা সাহিত্য",
+              "textbookPdf": "https://drive.google.com/file/d/1yjdxHcyFeQLBKLD8tykuqGABh_CaCXIn/view"
             },
             {
-              "subject": "ইংরেজি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_SCI_2/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_SCI_2/view"
+              "name": "বাংলা সহপাঠ",
+              "textbookPdf": "https://drive.google.com/file/d/1NqVcm3tt4olBGRPqi_tVksF__yknMNL8/view"
             },
             {
-              "subject": "উচ্চতর গণিত",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_SCI_3/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_SCI_3/view"
+              "name": "বাংলা ব্যাকরন ও নির্মিতি",
+              "textbookPdf": "https://drive.google.com/file/d/1yqoG73PYj6F8xlB-WTNfGSUk9Yf1z_tR/view"
+            }
+          ]
+        }, 
+        {
+         "subject": "English",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_2/view",
+          "textbookParts": [
+            {
+              "name": "English For Today",
+              "textbookPdf": "https://drive.google.com/file/d/119HUFSrDZ9GrG_cLGAgVVzM4XMPkA_1g/view"
+            },
+            {
+              "name": "English Grammar and Composition",
+              "textbookPdf": "https://drive.google.com/file/d/1bcIWidHEPsNpwx4Q9EXHdCbFA6HBQWbr/view"
+            }
+          ]
+        },
+            {
+              "subject": "গণিত",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_3/view",
+              "textbookPdf": "https://drive.google.com/file/d/1-Dj-9Y1Q79AWN7fViMR8fj4jvzDVNYYl/view"
             },
             {
               "subject": "পদার্থবিজ্ঞান",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_SCI_4/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_SCI_4/view"
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_4/view",
+              "textbookPdf": "https://drive.google.com/file/d/13P5E08HcNbpALj8-aC-RUCy0d3iwodet/view"
             },
             {
               "subject": "রসায়ন",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_SCI_5/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_SCI_5/view"
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_5/view",
+              "textbookPdf": "https://drive.google.com/file/d/1lbgge3uWpQmuHOBvlxJ4AuPP2Na1RYQ8/view"
             },
             {
               "subject": "জীববিজ্ঞান",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_SCI_6/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_SCI_6/view"
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_6/view",
+              "textbookPdf": "https://drive.google.com/file/d/11WRMSWpqi4KtgxClDCBXely2XdiAhoju/view"
+            },
+            {
+              "subject": "উচ্চতর গণিত",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_SCI_3/view",
+              "textbookPdf": "https://drive.google.com/file/d/18osCGwa0nHp-q3XgkjEFcoBqteORdiXE/view"
+            },
+            {
+              "subject": "বাংলাদেশ ও বিশ্বপরিচয়",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_5/view",
+              "textbookPdf": "https://drive.google.com/file/d/1y8nVlBXO8JA7yCVka_kaf2xFQZl5alS2/view"
+            },
+            {
+              "subject": "ইসলাম শিক্ষা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+              "textbookPdf": "https://drive.google.com/file/d/1-2tcr1JJFEB56yOlVhqRpssKJOIaXNM6/view"
+            },
+            {
+              "subject": "হিন্দুধর্ম শিক্ষা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+              "textbookPdf": "https://drive.google.com/file/d/1hoqjWrhNdcWEcOmzX5x9-g9Zeav85RTl/view"
             },
             {
               "subject": "তথ্য ও যোগাযোগ প্রযুক্তি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_SCI_7/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_SCI_7/view"
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_7/view",
+              "textbookPdf": "https://drive.google.com/file/d/1jgAhqSmR6zXZzcSr0fpkWbcw3_07pPGe/view"
+            },
+            {
+              "subject": "কৃষি শিক্ষা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_8/view",
+              "textbookPdf": "https://drive.google.com/file/d/1vcbOBJYqqH9RrWM7q1FTSAWkFwhrhSwj/view"
             }
           ],
-          "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_10_SCI/view"
+          "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_9_SCI/view"
         },
         "মানবিক": {
-          "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_10_HUM/view",
+          "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_9_HUM/view",
           "subjects": [
             {
-              "subject": "বাংলা",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_HUM_1/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_HUM_1/view"
+           "subject": "বাংলা ",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_1/view",
+          "textbookParts": [
+            {
+              "name": "বাংলা সাহিত্য",
+              "textbookPdf": "https://drive.google.com/file/d/1yjdxHcyFeQLBKLD8tykuqGABh_CaCXIn/view"
             },
             {
-              "subject": "ইংরেজি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_HUM_2/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_HUM_2/view"
+              "name": "বাংলা সহপাঠ",
+              "textbookPdf": "https://drive.google.com/file/d/1NqVcm3tt4olBGRPqi_tVksF__yknMNL8/view"
             },
             {
-              "subject": "ইতিহাস",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_HUM_3/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_HUM_3/view"
+              "name": "বাংলা ব্যাকরন ও নির্মিতি",
+              "textbookPdf": "https://drive.google.com/file/d/1yqoG73PYj6F8xlB-WTNfGSUk9Yf1z_tR/view"
+            }
+          ]
+        }, 
+        {
+          "subject": "English",
+          "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_2/view",
+          "textbookParts": [
+            {
+              "name": "English For Today",
+              "textbookPdf": "https://drive.google.com/file/d/119HUFSrDZ9GrG_cLGAgVVzM4XMPkA_1g/view"
             },
             {
-              "subject": "ভূগোল",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_HUM_4/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_HUM_4/view"
+              "name": "English Grammar and Composition",
+              "textbookPdf": "https://drive.google.com/file/d/1bcIWidHEPsNpwx4Q9EXHdCbFA6HBQWbr/view"
+            }
+          ]
+        },
+            {
+              "subject": "গণিত",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_3/view",
+              "textbookPdf": "https://drive.google.com/file/d/1-Dj-9Y1Q79AWN7fViMR8fj4jvzDVNYYl/view"
             },
             {
-              "subject": "পৌরনীতি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_HUM_5/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_HUM_5/view"
+              "subject": "ভূগোল ও পরিবেশ",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_HUM_4/view",
+              "textbookPdf": "https://drive.google.com/file/d/1IBxZA_tZ8Ayhcm0s7IAOXaju0iFt2Xsc/view"
+            },
+            {
+              "subject": "পৌরনীতি ও নাগরিকতা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_9_HUM_5/view",
+              "textbookPdf": "https://drive.google.com/file/d/1h5OQIDlC4TuOQjbaqlTVXa7QKUhAAAla/view"
+            },
+            {
+              "subject": "বাংলাদেশের ইতিহাস ও বিশ্বসভ্যতা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_5/view",
+              "textbookPdf": "https://drive.google.com/file/d/1fIva2037ZxRmu3kZRgRevoWt18yBo_22/view"
             },
             {
               "subject": "অর্থনীতি",
               "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_HUM_6/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_HUM_6/view"
+              "textbookPdf": "https://drive.google.com/file/d/1pr8PKw5S_eBcmwzBMmIzmsuqfjTX0iTo/view"
+            },
+            {
+              "subject": "বিজ্ঞান",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_4/view",
+              "textbookPdf": "https://drive.google.com/file/d/1AYg7uY_WjVYJmoskhb0-D58iFPvgwmpJ/view"
+            },
+            {
+              "subject": "ইসলাম শিক্ষা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+              "textbookPdf": "https://drive.google.com/file/d/1-2tcr1JJFEB56yOlVhqRpssKJOIaXNM6/view"
+            },
+            {
+              "subject": "হিন্দুধর্ম শিক্ষা",
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_6/view",
+              "textbookPdf": "https://drive.google.com/file/d/1hoqjWrhNdcWEcOmzX5x9-g9Zeav85RTl/view"
             },
             {
               "subject": "তথ্য ও যোগাযোগ প্রযুক্তি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_HUM_7/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_HUM_7/view"
+              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_6_7/view",
+              "textbookPdf": "https://drive.google.com/file/d/1jgAhqSmR6zXZzcSr0fpkWbcw3_07pPGe/view"
             }
           ],
-          "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_10_HUM/view"
-        },
-        "ব্যবসায় শিক্ষা": {
-          "routinePdf": "https://drive.google.com/file/d/DUMMY_ROUTINE_10_BUS/view",
-          "subjects": [
-            {
-              "subject": "বাংলা",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_BUS_1/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_BUS_1/view"
-            },
-            {
-              "subject": "ইংরেজি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_BUS_2/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_BUS_2/view"
-            },
-            {
-              "subject": "হিসাববিজ্ঞান",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_BUS_3/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_BUS_3/view"
-            },
-            {
-              "subject": "ব্যবসায় উদ্যোগ",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_BUS_4/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_BUS_4/view"
-            },
-            {
-              "subject": "ফিন্যান্স ও ব্যাংকিং",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_BUS_5/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_BUS_5/view"
-            },
-            {
-              "subject": "তথ্য ও যোগাযোগ প্রযুক্তি",
-              "syllabusPdf": "https://drive.google.com/file/d/DUMMY_SYL_10_BUS_6/view",
-              "textbookPdf": "https://drive.google.com/file/d/DUMMY_BOOK_10_BUS_6/view"
-            }
-          ],
-          "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_10_BUS/view"
-        }
+          "examRoutinePdf": "https://drive.google.com/file/d/DUMMY_EXAMROUTINE_9_HUM/view"
       }
     }
   ]

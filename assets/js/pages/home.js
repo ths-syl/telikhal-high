@@ -105,22 +105,25 @@ async function renderAboutAndMessages() {
   }
 }
 
-async function renderAchievements() {
-  const data = await fetchJSON("achievements.json");
-  const el = document.getElementById("achievements-grid");
+async function renderAchievementWidget() {
+  const el = document.getElementById("achievement-widget-body");
   if (!el) return;
-  if (!data) return showError(el);
 
-  const icons = { trophy: "🏆", medal: "🥇", star: "⭐", award: "🎖️" };
-  el.innerHTML = data
+  const photos = await fetchJSON("gallery.json");
+  if (!photos) return showError(el);
+
+  const achievementPhotos = photos
+    .filter((p) => p.category === "বিদ্যালয়ের অর্জন")
+    .sort((a, b) => parseBnDate(b.date) - parseBnDate(a.date))
+    .slice(0, 4);
+
+  el.innerHTML = achievementPhotos
     .map(
-      (a) => `
-    <div class="achievement-card reveal-on-scroll">
-      <div class="icon">${icons[a.icon] || "🏅"}</div>
-      <div class="year">${a.year}</div>
-      <h4>${a.title}</h4>
-      <p>${a.description}</p>
-    </div>`
+      (p) => `
+    <a class="achievement-mini-item" href="gallery.html?category=${encodeURIComponent(p.category)}">
+      <img src="${p.images[0].thumb}" alt="${p.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/100x100.png?text=🏆'">
+      <span>${p.title}</span>
+    </a>`
     )
     .join("");
   initScrollReveal(el);
@@ -222,8 +225,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHero();
   renderNewsTicker();
   renderAboutAndMessages();
-  renderAchievements();
+  renderAchievementWidget();
   renderNotableStudents();
   renderNotices();
-  initScrollReveal(document); // স্ট্যাটিক সেকশন (about-grid, message-card, sidebar) রিভিল করার জন্য
+  initScrollReveal(document); 
 });

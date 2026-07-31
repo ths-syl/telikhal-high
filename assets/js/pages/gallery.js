@@ -113,13 +113,13 @@ function galleryItemHTML(photo) {
   const first = photo.images[0];
   const countBadge = photo.images.length > 1 ? `<span class="gallery-count-badge">১/${photo.images.length}</span>` : "";
   return `
-    <figure class="gallery-item reveal-on-scroll" tabindex="0" data-id="${photo.id}" role="button" aria-label="${photo.title} - বড় করে দেখুন">
-      <img class="gallery-cycle-img" src="${first.thumb}" alt="${photo.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300.png?text=${encodeURIComponent(photo.category)}'">
+    <figure class="gallery-item reveal-on-scroll" tabindex="0" data-id="${photo.id}" role="button" aria-label="${photo.title || photo.category} - বড় করে দেখুন">
+      <img class="gallery-cycle-img" src="${first.thumb}" alt="${photo.title || photo.category}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300.png?text=${encodeURIComponent(photo.category)}'">
       ${countBadge}
       <figcaption class="overlay">
         <div>
-          <p>${photo.title}</p>
-          <time>${photo.date}</time>
+          <p>${photo.title || photo.category}</p>
+          ${photo.date ? `<time>${photo.date}</time>` : ""}
         </div>
       </figcaption>
     </figure>
@@ -163,7 +163,7 @@ function openLightbox(photo) {
       <div class="lightbox-content">
         <div class="lightbox-carousel">
           ${total > 1 ? `<button class="lightbox-nav prev" aria-label="আগের ছবি">&#10094;</button>` : ""}
-          <img src="${img.image}" alt="${photo.title}" onerror="this.src='https://via.placeholder.com/700x500.png?text=${encodeURIComponent(photo.category)}'">
+          <img src="${img.image}" alt="${photo.title || photo.category}" onerror="this.src='https://via.placeholder.com/700x500.png?text=${encodeURIComponent(photo.category)}'">
           ${total > 1 ? `<button class="lightbox-nav next" aria-label="পরের ছবি">&#10095;</button>` : ""}
         </div>
         ${
@@ -173,8 +173,8 @@ function openLightbox(photo) {
                 .join("")}</div>`
             : ""
         }
-        <h3>${photo.title}</h3>
-        <p class="meta">${photo.category} • ${photo.date}${total > 1 ? ` • ছবি ${toBn(index + 1)}/${toBn(total)}` : ""}</p>
+        <h3>${photo.title || photo.category}</h3>
+        <p class="meta">${photo.category}${photo.date ? ` • ${photo.date}` : ""}${total > 1 ? ` • ছবি ${toBn(index + 1)}/${toBn(total)}` : ""}</p>
       </div>
     `;
   }
@@ -251,6 +251,10 @@ async function initGallery() {
 
   allPhotos = photos;
   const categories = [...new Set(photos.map((p) => p.category))];
+  const urlCategory = new URLSearchParams(window.location.search).get("category");
+  if (urlCategory && categories.includes(urlCategory)) {
+  activeCategory = urlCategory;
+  }
   renderFilters(categories);
   renderGrid();
 }

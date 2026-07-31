@@ -1,7 +1,3 @@
-/**
- * সার্চ ইনপুটের মতো দ্রুত-repeated ইভেন্টে অতিরিক্ত রি-রেন্ডার এড়াতে debounce ব্যবহার হয়।
- * এতে মোবাইলে টাইপ করার সময় স্ক্রল/রেন্ডার স্মুথ থাকে।
- */
 function debounce(fn, delay = 250) {
   let timerId;
   return (...args) => {
@@ -9,16 +5,26 @@ function debounce(fn, delay = 250) {
     timerId = setTimeout(() => fn(...args), delay);
   };
 }
-
-/**
- * বাংলা সংখ্যার "DD-MM-YYYY" ফরম্যাটের তারিখকে সাজানোর জন্য সংখ্যায় (timestamp) রূপান্তর করে।
- * যেমন: "২০-০৭-২০২৬" -> Date timestamp
- */
 function parseBnDate(bnDateStr) {
+  if (!bnDateStr) return 0;
+
   const bnDigits = "০১২৩৪৫৬৭৮৯";
-  const enDateStr = bnDateStr.replace(/[০-৯]/g, (d) => bnDigits.indexOf(d));
+  const enDateStr = String(bnDateStr).replace(/[০-৯]/g, (d) => bnDigits.indexOf(d));
   const firstPart = enDateStr.split(" ")[0]; // রেঞ্জ ডেট হলে (যেমন "০৫-০৫-... থেকে ...") প্রথম তারিখ নেয়
-  const [day, month, year] = firstPart.split("-").map(Number);
+
+  if (!firstPart) return 0;
+
+  const segments = firstPart.split("-").map(Number);
+
+  // শুধু বছর দেওয়া থাকলে (যেমন "২০২৩") ঐ বছরের ১লা জানুয়ারি ধরে নেওয়া হয়
+  if (segments.length === 1) {
+    const year = segments[0];
+    if (!year || isNaN(year)) return 0;
+    return new Date(year, 0, 1).getTime();
+  }
+
+  const [day, month, year] = segments;
+  if (!year || isNaN(year)) return 0;
   return new Date(year, (month || 1) - 1, day || 1).getTime();
 }
 
