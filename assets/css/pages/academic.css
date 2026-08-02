@@ -166,3 +166,135 @@
   .pdf-resource-card { flex-direction: column; align-items: flex-start; }
   .pdf-link-btn { width: 100%; justify-content: center; }
 }
+
+/* ===================== Homework Tab ===================== */
+.homework-gate {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: flex-end;
+  margin-bottom: 1.2rem;
+}
+.homework-pin-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.homework-pin-row input {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  min-height: 44px;
+  min-width: 200px;
+}
+.homework-pin-row input:focus { outline: none; border-color: var(--color-sky-blue); }
+
+.form-error-box {
+  background: rgba(192, 57, 43, 0.08);
+  border: 1.5px solid var(--color-danger);
+  color: var(--color-danger);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  font-size: 0.88rem;
+  margin-bottom: 1.2rem;
+}
+
+.homework-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.homework-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 1.2rem;
+  border-left: 4px solid var(--color-amber);
+}
+.homework-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.homework-subject-badge {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-navy-deep);
+  background: var(--color-sky-light);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+}
+.homework-deadline {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--color-danger);
+  font-weight: 600;
+}
+.homework-details { font-size: 0.92rem; color: var(--color-ink); margin-bottom: 0.3rem; }
+.homework-assigned-on { font-family: var(--font-ui); font-size: 0.75rem; color: var(--color-ink-soft); }
+
+.homework-empty {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+}
+
+/* ---- হেডটিচার মাসিক রিপোর্ট ---- */
+.headteacher-report-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--color-border);
+}
+.report-status-note {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+  background: var(--color-limestone);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.2rem;
+}
+.report-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+.report-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+.report-subject-block { margin-bottom: 1rem; }
+.report-subject-block h4 {
+  font-size: 0.95rem;
+  color: var(--color-navy-deep);
+  margin-bottom: 0.5rem;
+}
+.report-subject-block .count-badge {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-paddy-green);
+  background: rgba(76,140,107,0.12);
+  padding: 0.15rem 0.55rem;
+  border-radius: 20px;
+  margin-left: 0.4rem;
+}
+.report-subject-block ul { padding-left: 1.2rem; }
+.report-subject-block li { font-size: 0.85rem; color: var(--color-ink-soft); margin-bottom: 0.3rem; }
+.report-download-btn { margin-top: 0.5rem; }
