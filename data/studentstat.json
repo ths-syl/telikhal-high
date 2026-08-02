@@ -1,80 +1,80 @@
 {
   "overview": {
-    "total": 335,
+    "total": 377,
     "boys": 163,
-    "girls": 172,
-    "scholarship": 113,
-    "feeWaiver": 68
+    "girls": 214,
+    "scholarship": 78,
+    "feeWaiver": { "fullFree": 5, "halfFree": null }
   },
   "classWise": [
     {
       "class": "৬ষ্ঠ",
-      "total": 84,
-      "boys": 40,
-      "girls": 44,
+      "total": 127,
+      "boys": 68,
+      "girls": 59,
       "religion": {
-        "মুসলিম": { "total": 69, "boys": 32, "girls": 37 },
-        "হিন্দু": { "total": 15, "boys": 8, "girls": 7 }
+        "মুসলিম": { "total": 121, "boys": 65, "girls": 56 },
+        "হিন্দু": { "total": 6, "boys": 3, "girls": 3 }
       },
-      "scholarship": { "total": 18, "boys": 9, "girls": 9 },
-      "feeWaiver": { "fullFree": 10, "halfFree": 6 }
+      "scholarship": { "total": 31, "boys": 11, "girls": 2 },
+      "feeWaiver": { "fullFree": 2, "halfFree": null }
     },
     {
       "class": "৭ম",
-      "total": 76,
-      "boys": 36,
-      "girls": 40,
+      "total": 70,
+      "boys": 34,
+      "girls": 36,
       "religion": {
-        "মুসলিম": { "total": 63, "boys": 30, "girls": 33 },
-        "হিন্দু": { "total": 13, "boys": 6, "girls": 7 }
+        "মুসলিম": { "total": 59, "boys": 27, "girls": 32 },
+        "হিন্দু": { "total": 11, "boys": 7, "girls": 4 }
       },
-      "scholarship": { "total": 20, "boys": 10, "girls": 10 },
-      "feeWaiver": { "fullFree": 8, "halfFree": 7 }
+      "scholarship": { "total": 29, "boys": 12, "girls": 17 },
+      "feeWaiver": { "fullFree":null , "halfFree": null }
     },
     {
       "class": "৮ম",
-      "total": 70,
-      "boys": 33,
-      "girls": 37,
+      "total": 69,
+      "boys": 27,
+      "girls": 42,
       "religion": {
-        "মুসলিম": { "total": 58, "boys": 27, "girls": 31 },
-        "হিন্দু": { "total": 12, "boys": 6, "girls": 6 }
+        "মুসলিম": { "total": 60, "boys": 21, "girls": 39 },
+        "হিন্দু": { "total": 9, "boys": 6, "girls": 3 }
       },
-      "scholarship": { "total": 22, "boys": 11, "girls": 11 },
-      "feeWaiver": { "fullFree": 9, "halfFree": 5 }
+      "scholarship": { "total": 35, "boys": 12, "girls": 23 },
+      "feeWaiver": { "fullFree":null , "halfFree": null }
     },
     {
       "class": "৯ম",
-      "total": 58,
-      "boys": 28,
-      "girls": 30,
+      "total": 66,
+      "boys": 27,
+      "girls": 39,
       "religion": {
-        "মুসলিম": { "total": 48, "boys": 23, "girls": 25 },
-        "হিন্দু": { "total": 10, "boys": 5, "girls": 5 }
+        "মুসলিম": { "total": 61, "boys": 24, "girls": 37 },
+        "হিন্দু": { "total": 5, "boys": 5, "girls": 5 }
       },
-      "scholarship": { "total": 27, "boys": 13, "girls": 14 },
-      "feeWaiver": { "fullFree": 12, "halfFree": 8 },
+      "scholarship": { "total": 28, "boys": 9, "girls": 19 },
+      "feeWaiver": { "fullFree":null , "halfFree":null  },
       "groupWise": {
-        "বিজ্ঞান": 24,
-        "মানবিক": 22,
-        "ব্যবসায় শিক্ষা": 12
+        "বিজ্ঞান": 5,
+        "মানবিক": 61,
+        "ব্যবসায় শিক্ষা": null
       }
     },
     {
       "class": "১০ম",
-      "total": 47,
-      "boys": 26,
-      "girls": 21,
+      "total": 45,
+      "boys": 18,
+      "girls": 27,
       "religion": {
-        "মুসলিম": { "total": 39, "boys": 22, "girls": 17 },
-        "হিন্দু": { "total": 8, "boys": 4, "girls": 4 }
+        "মুসলিম": { "total": 44, "boys": 17, "girls": 27 },
+        "হিন্দু": { "total": 1, "boys": 1, "girls": null }
       },
-      "scholarship": { "total": 26, "boys": 14, "girls": 12 },
-      "feeWaiver": { "fullFree": 11, "halfFree": 8 },
+      "scholarship": { "total": 21, "boys": 8, "girls": 13 },
+      "feeWaiver": { "fullFree": 3, "halfFree": null },
       "groupWise": {
-        "বিজ্ঞান": 19,
-        "মানবিক": 17,
-        "ব্যবসায় শিক্ষা": 11
+        "বিজ্ঞান": 5,
+        "মানবিক": 37,
+        "ব্যবসায় শিক্ষা": null
       }
     }
   ]
