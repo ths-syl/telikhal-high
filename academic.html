@@ -65,7 +65,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>একাডেমিক তথ্য</h1>
-    <p>ক্লাস রুটিন, বার্ষিক ক্যালেন্ডার, সিলেবাস ও পাঠ্যপুস্তক — সব গুগল ড্রাইভ পিডিএফ লিংকের মাধ্যমে</p>
+    <p>হোমওয়ার্ক,ক্লাস রুটিন, বার্ষিক ক্যালেন্ডার, সিলেবাস ও পাঠ্যপুস্তক </p> 
   </div>
 </section>
 
@@ -74,14 +74,56 @@
 
     <!-- Tabs -->
     <div class="academic-tabs">
-      <button class="academic-tab-btn active" data-target="panel-routine">রুটিন</button>
+      <button class="academic-tab-btn active" data-target="panel-homework">হোমওয়ার্ক</button>
+      <button class="academic-tab-btn" data-target="panel-routine">রুটিন</button>
       <button class="academic-tab-btn" data-target="panel-calendar">বার্ষিক ক্যালেন্ডার</button>
       <button class="academic-tab-btn" data-target="panel-syllabus">সিলেবাস</button>
       <button class="academic-tab-btn" data-target="panel-textbook">পাঠ্যপুস্তক</button>
     </div>
 
-    <!-- ===== Routine Panel (২টা সাব-ট্যাব: ক্লাস রুটিন ও পরীক্ষার রুটিন) ===== -->
-    <div class="academic-panel active" id="panel-routine">
+
+            <!-- ===== Homework Panel ===== -->
+    <div class="academic-panel active" id="panel-homework">
+
+      <!-- ক্লাস-পিন দিয়ে হোমওয়ার্ক দেখা -->
+      <form class="homework-gate" id="homework-gate-form">
+        <div class="academic-selector">
+          <select class="academic-select" id="hw-class" required>
+            <option value="৬ষ্ঠ">৬ষ্ঠ</option>
+            <option value="৭ম">৭ম</option>
+            <option value="৮ম">৮ম</option>
+            <option value="৯ম">৯ম</option>
+            <option value="১০ম">১০ম</option>
+          </select>
+          <select class="academic-select" id="hw-group" style="display:none;">
+            <option value="বিজ্ঞান">বিজ্ঞান</option>
+            <option value="মানবিক">মানবিক</option>
+            <option value="ব্যবসায় শিক্ষা">ব্যবসায় শিক্ষা</option>
+          </select>
+        </div>
+        <div class="homework-pin-row">
+          <input type="password" id="hw-pin" inputmode="numeric" maxlength="4" placeholder="PIN " required>
+          <button type="submit" class="btn btn-primary">হোমওয়ার্ক দেখুন</button>
+        </div>
+      </form>
+      <div class="form-error-box" id="homework-error" style="display:none;"></div>
+      <div class="homework-list" id="homework-list-wrap"></div>
+
+      <div class="headteacher-report-section">
+        <div class="section-title" style="text-align:left; margin-bottom:1rem;"><h3><span>হোমওয়ার্ক রিপোর্ট(প্রধান শিক্ষকের জন্য সংরক্ষিত)</span></h3></div>
+        <form class="homework-gate" id="report-gate-form">
+          <div class="homework-pin-row">
+            <input type="password" id="report-pin" inputmode="numeric" maxlength="6" required>
+            <button type="submit" class="btn btn-outline">রিপোর্ট দেখুন</button>
+          </div>
+        </form>
+        <div class="form-error-box" id="report-error" style="display:none;"></div>
+        <div id="report-wrap"></div>
+      </div>
+    </div>
+    
+    <!-- ===== Routine Panel ===== -->
+    <div class="academic-panel" id="panel-routine">
       <div class="academic-subtabs">
         <button class="academic-subtab-btn active" data-subtarget="subpanel-class-routine">ক্লাস রুটিন</button>
         <button class="academic-subtab-btn" data-subtarget="subpanel-exam-routine">পরীক্ষার রুটিন</button>
