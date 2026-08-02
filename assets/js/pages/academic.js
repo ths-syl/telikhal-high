@@ -273,9 +273,169 @@ async function initAcademicPage() {
   initCalendarHighlights();
 }
 
+const HOMEWORK_API_URL = "https://script.google.com/macros/s/আপনার_হোমওয়ার্ক_ডিপ্লয়মেন্ট_আইডি/exec";
+
+function initHomeworkClassToggle() {
+  const classSelect = document.getElementById("hw-class");
+  const groupSelect = document.getElementById("hw-group");
+  if (!classSelect || !groupSelect) return;
+
+  function toggle() {
+    const needsGroup = classSelect.value === "৯ম" || classSelect.value === "১০ম";
+    groupSelect.style.display = needsGroup ? "" : "none";
+  }
+  classSelect.addEventListener("change", toggle);
+  toggle();
+}
+
+function homeworkCardHTML(h) {
+  return `
+    <div class="homework-card reveal-on-scroll">
+      <div class="homework-card-top">
+        <span class="homework-subject-badge">${h.subject}</span>
+        <span class="homework-deadline">শেষ তারিখ: ${h.deadline}</span>
+      </div>
+      <p class="homework-details">${h.details}</p>
+      <p class="homework-assigned-on">দেওয়া হয়েছে: ${h.assignedOn}</p>
+    </div>
+  `;
+}
+
+async function handleHomeworkSubmit(e) {
+  e.preventDefault();
+  const errorEl = document.getElementById("homework-error");
+  const listEl = document.getElementById("homework-list-wrap");
+  errorEl.style.display = "none";
+  listEl.innerHTML = "";
+
+  const classSelect = document.getElementById("hw-class");
+  const groupSelect = document.getElementById("hw-group");
+  const needsGroup = classSelect.value === "৯ম" || classSelect.value === "১০ম";
+  const classKey = needsGroup ? `${classSelect.value}-${groupSelect.value}` : classSelect.value;
+  const pin = document.getElementById("hw-pin").value.trim();
+
+  try {
+    const params = new URLSearchParams({ action: "homework", class: classKey, pin });
+    const response = await fetch(`${HOMEWORK_API_URL}?${params.toString()}`);
+    const data = await response.json();
+
+    if (!data.success) {
+      errorEl.textContent = data.message || "হোমওয়ার্ক পাওয়া যায়নি।";
+      errorEl.style.display = "block";
+      return;
+    }
+
+    if (data.homework.length === 0) {
+      listEl.innerHTML = `<p class="homework-empty">📭 বর্তমানে কোনো পেন্ডিং হোমওয়ার্ক নেই।</p>`;
+    } else {
+      listEl.innerHTML = data.homework.map(homeworkCardHTML).join("");
+      initScrollReveal(listEl);
+    }
+  } catch (err) {
+    errorEl.textContent = "সার্ভারের সাথে সংযোগ করা যায়নি। পরে আবার চেষ্টা করুন।";
+    errorEl.style.display = "block";
+  }
+}
+
+function reportCardHTML(report) {
+  const subjects = Object.entries(report.summary);
+  const subjectBlocks = subjects
+    .map(
+      ([subject, entries]) => `
+    <div class="report-subject-block">
+      <h4>${subject}<span class="count-badge">${entries.length}টি</span></h4>
+      <ul>
+        ${entries.map((en) => `<li>${en.date} — ${en.class} — ${en.details}</li>`).join("")}
+      </ul>
+    </div>
+  `
+    )
+    .join("");
+
+  return `
+    <div class="report-card reveal-on-scroll">
+      <div class="report-card-header">
+        <span>মেয়াদ: ${report.periodStart} থেকে ${report.periodEnd}</span>
+        <span>তৈরি হয়েছে: ${report.generatedDate}</span>
+      </div>
+      ${subjectBlocks}
+      <button class="btn btn-outline report-download-btn" data-report='${JSON.stringify(report).replace(/'/g, "&apos;")}'>⬇️ সামারি ডাউনলোড করুন</button>
+    </div>
+  `;
+}
+
+function downloadReportAsText(report) {
+  let text = `হোমওয়ার্ক মাসিক রিপোর্ট\nমেয়াদ: ${report.periodStart} থেকে ${report.periodEnd}\nতৈরি হয়েছে: ${report.generatedDate}\n\n`;
+  Object.entries(report.summary).forEach(([subject, entries]) => {
+    text += `${subject} (${entries.length}টি)\n`;
+    entries.forEach((en) => (text += `  - ${en.date} | ${en.class} | ${en.details}\n`));
+    text += "\n";
+  });
+
+  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `homework-report-${report.periodStart}-to-${report.periodEnd}.txt`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+async function handleReportSubmit(e) {
+  e.preventDefault();
+  const errorEl = document.getElementById("report-error");
+  const wrap = document.getElementById("report-wrap");
+  errorEl.style.display = "none";
+  wrap.innerHTML = "";
+
+  const pin = document.getElementById("report-pin").value.trim();
+
+  try {
+    const params = new URLSearchParams({ action: "report", pin });
+    const response = await fetch(`${HOMEWORK_API_URL}?${params.toString()}`);
+    const data = await response.json();
+
+    if (!data.success) {
+      errorEl.textContent = data.message || "রিপোর্ট পাওয়া যায়নি।";
+      errorEl.style.display = "block";
+      return;
+    }
+
+    let html = "";
+    if (!data.reportReady) {
+      html += `<p class="report-status-note">এখনো নতুন রিপোর্ট তৈরির সময় হয়নি — গত রিপোর্টের পর থেকে এন্ট্রি হয়েছে এমন ${data.entryDaysSoFar} দিন জমা হয়েছে, আরও ${data.entryDaysNeeded} দিন লাগবে।</p>`;
+    }
+    if (data.savedReports && data.savedReports.length > 0) {
+      html += [...data.savedReports].reverse().map(reportCardHTML).join("");
+    } else if (data.reportReady === false) {
+      html += `<p class="homework-empty">এখনো কোনো রিপোর্ট সেভ হয়নি।</p>`;
+    }
+
+    wrap.innerHTML = html;
+    initScrollReveal(wrap);
+
+    wrap.querySelectorAll(".report-download-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const report = JSON.parse(btn.dataset.report.replace(/&apos;/g, "'"));
+        downloadReportAsText(report);
+      });
+    });
+  } catch (err) {
+    errorEl.textContent = "সার্ভারের সাথে সংযোগ করা যায়নি। পরে আবার চেষ্টা করুন।";
+    errorEl.style.display = "block";
+  }
+}
+
+function initHomeworkTab() {
+  initHomeworkClassToggle();
+  document.getElementById("homework-gate-form").addEventListener("submit", handleHomeworkSubmit);
+  document.getElementById("report-gate-form").addEventListener("submit", handleReportSubmit);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderHeaderFooter();
   initTabs();
   initSubTabs();
   initAcademicPage();
+  initHomeworkTab();
 });
