@@ -273,7 +273,7 @@ async function initAcademicPage() {
   initCalendarHighlights();
 }
 
-const HOMEWORK_API_URL = "https://script.google.com/macros/s/আপনার_হোমওয়ার্ক_ডিপ্লয়মেন্ট_আইডি/exec";
+const HOMEWORK_API_URL = "https://script.google.com/macros/s/AKfycbzgvjvccarwi38tx4efvIPxbk5eFATxBIL-IkIRxKPAM6dqG2BKj_1DfdufagoItHflVw/exec";
 
 function initHomeworkClassToggle() {
   const classSelect = document.getElementById("hw-class");
