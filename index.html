@@ -2,8 +2,13 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
 <meta name="color-scheme" content="light">
+<script>
+  if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+    document.documentElement.classList.add('pwa-standalone');
+  }
+</script>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0E3A5C">
 <link rel="apple-touch-icon" href="assets/images/logo/icon-192.png">
