@@ -2,8 +2,13 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover">
 <meta name="color-scheme" content="light">
+<script>
+  if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+    document.documentElement.classList.add('pwa-standalone');
+  }
+</script>
 <title>ফটো গ্যালারি | তেলিখাল উচ্চ বিদ্যালয়</title>
 <meta name="description" content="তেলিখাল উচ্চ বিদ্যালয়ের বিভিন্ন অনুষ্ঠান ও কর্মসূচির ছবি">
 
