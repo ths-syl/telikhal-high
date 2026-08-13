@@ -4,6 +4,9 @@ import { openModal } from "../components/modal.js";
 import { initNavbar } from "../components/navbar.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
 import { initCountUp } from "../core/countUp.js";
+import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initOfflineStatus } from "../core/offlineStatus.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";
 
 const PAGE_SIZE = 8;
 let allStudents = [];
@@ -291,4 +294,7 @@ async function initStudents() {
 document.addEventListener("DOMContentLoaded", () => {
   renderHeaderFooter();
   initStudents();
+  initPwaTabbar();
+  initOfflineStatus();
+  initPullToRefresh();
 });
