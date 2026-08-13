@@ -1,6 +1,9 @@
 import { fetchJSON, showLoading, showError } from "../core/fetchData.js";
 import { initNavbar } from "../components/navbar.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
+import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initOfflineStatus } from "../core/offlineStatus.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";
 
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
@@ -76,4 +79,7 @@ async function initRegulations() {
 document.addEventListener("DOMContentLoaded", () => {
   renderHeaderFooter();
   initRegulations();
+  initPwaTabbar();
+  initOfflineStatus();
+  initPullToRefresh();
 });

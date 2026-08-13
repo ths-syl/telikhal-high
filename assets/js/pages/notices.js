@@ -2,6 +2,10 @@ import { fetchJSON, showLoading, showError } from "../core/fetchData.js";
 import { debounce, parseBnDate } from "../core/domUtils.js";
 import { initNavbar } from "../components/navbar.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
+import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initOfflineStatus } from "../core/offlineStatus.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";
+import { markNoticesSeen } from "../core/appBadge.js";
 
 const PAGE_SIZE = 6;
 let allNotices = [];
@@ -153,9 +157,13 @@ async function initNotices() {
   populateFilterOptions(notices);
   bindFilterEvents();
   renderList();
+  markNoticesSeen(allNotices);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   renderHeaderFooter();
   initNotices();
+  initPwaTabbar();
+  initOfflineStatus();
+  initPullToRefresh();
 });
