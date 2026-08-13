@@ -14,9 +14,9 @@
     "title": "বিতর্ক প্রতিযোগিতা",
     "date": null,
     "images": [
-      { "thumb": "assets/images/gallery/debate-1.webp", "image": "assets/images/gallery/debate-1.webp" }
-{ "thumb": "assets/images/gallery/debate-2.webp", "image": "assets/images/gallery/debate-2.webp" }
-{ "thumb": "assets/images/gallery/debate-3.webp", "image": "assets/images/gallery/debate-3.webp" }
+      { "thumb": "assets/images/gallery/debate-1.webp", "image": "assets/images/gallery/debate-1.webp" },
+{ "thumb": "assets/images/gallery/debate-2.webp", "image": "assets/images/gallery/debate-2.webp" },
+{ "thumb": "assets/images/gallery/debate-3.webp", "image": "assets/images/gallery/debate-3.webp" },
 { "thumb": "assets/images/gallery/debate-4.webp", "image": "assets/images/gallery/debate-4.webp" }
     ]
   },
