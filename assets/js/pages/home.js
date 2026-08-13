@@ -7,7 +7,8 @@ import { parseBnDate } from "../core/domUtils.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
 import { initPwaTabbar } from "../core/pwaTabbar.js";
 import { initOfflineStatus } from "../core/offlineStatus.js";
-import { initPullToRefresh } from "../core/pullToRefresh.js";import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";
+import { initPwaTabbar } from "../core/pwaTabbar.js";
 import { initOfflineStatus } from "../core/offlineStatus.js";
 import { initPullToRefresh } from "../core/pullToRefresh.js";
 
@@ -195,12 +196,6 @@ async function renderNewsTicker() {
   startTickerAnimation();
 }
 
-/**
- * CSS @keyframes এর বদলে requestAnimationFrame দিয়ে স্ক্রল করানো হয় —
- * এতে base.css এর গ্লোবাল prefers-reduced-motion override (যেটা সব CSS animation
- * বন্ধ করে দেয়, এবং কিছু dev-preview এনভায়রনমেন্টে ভুলবশত ট্রু হয়ে যায়) এর কারণে
- * টিকার আটকে/ফ্রিজ হয়ে থাকার সমস্যা হয় না।
- */
 function startTickerAnimation() {
   const track = document.getElementById("news-ticker-track");
   if (!track) return;
@@ -234,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderNotableStudents();
   renderNotices();
   initScrollReveal(document);
-		initPwaTabbar();
-		initOfflineStatus();
-		initPullToRefresh();
+  initPwaTabbar();
+  initOfflineStatus();
+  initPullToRefresh();
 });
