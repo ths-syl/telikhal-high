@@ -1,6 +1,9 @@
 import { fetchJSON } from "../core/fetchData.js";
 import { initNavbar } from "../components/navbar.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
+import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initOfflineStatus } from "../core/offlineStatus.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";
 
 /**
  * ⚠️  Google Apps Script Web App এর /exec 
@@ -291,4 +294,7 @@ function initForm() {
 document.addEventListener("DOMContentLoaded", () => {
   schoolInfoPromise = renderHeaderFooter();
   initForm();
+  initPwaTabbar();
+  initOfflineStatus();
+  initPullToRefresh();
 });
