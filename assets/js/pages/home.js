@@ -8,7 +8,7 @@ import { initScrollReveal } from "../core/scrollReveal.js";
 import { initPwaTabbar } from "../core/pwaTabbar.js";
 import { initOfflineStatus } from "../core/offlineStatus.js";
 import { initPullToRefresh } from "../core/pullToRefresh.js";
-
+import { updateAppBadge } from "../core/appBadge.js";
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
   const info = await fetchJSON("school-info.json");
@@ -167,6 +167,7 @@ async function renderNotices() {
   const data = await fetchJSON("notices.json");
   const el = document.getElementById("notice-widget-body");
   renderNoticeWidget(el, data);
+  updateAppBadge(data);
 }
 
 async function renderNewsTicker() {

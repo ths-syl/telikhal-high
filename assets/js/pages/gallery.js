@@ -2,6 +2,9 @@ import { fetchJSON, showLoading, showError } from "../core/fetchData.js";
 import { openModal } from "../components/modal.js";
 import { initNavbar } from "../components/navbar.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
+import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initOfflineStatus } from "../core/offlineStatus.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";
 
 const PAGE_SIZE = 8;
 let allPhotos = [];
@@ -262,4 +265,7 @@ async function initGallery() {
 document.addEventListener("DOMContentLoaded", () => {
   renderHeaderFooter();
   initGallery();
+  initPwaTabbar();
+  initOfflineStatus();
+  initPullToRefresh();
 });
