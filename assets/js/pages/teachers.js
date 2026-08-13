@@ -3,6 +3,10 @@ import { openModal } from "../components/modal.js";
 import { initNavbar } from "../components/navbar.js";
 import { bindAvatarFallbacks } from "../core/avatar.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
+import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initOfflineStatus } from "../core/offlineStatus.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";
+
 
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
@@ -163,4 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHeaderFooter();
   renderTeachers();
   renderCommittee();
+  initPwaTabbar();
+  initOfflineStatus();
+  initPullToRefresh();
 });
