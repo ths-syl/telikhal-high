@@ -1,6 +1,10 @@
 import { fetchJSON, showLoading, showError } from "../core/fetchData.js";
 import { initNavbar } from "../components/navbar.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
+import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initOfflineStatus } from "../core/offlineStatus.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";
+
 
 let academicData = null;
 const CLASS_ORDER = ["৬ষ্ঠ শ্রেণি", "৭ম শ্রেণি", "৮ম শ্রেণি", "৯ম শ্রেণি", "১০ম শ্রেণি"];
@@ -438,4 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSubTabs();
   initAcademicPage();
   initHomeworkTab();
+  initPwaTabbar();
+  initOfflineStatus();
+  initPullToRefresh();
 });
