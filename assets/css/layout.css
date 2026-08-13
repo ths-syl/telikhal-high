@@ -222,6 +222,7 @@
   padding-top: var(--safe-top);
 }
 .pwa-tabbar { display: none; }
+.pwa-standalone .nav-toggle { display: none; }
 
 .pwa-standalone .pwa-tabbar {
   display: flex;
@@ -247,5 +248,5 @@
 .pwa-tab-item span { font-size: 1.25rem; }
 .pwa-tab-item.active { color: var(--color-navy-deep); font-weight: 600; }
 
-/* কনটেন্ট যেন ট্যাব-বারের নিচে চাপা না পড়ে */
+
 .pwa-standalone body { padding-bottom: calc(58px + var(--safe-bottom)); }
