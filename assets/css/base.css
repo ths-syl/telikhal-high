@@ -41,6 +41,8 @@
 
   --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --container-max: 1200px;
+--safe-top: env(safe-area-inset-top, 0px);
+--safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 /* ---- Reset ---- */
