@@ -40,6 +40,8 @@
 <link rel="stylesheet" href="assets/css/pages/regulations.css">
 </head>
 <body>
+<div id="offline-banner" class="offline-banner" style="display:none;">📡 আপনি অফলাইনে আছেন — ইন্টারনেট সংযোগ নিশ্চিত করুন </div>
+<div id="ptr-indicator" class="ptr-indicator"><img src="assets/images/logo/school-logo.png" alt=""></div>
 
 <!-- ===================== Header ===================== -->
 <header class="site-header">
@@ -114,5 +116,10 @@
 
 <script type="module" src="assets/js/pages/regulations.js"></script>
 <script src="assets/js/core/registerSW.js"></script>
+<nav class="pwa-tabbar" aria-label="দ্রুত নেভিগেশন">
+  <a href="index.html" class="pwa-tab-item"><span>🏠</span><small>হোম</small></a>
+  <a href="notices.html" class="pwa-tab-item"><span>📢</span><small>নোটিশ</small></a>
+  <a href="academic.html" class="pwa-tab-item"><span>📚</span><small>একাডেমিক</small></a>
+  <a href="#" class="pwa-tab-item" id="pwa-menu-toggle"><span>☰</span><small>মেনু</small></a>
 </body>
 </html>
