@@ -5,6 +5,11 @@ import { initNavbar } from "../components/navbar.js";
 import { bindAvatarFallbacks } from "../core/avatar.js";
 import { parseBnDate } from "../core/domUtils.js";
 import { initScrollReveal } from "../core/scrollReveal.js";
+import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initOfflineStatus } from "../core/offlineStatus.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initOfflineStatus } from "../core/offlineStatus.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";
 
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
@@ -228,5 +233,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderAchievementWidget();
   renderNotableStudents();
   renderNotices();
-  initScrollReveal(document); 
+  initScrollReveal(document);
+		initPwaTabbar();
+		initOfflineStatus();
+		initPullToRefresh();
 });
