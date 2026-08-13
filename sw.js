@@ -1,4 +1,4 @@
-const CACHE_NAME = "telikhal-school-v1";
+const CACHE_NAME = "telikhal-school-v2";
 
 const CORE_ASSETS = [
   "index.html",

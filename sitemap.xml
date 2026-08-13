@@ -1,46 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="2.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tkhs.edu.bd/index.html</loc>
-<lastmod>2026-08-02</lastmod>
+<lastmod>2026-08-13</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tkhs.edu.bd/teachers.html</loc>
-<lastmod>2026-08-02</lastmod>
+<lastmod>2026-08-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tkhs.edu.bd/students.html</loc>
-<lastmod>2026-08-02</lastmod>
+<lastmod>2026-08-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tkhs.edu.bd/academic.html</loc>
-<lastmod>2026-08-02</lastmod>
+<lastmod>2026-08-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tkhs.edu.bd/notices.html</loc><lastmod>2026-08-02</lastmod>
+    <loc>https://tkhs.edu.bd/notices.html</loc><lastmod>2026-08-13</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tkhs.edu.bd/gallery.html</loc><lastmod>2026-08-02</lastmod>
+    <loc>https://tkhs.edu.bd/gallery.html</loc><lastmod>2026-08-13</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tkhs.edu.bd/regulations.html</loc>
-<lastmod>2026-08-02</lastmod>
+<lastmod>2026-08-13</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tkhs.edu.bd/admission.html</loc>
-<lastmod>2026-08-02</lastmod>
+<lastmod>2026-08-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tkhs.edu.bd/result.html</loc>
- <lastmod>2026-08-02</lastmod>   
+ <lastmod>2026-08-13</lastmod>   
 <priority>0.8</priority>
   </url>
 </urlset>
