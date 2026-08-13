@@ -1,5 +1,9 @@
 import { fetchJSON } from "../core/fetchData.js";
 import { initNavbar } from "../components/navbar.js";
+import { initPwaTabbar } from "../core/pwaTabbar.js";
+import { initOfflineStatus } from "../core/offlineStatus.js";
+import { initPullToRefresh } from "../core/pullToRefresh.js";
+
 
 async function renderHeaderFooter() {
   const config = await fetchJSON("site-config.json");
@@ -32,4 +36,9 @@ async function renderHeaderFooter() {
   initNavbar();
 }
 
-document.addEventListener("DOMContentLoaded", renderHeaderFooter);
+document.addEventListener("DOMContentLoaded", () => {
+  renderHeaderFooter();
+  initPwaTabbar();
+  initOfflineStatus();
+  initPullToRefresh();
+});
