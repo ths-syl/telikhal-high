@@ -167,7 +167,7 @@ async function renderNotices() {
   const data = await fetchJSON("notices.json");
   const el = document.getElementById("notice-widget-body");
   renderNoticeWidget(el, data);
-  updateAppBadge(data);
+  updateAppBadge(sortedNotices);
 }
 
 async function renderNewsTicker() {
