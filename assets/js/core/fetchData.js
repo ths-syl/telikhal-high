@@ -22,7 +22,7 @@ async function fetchJSON(fileName, useCache = true) {
     return data;
   } catch (error) {
     console.error("[fetchJSON Error]", error);
-    return null;
+    throw error;
   }
 }
 
