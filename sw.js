@@ -34,6 +34,13 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
+  const url = new URL(event.request.url);
+  if (url.pathname.includes("/data/")) {
+    // JSON ডাটা — Service Worker কখনো ক্যাশ করবে না/পড়বে না, সরাসরি নেটওয়ার্কে যাবে
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   event.respondWith(
     fetch(event.request)
       .then((response) => {
