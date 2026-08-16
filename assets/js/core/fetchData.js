@@ -13,7 +13,7 @@ async function fetchJSON(fileName, useCache = true) {
   }
 
   try {
-    const response = await fetch(`${DATA_BASE_PATH}${fileName}`);
+    const response = await fetch(`${DATA_BASE_PATH}${fileName}?t=${Date.now()}`);
     if (!response.ok) {
       throw new Error(`ডাটা লোড করা যায়নি: ${fileName} (স্ট্যাটাস ${response.status})`);
     }
