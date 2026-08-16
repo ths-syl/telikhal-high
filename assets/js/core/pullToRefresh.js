@@ -8,21 +8,30 @@ function initPullToRefresh() {
   let pulling = false;
   const threshold = 70;
 
-  document.addEventListener("touchstart", (e) => {
-    if (window.scrollY === 0) {
-      startY = e.touches[0].clientY;
-      pulling = true;
-    }
-  });
+  document.addEventListener(
+    "touchstart",
+    (e) => {
+      if (window.scrollY === 0) {
+        startY = e.touches[0].clientY;
+        pulling = true;
+      }
+    },
+    { passive: true }
+  );
 
-  document.addEventListener("touchmove", (e) => {
-    if (!pulling) return;
-    const diff = e.touches[0].clientY - startY;
-    if (diff > 0) {
-      indicator.style.opacity = Math.min(diff / threshold, 1);
-      indicator.style.transform = `translateX(-50%) translateY(${Math.min(diff, threshold)}px)`;
-    }
-  });
+  document.addEventListener(
+    "touchmove",
+    (e) => {
+      if (!pulling) return;
+      const diff = e.touches[0].clientY - startY;
+      if (diff > 0) {
+        e.preventDefault(); // ব্রাউজারের নিজস্ব pull-to-refresh বন্ধ রাখা
+        indicator.style.opacity = Math.min(diff / threshold, 1);
+        indicator.style.transform = `translateX(-50%) translateY(${Math.min(diff, threshold)}px)`;
+      }
+    },
+    { passive: false } // preventDefault() কাজ করানোর জন্য এটা আবশ্যক
+  );
 
   document.addEventListener("touchend", (e) => {
     if (!pulling) return;
